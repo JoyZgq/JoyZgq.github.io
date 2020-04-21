@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://JoyZgq.github.io</id>
     <title>Bravo</title>
-    <updated>2020-04-21T13:33:50.946Z</updated>
+    <updated>2020-04-21T13:51:03.758Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://JoyZgq.github.io"/>
     <link rel="self" href="https://JoyZgq.github.io/atom.xml"/>
@@ -12,23 +12,9 @@
     <rights>All rights reserved 2020, Bravo</rights>
     <entry>
         <title type="html"><![CDATA[Hello Traveller 🍄]]></title>
-        <id>https://JoyZgq.github.io/post/hello-gridea/</id>
-        <link href="https://JoyZgq.github.io/post/hello-gridea/">
+        <id>https://JoyZgq.github.io/post/hello-TRA/</id>
+        <link href="https://JoyZgq.github.io/post/hello-TRA/">
         </link>
         <updated>2018-12-11T16:00:00.000Z</updated>
-        <summary type="html"><![CDATA[<p><img src="https://JoyZgq.github.io/post-images/1587475563282.jpg" alt="" loading="lazy">👏  Congratulations! You find my blog FINALLY!🤡</p>
-<h2 id="introduction">Introduction👇</h2>
-<p>📝  You can know about the life or study of the blogger , and taste the different chocolates at different instants of time .</p>
-<p>🏷️  Tags will be  varied and you can choose what you like .</p>
-<p>📋  It is used to keep a diary or share knowledge about IT , Art , Math , History and somthing else.</p>
-<p>🌎  I will keep different language (Chinese and English in most time) versions to write at this site .</p>
-]]></summary>
-        <content type="html"><![CDATA[<p><img src="https://JoyZgq.github.io/post-images/1587475563282.jpg" alt="" loading="lazy">👏  Congratulations! You find my blog FINALLY!🤡</p>
-<h2 id="introduction">Introduction👇</h2>
-<p>📝  You can know about the life or study of the blogger , and taste the different chocolates at different instants of time .</p>
-<p>🏷️  Tags will be  varied and you can choose what you like .</p>
-<p>📋  It is used to keep a diary or share knowledge about IT , Art , Math , History and somthing else.</p>
-<p>🌎  I will keep different language (Chinese and English in most time) versions to write at this site .</p>
-]]></content>
     </entry>
 </feed>
