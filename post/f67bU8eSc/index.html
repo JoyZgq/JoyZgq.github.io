@@ -91,7 +91,7 @@ CharSequence是char值的可读序列。 该接口提供对许多不同类型的
 <p>CharSequence是char值的可读序列。 该接口提供对许多不同类型的char序列的统一，只读访问。char值表示基本多语言平面（BMP）中的字符或代理项。</p>
 </blockquote>
 <p>此接口不会细化equals和hashCode方法的常规合同。 因此，测试实现CharSequence两个对象的相等性的结果通常是未定义的。 每个对象可以由不同的类实现，并且不能保证每个类都能够测试其实例与另一个类的实例是否相等。 因此，将任意CharSequence实例用作集合中的元素或映射中的键是不合适的。</p>
-<h3 id="实例方法">实例方法</h3>
+<h3 id="抽象方法">抽象方法</h3>
 <h4 id="charatint-index">charAt(int index)</h4>
 <pre><code>char charAt​(int index)
 </code></pre>
@@ -113,7 +113,7 @@ CharSequence是char值的可读序列。 该接口提供对许多不同类型的
 <h4 id="subsequenceint-startint-end">subSequence(int start,int end)</h4>
 <h4 id="tostring">toString()</h4>
 <hr>
-<h3 id="抽象方法">抽象方法</h3>
+<h3 id="默认方法">默认方法</h3>
 <h6 id="异常">异常</h6>
 <blockquote>
 <p>IndexOutOfBoundsException - 如果 index参数为负数或不小于 length()</p>
@@ -166,7 +166,7 @@ CharSequence是char值的可读序列。 该接口提供对许多不同类型的
 <li>
 <ul>
 <li><a href="#summary">Summary</a></li>
-<li><a href="#%E5%AE%9E%E4%BE%8B%E6%96%B9%E6%B3%95">实例方法</a>
+<li><a href="#%E6%8A%BD%E8%B1%A1%E6%96%B9%E6%B3%95">抽象方法</a>
 <ul>
 <li><a href="#charatint-index">charAt(int index)</a></li>
 <li><a href="#chars">chars()</a></li>
@@ -176,7 +176,7 @@ CharSequence是char值的可读序列。 该接口提供对许多不同类型的
 <li><a href="#tostring">toString()</a></li>
 </ul>
 </li>
-<li><a href="#%E6%8A%BD%E8%B1%A1%E6%96%B9%E6%B3%95">抽象方法</a><br>
+<li><a href="#%E9%BB%98%E8%AE%A4%E6%96%B9%E6%B3%95">默认方法</a><br>
 *<br>
 *<br>
 * <a href="#%E5%BC%82%E5%B8%B8">异常</a></li>
