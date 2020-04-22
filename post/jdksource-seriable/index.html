@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>JDK Source --- java.lang.Number - bravo</title>
+<title>JDK Source --- Serializable - bravo</title>
 <link rel="shortcut icon" href="https://JoyZgq.github.io/favicon.ico">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
 <link rel="stylesheet" href="https://JoyZgq.github.io/media/css/tailwind.css">
 <link rel="stylesheet" href="https://JoyZgq.github.io/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="JDK Source --- java.lang.Number - bravo - Atom Feed" href="https://JoyZgq.github.io/atom.xml">
+<link rel="alternate" type="application/atom+xml" title="JDK Source --- Serializable - bravo - Atom Feed" href="https://JoyZgq.github.io/atom.xml">
 
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-164181119-1"></script>
@@ -23,42 +23,24 @@
   </script>
     
 
-  <meta name="description" content="Number.java
+  <meta name="description" content="Summary 综述🤡👾😉
 
-实现的所有接口:Serializable
+实现java.io.Serializable接口的类启用了类的可序列化。未实现此接口的类将不会将其任何状态序列化或反序列化。可序列化类的所有子类型本身都是可序列化的。 序列化接口没有方法或字段，仅用于标识..." />
+  <meta property="og:title" content="JDK Source --- Serializable - bravo">
+  <meta property="og:description" content="Summary 综述🤡👾😉
 
-Summary 综述🤡👾😉
-
-package java.lang;
-/**
- * The abstract class {@code Number} is the ..." />
-  <meta property="og:title" content="JDK Source --- java.lang.Number - bravo">
-  <meta property="og:description" content="Number.java
-
-实现的所有接口:Serializable
-
-Summary 综述🤡👾😉
-
-package java.lang;
-/**
- * The abstract class {@code Number} is the ..." />
+实现java.io.Serializable接口的类启用了类的可序列化。未实现此接口的类将不会将其任何状态序列化或反序列化。可序列化类的所有子类型本身都是可序列化的。 序列化接口没有方法或字段，仅用于标识..." />
   <meta property="og:type" content="articles">
-  <meta property="og:url" content="https://JoyZgq.github.io/post/jdk-source-number/" />
-  <meta property="og:image" content="https://JoyZgq.github.io/post-images/jdk-source-number.jpg">
+  <meta property="og:url" content="https://JoyZgq.github.io/post/jdksource-seriable/" />
+  <meta property="og:image" content="https://JoyZgq.github.io/images/avatar.png">
   <meta property="og:image:height" content="630">
   <meta property="og:image:width" content="1200">
-  <meta name="twitter:title" content="JDK Source --- java.lang.Number - bravo">
-  <meta name="twitter:description" content="Number.java
+  <meta name="twitter:title" content="JDK Source --- Serializable - bravo">
+  <meta name="twitter:description" content="Summary 综述🤡👾😉
 
-实现的所有接口:Serializable
-
-Summary 综述🤡👾😉
-
-package java.lang;
-/**
- * The abstract class {@code Number} is the ...">
+实现java.io.Serializable接口的类启用了类的可序列化。未实现此接口的类将不会将其任何状态序列化或反序列化。可序列化类的所有子类型本身都是可序列化的。 序列化接口没有方法或字段，仅用于标识...">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="canonical" href="https://JoyZgq.github.io/post/jdk-source-number/">
+  <link rel="canonical" href="https://JoyZgq.github.io/post/jdksource-seriable/">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
@@ -76,13 +58,16 @@ package java.lang;
     <div class="max-w-4xl w-full mx-auto">
       <div class="shadow-box bg-white dark:bg-gray-600 rounded-lg pt-32 md:pt-64 px-4 md:px-8 pb-8 animated fadeIn mb-8">
         <h1 class="text-5xl font-semibold leading-normal pb-8 mb-8 border-b-8 border-gray-700">
-          JDK Source --- java.lang.Number
+          JDK Source --- Serializable
         </h1>
         
-          <img src="https://JoyZgq.github.io/post-images/jdk-source-number.jpg" alt="JDK Source --- java.lang.Number" class="block w-full mb-8">
-        
         <div class="mb-8 flex flex-wrap">
-          <div class="text-gray-400 text-sm mr-4">2019-01-17 · 5 min read</div>
+          <div class="text-gray-400 text-sm mr-4">2019-02-02 · 6 min read</div>
+          
+            <a href="https://JoyZgq.github.io/tag/iZOVsvccF/" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
+              <i class="ri-hashtag"></i>
+              io
+            </a>
           
             <a href="https://JoyZgq.github.io/tag/mfQ75zvRf/" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
               <i class="ri-hashtag"></i>
@@ -91,139 +76,60 @@ package java.lang;
           
         </div>
         <div class="markdown mb-8" v-pre>
-          <h3 id="numberjava">Number.java</h3>
+          <h4 id="summary-综述">Summary 综述🤡👾😉</h4>
 <blockquote>
-<p>实现的所有接口:Serializable</p>
+<p>实现java.io.Serializable接口的类启用了类的可序列化。未实现此接口的类将不会将其任何状态序列化或反序列化。可序列化类的所有子类型本身都是可序列化的。 序列化接口没有方法或字段，仅用于标识可序列化的语义。为了允许序列化非可序列化类的子类型，子类型可以承担保存和恢复超类型的公共，<br>
+受保护和（如果可访问）包字段的状态的责任。只有当它扩展的类具有可访问的无参构造函数来初始化类的状态时，子类型才可以承担此责任。如果不是这种情况，则声明类Serializable是错误的。 将在运行时检测到错误。在反序列化期间，将使用类的public或protected 无参构造函数初始化非可序列化类的字段。 必须可以对可序列化的子类访问no-arg构造函数。可序列化子类的字段将从流中恢复。 遍历图形时，可能会遇到不支持Serializable接口的对象。 在这种情况下，将抛出NotSerializableException，并将标识非可序列化对象的类。<br>
+在序列化和反序列化过程中需要特殊处理的类必须使用这些精确签名实现特殊方法：</p>
 </blockquote>
-<h4 id="summary-综述">Summary 综述🤡👾😉</h4>
-<!-- more -->
-<pre><code>package java.lang;
-/**
- * The abstract class {@code Number} is the superclass of platform
- * classes representing numeric values that are convertible to the
- * primitive types {@code byte}, {@code double}, {@code float}, {@code
- * int}, {@code long}, and {@code short}.
- * 此抽象类是Java平台表示数值类型的类的父类，其可以转化为基本数值类型，如byte，double,float,int,long,short
- * &lt;p&gt;
- * The specific semantics of the conversion from the numeric value of
- * a particular {@code Number} implementation to a given primitive
- * type is defined by the {@code Number} implementation in question.
- * 从特定Number实现的数值到给定基元类型的转换的特定语义由所Number实现定义。
- * &lt;p&gt;
- * For platform classes, the conversion is often analogous to a
- * narrowing primitive conversion or a widening primitive conversion
- * as defining in &lt;cite&gt;The Java&amp;trade; Language Specification&lt;/cite&gt;
- * for converting between primitive types.  Therefore, conversions may
- * lose information about the overall magnitude of a numeric value, may
- * lose precision, and may even return a result of a different sign
- * than the input.
- * 对于平台类，转换通常类似于缩小基元转换或扩展基元转换（如The Java™ Language Specification中所定义），
- * 用于在基元类型之间进行转换。 因此，转换可能会丢失有关数值总体大小的信息，可能会丢失精度，甚至可能返回与输入不同的符号结果。
- * &lt;p&gt;
- * See the documentation of a given {@code Number} implementation for
- * conversion details.
- * 有关转换详细信息，请参阅给定Number实现的文档。
- *
- * @author Lee Boynton
- * @author Arthur van Hoff
- * @jls 5.1.2 Widening Primitive Conversions
- * @jls 5.1.3 Narrowing Primitive Conversions
- * @since JDK1.0
- */
+<pre><code>   private void writeObject(java.io.ObjectOutputStream out)
+   throws IOException
+   private void readObject(java.io.ObjectInputStream in)
+   throws IOException, ClassNotFoundException;
+   private void readObjectNoData()
+   throws ObjectStreamException;
 </code></pre>
-<hr>
-<h4 id="abstract-methods-抽象方法">Abstract Methods 抽象方法😇😵🤐</h4>
-<pre><code>public abstract class Number implements java.io.Serializable {
-   /**
-    * Returns the value of the specified number as an {@code int},
-    * which may involve rounding or truncation.
-    * 返回指定数字的 int,其过可能涉及取整（舍余）
-    *
-    * @return the numeric value represented by this object after conversion
-    * to type {@code int}.
-    * 转换为类型 int后此对象表示的数值
-    */
-   public abstract int intValue();
-
-   /**
-    * Returns the value of the specified number as a {@code long},
-    * which may involve rounding or truncation.
-    * 返回指定数字的 int,其过可能涉及舍入或截断
-    *
-    * @return the numeric value represented by this object after conversion
-    * to type {@code long}.
-    * 转换为类型 int后此对象表示的数值
-    */
-   public abstract long longValue();
-
-   /**
-    * Returns the value of the specified number as a {@code float},
-    * which may involve rounding.
-    * 返回指定数字的 float,其过可能涉及舍入
-    *
-    * @return the numeric value represented by this object after conversion
-    * to type {@code float}.
-    * 转换为类型 float 后此对象表示的数值
-    */
-   public abstract float floatValue();
-
-   /**
-    * Returns the value of the specified number as a {@code double},
-    * which may involve rounding.
-    * 返回指定数字的 double,其过可能涉及舍入
-    *
-    * @return the numeric value represented by this object after conversion
-    * to type {@code double}.
-    * 转换为类型 double 后此对象表示的数值
-    */
-   public abstract double doubleValue();
+<h4 id="writeobject">writeObject</h4>
+<blockquote>
+<p>writeObject方法负责为其特定类编写对象的状态，以便相应的readObject方法可以恢复它。可以通过调用out.defaultWriteObject来调用保存Object字段的默认机制。 该方法不需要关注属于其超类或子类的状态。 通过使用writeObject方法或使用DataOutput支持的原始数据类型的方法将各个字段写入ObjectOutputStream来保存状态。</p>
+</blockquote>
+<h4 id="readobject">ReadObject</h4>
+<blockquote>
+<p>ReadObject方法负责从流中读取并恢复类字段。 它可以调用in.defaultReadObject 来调用恢复对象的非静态和非瞬态字段的默认机制。 defaultReadObject方法使用流中的信息来指定流中保存的对象的字段以及当前对象中相应命名的字段。这处理了类在演变为添加新字段时的情况。 该方法不需要关注属于其超类或子类的状态。通过从ObjectInputStream读取各个字段的数据并对对象的相应字段进行分配来恢复状态。 DataInput支持读取原始数据类型。readObjectNoData方法负责在序列化流未将给定类列为要反序列化的对象的超类的情况下初始化其特定类的对象的状态。 如果接收方使用与发送方不同版本的反序列化实例的类，并且接收方的版本扩展了未由发送方版本扩展的类，则可能发生这种情况。 如果序列化流已被篡改，也可能发生这种情况; 因此，尽管存在“恶意”或不完整的源流，readObjectNoData对于正确初始化反序列化对象非常有用。在将对象写入流时需要指定要使用的备用对象的可序列化类应该使用确切的签名实现此特殊方法：</p>
+</blockquote>
+<pre><code>   ANY-ACCESS-MODIFIER Object writeReplace() throws ObjectStreamException;
 </code></pre>
-<hr>
-<h4 id="concrete-methods-具体方法">Concrete Methods 具体方法😎🤓🤗</h4>
-<pre><code>    /**
-     * Returns the value of the specified number as a {@code byte},
-     * which may involve rounding or truncation.
-     * 返回指定数字的 byte,其过可能涉及舍入或截断
-     * &lt;p&gt;This implementation returns the result of {@link #intValue} cast
-     * to a {@code byte}.
-     * 强制将intValue结果转为byte
-     *
-     * @return the numeric value represented by this object after conversion
-     * to type {@code byte}.
-     * 转换为类型 byte后此对象表示的数值
-     * @since JDK1.1
-     */
-    public byte byteValue() {
-        return (byte) intValue();
-    }
-
-    /**
-     * Returns the value of the specified number as a {@code short},
-     * which may involve rounding or truncation.
-     * 返回指定数字的 short,其过可能涉及舍入或截断
-     * &lt;p&gt;This implementation returns the result of {@link #intValue} cast
-     * to a {@code short}.
-     * 强制将intValue结果转为short
-     *
-     * @return the numeric value represented by this object after conversion
-     * to type {@code short}.
-     * 转换为类型 short后此对象表示的数值
-     * @since JDK1.1
-     */
-    public short shortValue() {
-        return (short) intValue();
-    }
-
-    /**
-     * use serialVersionUID from JDK 1.0.2 for interoperability
-     * 序列化ID
-     */
-    private static final long serialVersionUID = -8742448824652078965L;
+<blockquote>
+<p>如果方法存在，则可以通过序列化调用此writeReplace方法，并且可以从要序列化的对象的 类中定义的方法访问该方法。 因此，该方法可以具有私有，受保护和包私有访问。 对此方法的子类访问遵循java可访问性规则。<br>
+从流中读取实例时需要指定替换的类应该使用精确签名实现此特殊方法。</p>
+</blockquote>
+<pre><code>   ANY-ACCESS-MODIFIER Object readResolve() throws ObjectStreamException;
+</code></pre>
+<ul>
+<li>此readResolve方法遵循与writeReplace相同的调用规则和可访问性规则。</li>
+<li>序列化运行时将每个可序列化类与版本号相关联，称为serialVersionUID，在反序列化期间使用该版本号来验证序列化对象的发送方和接收方是否已</li>
+<li>加载与该序列化兼容的该对象的类。 如果接收者已经为具有与相应发送者类别不同的serialVersionUID的对象加载了类，则反序列化将导致InvalidClassException 。</li>
+<li>可序列化类可以通过声明名为&quot;serialVersionUID&quot;必须为static，final和long类型的字段来显式声明其自己的serialVersionUID：</li>
+</ul>
+<pre><code>   ANY-ACCESS-MODIFIER static final long serialVersionUID = 42L;
+</code></pre>
+<ul>
+<li>如果可序列化类未显式声明serialVersionUID，则序列化运行时将基于类的各个方面计算该类的默认serialVersionUID值，</li>
+<li>如Java（TM）对象序列化规范中所述。 但是， 强烈建议所有可序列化类显式声明serialVersionUID值，因为默认的serialVersionUID计算对类细节高度敏感，</li>
+<li>这些细节可能因编译器实现而异，因此在反序列化期间可能会导致意外的InvalidClassException 。 因此，为了保证跨不同java编译器实现的一致serialVersionUID值，</li>
+<li>可序列化类必须声明显式serialVersionUID值。 强烈建议显式serialVersionUID声明尽可能使用private修饰符，因为此类声明仅适用于立即声明的类</li>
+<li>
+<ul>
+<li>serialVersionUID字段不适用于继承成员。 数组类不能声明显式的serialVersionUID，因此它们始终具有默认的计算值，但是对于数组类，不需要匹配serialVersionUID值。</li>
+</ul>
+</li>
+</ul>
+<pre><code>public interface Serializable {
 }
 </code></pre>
 <hr>
 <blockquote>
-<p>已知直接子类：AtomicInteger , AtomicLong , BigDecimal , BigInteger , Byte , Double , DoubleAccumulator , DoubleAdder , Float , Integer , Long , LongAccumulator , LongAdder , Short</p>
+<p>所有子接口:Attribute ， Attribute ， Attributes ， CertPathValidatorException.Reason ， Connector.Argument ， Connector.BooleanArgument ， Connector.IntegerArgument ， Connector.SelectedArgument ， Connector.StringArgument ， Control ， Descriptor ， DHPrivateKey ， DHPublicKey ， DocAttribute ， DSAPrivateKey ， DSAPublicKey ， ECPrivateKey ， ECPublicKey ， ExtendedRequest ， ExtendedResponse ， Externalizable ， Key ， Name ， NotificationFilter ， PBEKey ， PrintJobAttribute ， PrintRequestAttribute ， PrintServiceAttribute ， PrivateKey ， PublicKey ， QueryExp ， RelationType ， RemoteRef ， RSAMultiPrimePrivateCrtKey ， RSAPrivateCrtKey ， RSAPrivateKey ， RSAPublicKey ， SecretKey ， ServerRef ， SupportedValuesAttribute ， UnsolicitedNotification ， ValueExp ， XECPrivateKey ， XECPublicKey</p>
 </blockquote>
 
         </div>
@@ -272,11 +178,11 @@ package java.lang;
 <ul>
 <li>
 <ul>
-<li><a href="#numberjava">Number.java</a>
+<li>
 <ul>
 <li><a href="#summary-%E7%BB%BC%E8%BF%B0">Summary 综述🤡👾😉</a></li>
-<li><a href="#abstract-methods-%E6%8A%BD%E8%B1%A1%E6%96%B9%E6%B3%95">Abstract Methods 抽象方法😇😵🤐</a></li>
-<li><a href="#concrete-methods-%E5%85%B7%E4%BD%93%E6%96%B9%E6%B3%95">Concrete Methods 具体方法😎🤓🤗</a></li>
+<li><a href="#writeobject">writeObject</a></li>
+<li><a href="#readobject">ReadObject</a></li>
 </ul>
 </li>
 </ul>
