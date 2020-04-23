@@ -1,0 +1,772 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title> 23种模式 --- 创建型模式 - bravo</title>
+<link rel="shortcut icon" href="https://JoyZgq.github.io/favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
+<link rel="stylesheet" href="https://JoyZgq.github.io/media/css/tailwind.css">
+<link rel="stylesheet" href="https://JoyZgq.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title=" 23种模式 --- 创建型模式 - bravo - Atom Feed" href="https://JoyZgq.github.io/atom.xml">
+
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-164181119-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-164181119-1');
+  </script>
+    
+
+  <meta name="description" content="
+创建型模式(Creational Pattern)对类的实例化过程进行了抽象，能够将软件模块中对象的创建和对象的使用分离。为了使软件的结构更加清晰，外界对于这些对象只需要知道它们共同的接口，而不清楚其具体的实现细节，使整个系统的设计更加符..." />
+  <meta property="og:title" content=" 23种模式 --- 创建型模式 - bravo">
+  <meta property="og:description" content="
+创建型模式(Creational Pattern)对类的实例化过程进行了抽象，能够将软件模块中对象的创建和对象的使用分离。为了使软件的结构更加清晰，外界对于这些对象只需要知道它们共同的接口，而不清楚其具体的实现细节，使整个系统的设计更加符..." />
+  <meta property="og:type" content="articles">
+  <meta property="og:url" content="https://JoyZgq.github.io/post/LSRQQMEMO/" />
+  <meta property="og:image" content="https://JoyZgq.github.io/post-images/LSRQQMEMO.webp">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:width" content="1200">
+  <meta name="twitter:title" content=" 23种模式 --- 创建型模式 - bravo">
+  <meta name="twitter:description" content="
+创建型模式(Creational Pattern)对类的实例化过程进行了抽象，能够将软件模块中对象的创建和对象的使用分离。为了使软件的结构更加清晰，外界对于这些对象只需要知道它们共同的接口，而不清楚其具体的实现细节，使整个系统的设计更加符...">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://JoyZgq.github.io/post/LSRQQMEMO/">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+ 
+  
+    <link rel="stylesheet" href="https://JoyZgq.github.io/media/css/prism-github.css">
+  
+
+  
+</head>
+
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
+    <a href="https://JoyZgq.github.io" class="fixed top-0 left-0 mt-4 bg-black text-white dark:text-gray-700 dark:bg-yellow-50 dark:hover:bg-black dark:hover:text-white inline-flex p-2 pl-8 hover:text-gray-700 hover:bg-yellow-50 font-bold z-10 transition-fast animated fadeInLeft">
+      bravo
+    </a>
+    <div class="max-w-4xl w-full mx-auto">
+      <div class="shadow-box bg-white dark:bg-gray-600 rounded-lg pt-32 md:pt-64 px-4 md:px-8 pb-8 animated fadeIn mb-8">
+        <h1 class="text-5xl font-semibold leading-normal pb-8 mb-8 border-b-8 border-gray-700">
+           23种模式 --- 创建型模式
+        </h1>
+        
+          <img src="https://JoyZgq.github.io/post-images/LSRQQMEMO.webp" alt=" 23种模式 --- 创建型模式" class="block w-full mb-8">
+        
+        <div class="mb-8 flex flex-wrap">
+          <div class="text-gray-400 text-sm mr-4">2019-04-22 · 19 min read</div>
+          
+        </div>
+        <div class="markdown mb-8" v-pre>
+          <blockquote>
+<p style="text-indent:2em">创建型模式(Creational Pattern)对类的实例化过程进行了抽象，能够将软件模块中对象的创建和对象的使用分离。为了使软件的结构更加清晰，外界对于这些对象只需要知道它们共同的接口，而不清楚其具体的实现细节，使整个系统的设计更加符合单一职责原则。创建型模式在创建什么(What)，由谁创建(Who)，何时创建(When)等方面都为软件设计者提供了尽可能大的灵活性。创建型模式隐藏了类的实例的创建细节，通过隐藏对象如何被创建和组合在一起达到使整个系统独立的目的。</p>
+</blockquote>
+<ul>
+<li>
+<h4 id="简单工厂模式-simple-factory-pattern">简单工厂模式( Simple Factory Pattern )</h4>
+</li>
+</ul>
+<blockquote>
+<h5 id="综述创建型模式对类的实例化过程进行了抽象能够将对象的创建与对象的使用过程分离-简单工厂模式又称为静态工厂方法模式它属于类创建型模式-在简单工厂模式中可以根据参数的不同返回不同类的实例-简单工厂模式专门定义一个类来负责创建其他类的实例被创建的实例通常都具有共同的父类-简单工厂模式包含三个角色工厂角色负责实现创建所有实例的内部逻辑抽象产品角色是所创建的所有对象的父类负责描述所有实例所共有的公共接口具体产品角色是创建目标所有创建的对象都充当这个角色的某个具体类的实例-简单工厂模式的要点在于当你需要什么只需要传入一个正确的参数就可以获取你所需要的对象而无须知道其创建细节-简单工厂模式最大的优点在于实现对象的创建和对象的使用分离将对象的创建交给专门的工厂类负责但是其最大的缺点在于工厂类不够灵活增加新的具体产品需要修改工厂类的判断逻辑代码而且产品较多时工厂方法代码将会非常复杂-简单工厂模式适用情况包括工厂类负责创建的对象比较少客户端只知道传入工厂类的参数对于如何创建对象不关心">综述:创建型模式对类的实例化过程进行了抽象，能够将对象的创建与对象的使用过程分离。简单工厂模式又称为静态工厂方法模式，它属于类创建型模式。在简单工厂模式中，可以根据参数的不同返回不同类的实例。简单工厂模式专门定义一个类来负责创建其他类的实例，被创建的实例通常都具有共同的父类。简单工厂模式包含三个角色：工厂角色负责实现创建所有实例的内部逻辑；抽象产品角色是所创建的所有对象的父类，负责描述所有实例所共有的公共接口；具体产品角色是创建目标，所有创建的对象都充当这个角色的某个具体类的实例。简单工厂模式的要点在于：当你需要什么，只需要传入一个正确的参数，就可以获取你所需要的对象，而无须知道其创建细节。简单工厂模式最大的优点在于实现对象的创建和对象的使用分离，将对象的创建交给专门的工厂类负责，但是其最大的缺点在于工厂类不够灵活，增加新的具体产品需要修改工厂类的判断逻辑代码，而且产品较多时，工厂方法代码将会非常复杂。简单工厂模式适用情况包括：工厂类负责创建的对象比较少；客户端只知道传入工厂类的参数，对于如何创建对象不关心。</h5>
+</blockquote>
+<ol>
+<li>
+<h5 id="sfp做什么">SFP做什么?</h5>
+</li>
+</ol>
+<p style="text-indent:2em">考虑一个简单的软件应用场景，一个软件系统可以提供多个外观不同的按钮（如圆形按钮、矩形按钮、菱形按钮等）， 这些按钮都源自同一个基类，不过在继承基类后不同的子类修改了部分属性从而使得它们可以呈现不同的外观，如果我们希望在使用这些按钮时，不需要知道这些具体按钮类的名字，只需要知道表示该按钮类的一个参数，并提供一个调用方便的方法，把该参数传入方法即可返回一个相应的按钮对象，此时，就可以使用简单工厂模式。</p>
+<ol start="2">
+<li>
+<h5 id="什么是sfp">什么是SFP?</h5>
+</li>
+</ol>
+<p>​       简单工厂模式(Simple Factory Pattern)：又称为静态工厂方法(Static Factory Method)模式，它属于类创建型模式。<em><strong>在简单工厂模式中，可以根据参数的不同返回不同类的实例</strong></em>。简单工厂模式专门定义一个类来负责创建其他类的实例，被创建的实例通常都具有共同的父类。</p>
+<ol start="3">
+<li>
+<h5 id="sfp的模式结构">SFP的模式结构</h5>
+<ul>
+<li>
+<p>Factory:工厂角色</p>
+<p>工厂角色负责实现创建所有实例的内部逻辑</p>
+</li>
+<li>
+<p>Product:抽象产品角色<br>
+抽象产品角色是所创建的所有对象的父类，负责描述所有实例所共有的公共接口</p>
+</li>
+<li>
+<p>Concrete Product：具体产品<br>
+具体产品角色是创建目标，所有创建的对象都充当这个角色的某个具体类的实例。<br>
+<img src="https://design-patterns.readthedocs.io/zh_CN/latest/_images/SimpleFactory.jpg" alt="SFP" loading="lazy"></p>
+</li>
+</ul>
+</li>
+<li>
+<h5 id="sfp时序图">SFP时序图</h5>
+<pre><code class="language-sequence">Title: SFP
+    Main-&gt;Factory: createProduct?（Product）
+    Factory--&gt;ConcreteProduct: create
+    Main-&gt;ConcreteProduct: use
+</code></pre>
+</li>
+<li>
+<h5 id="sfp模式分析">SFP模式分析</h5>
+</li>
+</ol>
+<ul>
+<li>将对象的创建和对象本身业务处理分离可以降低系统的耦合度，使得两者修改起来都相对容易。</li>
+<li>在调用工厂类的工厂方法时，由于工厂方法是静态方法，使用起来很方便，可通过类名直接调用，而且只需要传入一个简单的参数即可，在实际开发中，还可以在调用时将所传入的参数保存在XML等格式的配置文件中，修改参数时无须修改任何源代码。</li>
+<li>简单工厂模式最大的问题在于工厂类的职责相对过重，增加新的产品需要修改工厂类的判断逻辑，这一点与开闭原则是相违背的。</li>
+<li>简单工厂模式的要点在于：当你需要什么，只需要传入一个正确的参数，就可以获取你所需要的对象，而无须知道其创建细节。</li>
+</ul>
+<ol start="6">
+<li>
+<h5 id="sfp优点">SFP优点</h5>
+</li>
+</ol>
+<ul>
+<li>工厂类含有必要的判断逻辑，可以决定在什么时候创建哪一个产品类的实例，客户端可以免除直接创建产品对象的责任，而仅仅“消费”产品；简单工厂模式通过这种做法实现了对责任的分割，它提供了专门的工厂类用于创建对象。</li>
+<li>客户端无须知道所创建的具体产品类的类名，只需要知道具体产品类所对应的参数即可，对于一些复杂的类名，通过简单工厂模式可以减少使用者的记忆量。</li>
+<li>通过<strong>引入配置文件</strong>，可以在不修改任何客户端代码的情况下更换和增加新的具体产品类，在一定程度上提高了系统的灵活性。</li>
+</ul>
+<ol start="7">
+<li>
+<h5 id="sfp缺点">SFP缺点</h5>
+</li>
+</ol>
+<ul>
+<li>由于工厂类集中了所有产品创建逻辑，一旦不能正常工作，整个系统都要受到影响。</li>
+<li>使用简单工厂模式将会增加系统中类的个数，在一定程序上增加了<em>系统的复杂度和理解难度</em>。</li>
+<li>系统扩展困难，一旦添加新产品就不得不修改工厂逻辑，在产品类型较多时，有可能造成工厂逻辑过于复杂，不利于<em>系统的扩展和维护</em>。</li>
+<li>简单工厂模式由于使用了静态工厂方法，造成工厂角色无法形成<strong>基于继承</strong>的等级结构。</li>
+</ul>
+<ol start="8">
+<li>
+<h5 id="适用于">适用于</h5>
+</li>
+</ol>
+<ul>
+<li>工厂类负责<strong>创建的对象比较少</strong>：由于创建的对象较少，不会造成工厂方法中的业务逻辑太过复杂。</li>
+<li>客户端只知道传入工厂类的参数，对于如何创建对象不关心：客户端既不需要关心创建细节，甚至连类名都不需要记住，只需要知道类型所对应的参数。</li>
+</ul>
+<ol start="9">
+<li>
+<h5 id="sfp模式应用">SFP模式应用</h5>
+</li>
+</ol>
+<ul>
+<li>JDK类库中广泛使用了简单工厂模式，如工具类java.text.DateFormat，它用于格式化一个本地日期或者时间</li>
+</ul>
+<pre><code class="language-java">  public final static DateFormat getDateInstance();
+  public final static DateFormat getDateInstance(int style);
+  public final static DateFormat getDateInstance(int style,Locale locale);
+</code></pre>
+<ul>
+<li>
+<p>Java加密技术<br>
+获取不同加密算法的密钥生成器:</p>
+<pre><code class="language-java">KeyGenerator keyGen=KeyGenerator.getInstance(&quot;DESede&quot;);
+</code></pre>
+</li>
+<li>
+<p>创建密码器:</p>
+<pre><code class="language-java">Cipher cp=Cipher.getInstance(&quot;DESede&quot;);
+</code></pre>
+</li>
+</ul>
+<hr>
+<ul>
+<li>
+<h4 id="工厂方法模式factory-method-pattern"><strong>工厂方法模式（Factory Method Pattern）</strong></h4>
+<ol>
+<li>
+<h5 id="fm做什么">FM做什么?</h5>
+<p>现在对该系统进行修改，不再设计一个按钮工厂类来统一负责所有产品的创建，而是将具体按钮的创建过程交给专门的工厂子类去完成，我们先定义一个抽象的按钮工厂类，再定义具体的工厂类来生成圆形按钮、矩形按钮、菱形按钮等，它们实现在抽象按钮工厂类中定义的方法。这种抽象化的结果使这种结构可以在不修改具体工厂类的情况下引进新的产品，如果出现新的按钮类型，只需要为这种新类型的按钮创建一个具体的工厂类就可以获得该新按钮的实例，这一特点无疑使得工厂方法模式具有超越简单工厂模式的优越性，更加符合“开闭原则”。</p>
+</li>
+<li>
+<h5 id="什么是fm">什么是FM?</h5>
+<p>工厂方法模式(Factory Method Pattern)又称为工厂模式，也叫虚拟构造器(Virtual Constructor)模式或者多态工厂(Polymorphic Factory)模式，它属于类创建型模式。在工厂方法模式中，工厂父类负责定义创建产品对象的公共接口，而工厂子类则负责生成具体的产品对象，这样做的目的是将产品类的实例化操作延迟到工厂子类中完成，即通过工厂子类来确定究竟应该实例化哪一个具体产品类。</p>
+</li>
+<li>
+<h5 id="fm的模式结构">FM的模式结构</h5>
+<ul>
+<li>Product：抽象产品</li>
+<li>ConcreteProduct：具体产品</li>
+<li>Factory：抽象工厂</li>
+<li>ConcreteFactory：具体工厂<br>
+<img src="https://design-patterns.readthedocs.io/zh_CN/latest/_images/FactoryMethod.jpg" alt="fmp" loading="lazy"></li>
+</ul>
+</li>
+<li>
+<h5 id="fm时序图">FM时序图</h5>
+</li>
+</ol>
+</li>
+</ul>
+<pre><code class="language-sequence">Title: FMP
+Main-&gt;createFactory: factoryProduct?（Product）
+createFactory--&gt;ConcreteProduct: create
+Main-&gt;ConcreteProduct: use
+</code></pre>
+<ol start="5">
+<li>
+<h5 id="fm模式分析">FM模式分析</h5>
+<p>工厂方法模式是简单工厂模式的进一步抽象和推广。由于使用了面向对象的多态性，工厂方法模式保持了简单工厂模式的优点，而且克服了它的缺点。在工厂方法模式中，核心的工厂类不再负责所有产品的创建，而是将具体创建工作交给子类去做。这个核心类仅仅负责给出具体工厂必须实现的接口，而不负责哪一个产品类被实例化这种细节，这使得工厂方法模式可以允许系统在不修改工厂角色的情况下引进新产品。</p>
+</li>
+<li>
+<h5 id="fm优点">FM优点</h5>
+<ul>
+<li>在工厂方法模式中，工厂方法用来创建客户所需要的产品，同时还向客户隐藏了哪种具体产品类将被实例化这一细节，用户只需要关心所需产品对应的工厂，无须关心创建细节，甚至无须知道具体产品类的类名。</li>
+<li>基于工厂角色和产品角色的多态性设计是工厂方法模式的关键。它能够使工厂可以自主确定创建何种产品对象，而如何创建这个对象的细节则完全封装在具体工厂内部。工厂方法模式之所以又被称为多态工厂模式，是因为所有的具体工厂类都具有同一抽象父类。</li>
+<li>使用工厂方法模式的另一个优点是在系统中加入新产品时，无须修改抽象工厂和抽象产品提供的接口，无须修改客户端，也无须修改其他的具体工厂和具体产品，而只要添加一个具体工厂和具体产品就可以了。这样，系统的可扩展性也就变得非常好，完全符合“开闭原则”。</li>
+</ul>
+</li>
+<li>
+<h5 id="fm缺点">FM缺点</h5>
+<ul>
+<li>在添加新产品时，需要编写新的具体产品类，而且还要提供与之对应的具体工厂类，系统中类的个数将成对增加，在一定程度上增加了系统的复杂度，有更多的类需要编译和运行，会给系统带来一些额外的开销。</li>
+<li>由于考虑到系统的可扩展性，需要引入抽象层，在客户端代码中均使用抽象层进行定义，增加了系统的抽象性和理解难度，且在实现时可能需要用到DOM、反射等技术，增加了系统的实现难度。</li>
+</ul>
+</li>
+<li>
+<h5 id="使用环境">使用环境</h5>
+<p>在以下情况下可以使用工厂方法模式：</p>
+<ul>
+<li>一个类不知道它所需要的对象的类：在工厂方法模式中，客户端不需要知道具体产品类的类名，只需要知道所对应的工厂即可，具体的产品对象由具体工厂类创建；客户端需要知道创建具体产品的工厂类。</li>
+<li>一个类通过其子类来指定创建哪个对象：在工厂方法模式中，对于抽象工厂类只需要提供一个创建产品的接口，而由其子类来确定具体要创建的对象，利用面向对象的多态性和里氏代换原则，在程序运行时，子类对象将覆盖父类对象，从而使得系统更容易扩展。</li>
+<li>将创建对象的任务委托给多个工厂子类中的某一个，客户端在使用时可以无须关心是哪一个工厂子类创建产品子类，需要时再动态指定，可将具体工厂类的类名存储在配置文件或数据库中。</li>
+</ul>
+</li>
+<li>
+<h5 id="fmp模式应用">FMP模式应用</h5>
+<p>JDBC中的工厂方法:</p>
+<pre><code class="language-java">Connection conn=DriverManager.getConnection(&quot;jdbc:microsoft:sqlserver://loc
+alhost:1433; DatabaseName=DB;user=sa;password=&quot;);
+Statement statement=conn.createStatement();
+ResultSet rs=statement.executeQuery(&quot;select * from UserInfo&quot;);
+</code></pre>
+</li>
+<li>
+<h5 id="综述">综述</h5>
+<ul>
+<li>工厂方法模式又称为工厂模式，它属于类创建型模式。在工厂方法模式中，工厂父类负责定义创建产品对象的公共接口，而工厂子类则负责生成具体的产品对象，这样做的目的是将产品类的实例化操作延迟到工厂子类中完成，即通过工厂子类来确定究竟应该实例化哪一个具体产品类。</li>
+<li>工厂方法模式包含四个角色：抽象产品是定义产品的接口，是工厂方法模式所创建对象的超类型，即产品对象的共同父类或接口；具体产品实现了抽象产品接口，某种类型的具体产品由专门的具体工厂创建，它们之间往往一一对应；抽象工厂中声明了工厂方法，用于返回一个产品，它是工厂方法模式的核心，任何在模式中创建对象的工厂类都必须实现该接口；具体工厂是抽象工厂类的子类，实现了抽象工厂中定义的工厂方法，并可由客户调用，返回一个具体产品类的实例。</li>
+<li>工厂方法模式是简单工厂模式的进一步抽象和推广。由于使用了面向对象的多态性，工厂方法模式保持了简单工厂模式的优点，而且克服了它的缺点。在工厂方法模式中，核心的工厂类不再负责所有产品的创建，而是将具体创建工作交给子类去做。这个核心类仅仅负责给出具体工厂必须实现的接口，而不负责产品类被实例化这种细节，这使得工厂方法模式可以允许系统在不修改工厂角色的情况下引进新产品。</li>
+<li>工厂方法模式的主要优点是增加新的产品类时无须修改现有系统，并封装了产品对象的创建细节，系统具有良好的灵活性和可扩展性；其缺点在于增加新产品的同时需要增加新的工厂，导致系统类的个数成对增加，在一定程度上增加了系统的复杂性。</li>
+<li>工厂方法模式适用情况包括：一个类不知道它所需要的对象的类；一个类通过其子类来指定创建哪个对象；将创建对象的任务委托给多个工厂子类中的某一个，客户端在使用时可以无须关心是哪一个工厂子类创建产品子类，需要时再动态指定。</li>
+</ul>
+</li>
+<li>
+<p>实例</p>
+<p>日志记录器：</p>
+<p>某系统日志记录器要求支持多种日志记录方式，如文件记录、数据库记录等，且用户可以根据要求动态选择日志记录方式， 现使用工厂方法模式设计该系统。</p>
+</li>
+<li>
+<p>模式扩展</p>
+</li>
+</ol>
+<ul>
+<li>使用多个工厂方法：在抽象工厂角色中可以定义多个工厂方法，从而使具体工厂角色实现这些不同的工厂方法，这些方法可以包含不同的业务逻辑，以满足对不同的产品对象的需求。</li>
+<li>产品对象的重复使用：工厂对象将已经创建过的产品保存到一个集合（如数组、List等）中，然后根据客户对产品的请求，对集合进行查询。如果有满足要求的产品对象，就直接将该产品返回客户端；如果集合中没有这样的产品对象，那么就创建一个新的满足要求的产品对象，然后将这个对象在增加到集合中，再返回给客户端。</li>
+<li>多态性的丧失和模式的退化：如果工厂仅仅返回一个具体产品对象，便违背了工厂方法的用意，发生退化，此时就不再是工厂方法模式了。一般来说，工厂对象应当有一个抽象的父类型，如果工厂等级结构中只有一个具体工厂类的话，抽象工厂就可以省略，也将发生了退化。当只有一个具体工厂，在具体工厂中可以创建所有的产品对象，并且工厂方法设计为静态方法时，工厂方法模式就退化成简单工厂模式。</li>
+</ul>
+<p>​      *******************</p>
+<ul>
+<li>
+<h4 id="抽象工厂模式abstract-factory"><strong>抽象工厂模式（Abstract Factory）</strong></h4>
+<ol>
+<li>
+<h5 id="af做什么">AF做什么?</h5>
+</li>
+</ol>
+<ul>
+<li>在工厂方法模式中具体工厂负责生产具体的产品，每一个具体工厂对应一种具体产品，工厂方法也具有唯一性，一般情况下，一个具体工厂中只有一个工厂方法或者一组重载的工厂方法。但是有时候我们需要一个工厂可以提供多个产品对象，而不是单一的产品对象。</li>
+</ul>
+<blockquote>
+<p>为了更清晰地理解工厂方法模式，需要先引入两个概念：</p>
+<ul>
+<li><strong>产品等级结构</strong> ：产品等级结构即产品的继承结构，如一个抽象类是电视机，其子类有海尔电视机、海信电视机、TCL电视机，则抽象电视机与具体品牌的电视机之间构成了一个产品等级结构，抽象电视机是父类，而具体品牌的电视机是其子类。</li>
+<li><strong>产品族</strong> ：在抽象工厂模式中，产品族是指由同一个工厂生产的，位于不同产品等级结构中的一组产品，如海尔电器工厂生产的海尔电视机、海尔电冰箱，海尔电视机位于电视机产品等级结构中，海尔电冰箱位于电冰箱产品等级结构中。</li>
+</ul>
+</blockquote>
+<ul>
+<li>当系统所提供的工厂所需生产的具体产品并不是一个简单的对象，而是多个位于不同产品等级结构中属于不同类型的具体产品时需要使用抽象工厂模式。</li>
+<li>抽象工厂模式是所有形式的工厂模式中最为抽象和最具一般性的一种形态。</li>
+<li>抽象工厂模式与工厂方法模式最大的区别在于，工厂方法模式针对的是一个产品等级结构，而抽象工厂模式则需要面对多个产品等级结构，一个工厂等级结构可以负责多个不同产品等级结构中的产品对象的创建 。当一个工厂等级结构可以创建出分属于不同产品等级结构的一个产品族中的所有对象时，抽象工厂模式比工厂方法模式更为简单、有效率</li>
+</ul>
+<ol start="2">
+<li>
+<h5 id="什么是af">什么是AF?</h5>
+</li>
+</ol>
+<p>抽象工厂模式(Abstract Factory Pattern)：提供一个创建一系列相关或相互依赖对象的接口，而无须指定它们具体的类。抽象工厂模式又称为Kit模式，属于对象创建型模式。</p>
+<ol start="3">
+<li>
+<h5 id="af的模式结构">AF的模式结构</h5>
+</li>
+</ol>
+<ul>
+<li>AbstractFactory：抽象工厂</li>
+</ul>
+</li>
+<li>
+<p>ConcreteFactory：具体工厂</p>
+</li>
+<li>
+<p>AbstractProduct：抽象产品</p>
+</li>
+<li>
+<p>Product：具体产品</p>
+<ol start="4">
+<li>
+<h5 id="af时序图">AF时序图</h5>
+</li>
+</ol>
+</li>
+<li>
+<p><img src="https://design-patterns.readthedocs.io/zh_CN/latest/_images/AbatractFactory.jpg" alt="..AbatractFactory" loading="lazy"><br>
+5. ##### AF模式分析</p>
+<ol start="6">
+<li>
+<h5 id="af优点">AF优点</h5>
+</li>
+<li>
+<h5 id="af缺点">AF缺点</h5>
+</li>
+<li>
+<h5 id="使用环境-2">使用环境</h5>
+</li>
+<li>
+<h5 id="af模式应用">AF模式应用</h5>
+</li>
+<li>
+<h5 id="综述-2">综述</h5>
+</li>
+</ol>
+</li>
+<li>
+<h4 id="建造者模式builder">建造者模式（Builder）</h4>
+<ol>
+<li>
+<h5 id="builder做什么">Builder做什么?</h5>
+</li>
+<li>
+<h5 id="什么是builder">什么是Builder?</h5>
+</li>
+<li>
+<h5 id="builder的模式结构">Builder的模式结构</h5>
+</li>
+<li>
+<h5 id="builder时序图">Builder时序图</h5>
+</li>
+<li>
+<h5 id="builder模式分析">Builder模式分析</h5>
+</li>
+<li>
+<h5 id="builder优点">Builder优点</h5>
+</li>
+<li>
+<h5 id="builder缺点">Builder缺点</h5>
+</li>
+<li>
+<h5 id="使用环境-3">使用环境</h5>
+</li>
+<li>
+<h5 id="builder模式应用">Builder模式应用</h5>
+</li>
+<li>
+<h5 id="综述-3">综述</h5>
+</li>
+</ol>
+</li>
+<li>
+<h4 id="原型模式prototype"><em>原型模式（Prototype）</em></h4>
+<ol>
+<li>
+<h5 id="prototype做什么">Prototype做什么?</h5>
+</li>
+<li>
+<h5 id="什么是prototype">什么是Prototype?</h5>
+</li>
+<li>
+<h5 id="prototype的模式结构">Prototype的模式结构</h5>
+</li>
+<li>
+<h5 id="prototype时序图">Prototype时序图</h5>
+</li>
+<li>
+<h5 id="prototype模式分析">Prototype模式分析</h5>
+</li>
+<li>
+<h5 id="prototype优点">Prototype优点</h5>
+</li>
+<li>
+<h5 id="prototype缺点">Prototype缺点</h5>
+</li>
+<li>
+<h5 id="使用环境-4">使用环境</h5>
+</li>
+<li>
+<h5 id="prototype模式应用">Prototype模式应用</h5>
+</li>
+<li>
+<h5 id="综述-4">综述</h5>
+</li>
+</ol>
+</li>
+<li>
+<h4 id="单例模式singleton">单例模式（Singleton）</h4>
+</li>
+</ul>
+<p>1.#### Singleton做什么?</p>
+<ol start="2">
+<li>
+<h5 id="什么是singleton">什么是Singleton?</h5>
+</li>
+</ol>
+<p>3.##### Singleton的模式结构</p>
+<ol start="4">
+<li>
+<h5 id="singleton时序图">Singleton时序图</h5>
+</li>
+<li>
+<h5 id="singleton模式分析">Singleton模式分析</h5>
+</li>
+</ol>
+<p>6.##### Singleton优点</p>
+<ol start="7">
+<li>
+<h5 id="singleton缺点">Singleton缺点</h5>
+</li>
+</ol>
+<p>8.##### 使用环境</p>
+<ol start="9">
+<li>
+<h5 id="singleton模式应用">Singleton模式应用</h5>
+</li>
+</ol>
+<p>10.##### 综述</p>
+
+        </div>
+        <!-- Share to Twitter, Weibo, Telegram -->
+        <div class="flex items-center">
+          <div class="mr-4 flex items-center">
+            <i class="ri-share-forward-line text-gray-500"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-blue-500 hover:bg-blue-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTwitter">
+            <i class="ri-twitter-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-red-500 hover:bg-red-100 dark:hover:bg-gray-600 inline-flex" @click="shareToWeibo">
+            <i class="ri-weibo-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-indigo-500 hover:bg-indigo-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTelegram">
+            <i class="ri-telegram-line"></i>
+          </div>
+        </div>
+      </div>
+
+      
+
+      
+        <div id="vlaine-comment"></div>
+      
+
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>  Made by  <a href="https://github.com/JoyZgq" target="_blank">zgq</a> 🎈❤❤❤🌹
+</footer>
+    </div>
+
+    <!-- TOC Container -->
+    <div class="fixed right-0 bottom-0 mb-16 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white dark:bg-gray-500 dark:text-gray-200 hover:shadow-lg transition-all animated fadeInRight" @click="showToc = true">
+      <i class="ri-file-list-line"></i>
+    </div>
+
+    <div class="fixed right-0 top-0 bottom-0 overflow-y-auto w-64 bg-white dark:bg-gray-800 p-4 border-l border-gray-100 dark:border-gray-600 z-10 transition-fast" :class="{ '-mr-64': !showToc }">
+      <div class="flex mb-4 justify-end">
+        <div class="w-8 h-8 inline-flex justify-center items-center rounded-full cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600 transition-fast" @click="showToc = false">
+          <i class="ri-close-line text-lg"></i>
+        </div>
+      </div>
+      <div class="post-toc-container">
+        <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F-simple-factory-pattern">简单工厂模式( Simple Factory Pattern )</a>
+<ul>
+<li><a href="#%E7%BB%BC%E8%BF%B0%E5%88%9B%E5%BB%BA%E5%9E%8B%E6%A8%A1%E5%BC%8F%E5%AF%B9%E7%B1%BB%E7%9A%84%E5%AE%9E%E4%BE%8B%E5%8C%96%E8%BF%87%E7%A8%8B%E8%BF%9B%E8%A1%8C%E4%BA%86%E6%8A%BD%E8%B1%A1%E8%83%BD%E5%A4%9F%E5%B0%86%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9B%E5%BB%BA%E4%B8%8E%E5%AF%B9%E8%B1%A1%E7%9A%84%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E5%88%86%E7%A6%BB-%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%E5%8F%88%E7%A7%B0%E4%B8%BA%E9%9D%99%E6%80%81%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F%E5%AE%83%E5%B1%9E%E4%BA%8E%E7%B1%BB%E5%88%9B%E5%BB%BA%E5%9E%8B%E6%A8%A1%E5%BC%8F-%E5%9C%A8%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%E4%B8%AD%E5%8F%AF%E4%BB%A5%E6%A0%B9%E6%8D%AE%E5%8F%82%E6%95%B0%E7%9A%84%E4%B8%8D%E5%90%8C%E8%BF%94%E5%9B%9E%E4%B8%8D%E5%90%8C%E7%B1%BB%E7%9A%84%E5%AE%9E%E4%BE%8B-%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%E4%B8%93%E9%97%A8%E5%AE%9A%E4%B9%89%E4%B8%80%E4%B8%AA%E7%B1%BB%E6%9D%A5%E8%B4%9F%E8%B4%A3%E5%88%9B%E5%BB%BA%E5%85%B6%E4%BB%96%E7%B1%BB%E7%9A%84%E5%AE%9E%E4%BE%8B%E8%A2%AB%E5%88%9B%E5%BB%BA%E7%9A%84%E5%AE%9E%E4%BE%8B%E9%80%9A%E5%B8%B8%E9%83%BD%E5%85%B7%E6%9C%89%E5%85%B1%E5%90%8C%E7%9A%84%E7%88%B6%E7%B1%BB-%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%E5%8C%85%E5%90%AB%E4%B8%89%E4%B8%AA%E8%A7%92%E8%89%B2%E5%B7%A5%E5%8E%82%E8%A7%92%E8%89%B2%E8%B4%9F%E8%B4%A3%E5%AE%9E%E7%8E%B0%E5%88%9B%E5%BB%BA%E6%89%80%E6%9C%89%E5%AE%9E%E4%BE%8B%E7%9A%84%E5%86%85%E9%83%A8%E9%80%BB%E8%BE%91%E6%8A%BD%E8%B1%A1%E4%BA%A7%E5%93%81%E8%A7%92%E8%89%B2%E6%98%AF%E6%89%80%E5%88%9B%E5%BB%BA%E7%9A%84%E6%89%80%E6%9C%89%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%88%B6%E7%B1%BB%E8%B4%9F%E8%B4%A3%E6%8F%8F%E8%BF%B0%E6%89%80%E6%9C%89%E5%AE%9E%E4%BE%8B%E6%89%80%E5%85%B1%E6%9C%89%E7%9A%84%E5%85%AC%E5%85%B1%E6%8E%A5%E5%8F%A3%E5%85%B7%E4%BD%93%E4%BA%A7%E5%93%81%E8%A7%92%E8%89%B2%E6%98%AF%E5%88%9B%E5%BB%BA%E7%9B%AE%E6%A0%87%E6%89%80%E6%9C%89%E5%88%9B%E5%BB%BA%E7%9A%84%E5%AF%B9%E8%B1%A1%E9%83%BD%E5%85%85%E5%BD%93%E8%BF%99%E4%B8%AA%E8%A7%92%E8%89%B2%E7%9A%84%E6%9F%90%E4%B8%AA%E5%85%B7%E4%BD%93%E7%B1%BB%E7%9A%84%E5%AE%9E%E4%BE%8B-%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%E7%9A%84%E8%A6%81%E7%82%B9%E5%9C%A8%E4%BA%8E%E5%BD%93%E4%BD%A0%E9%9C%80%E8%A6%81%E4%BB%80%E4%B9%88%E5%8F%AA%E9%9C%80%E8%A6%81%E4%BC%A0%E5%85%A5%E4%B8%80%E4%B8%AA%E6%AD%A3%E7%A1%AE%E7%9A%84%E5%8F%82%E6%95%B0%E5%B0%B1%E5%8F%AF%E4%BB%A5%E8%8E%B7%E5%8F%96%E4%BD%A0%E6%89%80%E9%9C%80%E8%A6%81%E7%9A%84%E5%AF%B9%E8%B1%A1%E8%80%8C%E6%97%A0%E9%A1%BB%E7%9F%A5%E9%81%93%E5%85%B6%E5%88%9B%E5%BB%BA%E7%BB%86%E8%8A%82-%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%E6%9C%80%E5%A4%A7%E7%9A%84%E4%BC%98%E7%82%B9%E5%9C%A8%E4%BA%8E%E5%AE%9E%E7%8E%B0%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9B%E5%BB%BA%E5%92%8C%E5%AF%B9%E8%B1%A1%E7%9A%84%E4%BD%BF%E7%94%A8%E5%88%86%E7%A6%BB%E5%B0%86%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9B%E5%BB%BA%E4%BA%A4%E7%BB%99%E4%B8%93%E9%97%A8%E7%9A%84%E5%B7%A5%E5%8E%82%E7%B1%BB%E8%B4%9F%E8%B4%A3%E4%BD%86%E6%98%AF%E5%85%B6%E6%9C%80%E5%A4%A7%E7%9A%84%E7%BC%BA%E7%82%B9%E5%9C%A8%E4%BA%8E%E5%B7%A5%E5%8E%82%E7%B1%BB%E4%B8%8D%E5%A4%9F%E7%81%B5%E6%B4%BB%E5%A2%9E%E5%8A%A0%E6%96%B0%E7%9A%84%E5%85%B7%E4%BD%93%E4%BA%A7%E5%93%81%E9%9C%80%E8%A6%81%E4%BF%AE%E6%94%B9%E5%B7%A5%E5%8E%82%E7%B1%BB%E7%9A%84%E5%88%A4%E6%96%AD%E9%80%BB%E8%BE%91%E4%BB%A3%E7%A0%81%E8%80%8C%E4%B8%94%E4%BA%A7%E5%93%81%E8%BE%83%E5%A4%9A%E6%97%B6%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E4%BB%A3%E7%A0%81%E5%B0%86%E4%BC%9A%E9%9D%9E%E5%B8%B8%E5%A4%8D%E6%9D%82-%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%E9%80%82%E7%94%A8%E6%83%85%E5%86%B5%E5%8C%85%E6%8B%AC%E5%B7%A5%E5%8E%82%E7%B1%BB%E8%B4%9F%E8%B4%A3%E5%88%9B%E5%BB%BA%E7%9A%84%E5%AF%B9%E8%B1%A1%E6%AF%94%E8%BE%83%E5%B0%91%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%8F%AA%E7%9F%A5%E9%81%93%E4%BC%A0%E5%85%A5%E5%B7%A5%E5%8E%82%E7%B1%BB%E7%9A%84%E5%8F%82%E6%95%B0%E5%AF%B9%E4%BA%8E%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1%E4%B8%8D%E5%85%B3%E5%BF%83">综述:创建型模式对类的实例化过程进行了抽象，能够将对象的创建与对象的使用过程分离。简单工厂模式又称为静态工厂方法模式，它属于类创建型模式。在简单工厂模式中，可以根据参数的不同返回不同类的实例。简单工厂模式专门定义一个类来负责创建其他类的实例，被创建的实例通常都具有共同的父类。简单工厂模式包含三个角色：工厂角色负责实现创建所有实例的内部逻辑；抽象产品角色是所创建的所有对象的父类，负责描述所有实例所共有的公共接口；具体产品角色是创建目标，所有创建的对象都充当这个角色的某个具体类的实例。简单工厂模式的要点在于：当你需要什么，只需要传入一个正确的参数，就可以获取你所需要的对象，而无须知道其创建细节。简单工厂模式最大的优点在于实现对象的创建和对象的使用分离，将对象的创建交给专门的工厂类负责，但是其最大的缺点在于工厂类不够灵活，增加新的具体产品需要修改工厂类的判断逻辑代码，而且产品较多时，工厂方法代码将会非常复杂。简单工厂模式适用情况包括：工厂类负责创建的对象比较少；客户端只知道传入工厂类的参数，对于如何创建对象不关心。</a></li>
+<li><a href="#sfp%E5%81%9A%E4%BB%80%E4%B9%88">SFP做什么?</a></li>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AFsfp">什么是SFP?</a></li>
+<li><a href="#sfp%E7%9A%84%E6%A8%A1%E5%BC%8F%E7%BB%93%E6%9E%84">SFP的模式结构</a></li>
+<li><a href="#sfp%E6%97%B6%E5%BA%8F%E5%9B%BE">SFP时序图</a></li>
+<li><a href="#sfp%E6%A8%A1%E5%BC%8F%E5%88%86%E6%9E%90">SFP模式分析</a></li>
+<li><a href="#sfp%E4%BC%98%E7%82%B9">SFP优点</a></li>
+<li><a href="#sfp%E7%BC%BA%E7%82%B9">SFP缺点</a></li>
+<li><a href="#%E9%80%82%E7%94%A8%E4%BA%8E">适用于</a></li>
+<li><a href="#sfp%E6%A8%A1%E5%BC%8F%E5%BA%94%E7%94%A8">SFP模式应用</a></li>
+</ul>
+</li>
+<li><a href="#%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8Ffactory-method-pattern"><strong>工厂方法模式（Factory Method Pattern）</strong></a>
+<ul>
+<li><a href="#fm%E5%81%9A%E4%BB%80%E4%B9%88">FM做什么?</a></li>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AFfm">什么是FM?</a></li>
+<li><a href="#fm%E7%9A%84%E6%A8%A1%E5%BC%8F%E7%BB%93%E6%9E%84">FM的模式结构</a></li>
+<li><a href="#fm%E6%97%B6%E5%BA%8F%E5%9B%BE">FM时序图</a></li>
+<li><a href="#fm%E6%A8%A1%E5%BC%8F%E5%88%86%E6%9E%90">FM模式分析</a></li>
+<li><a href="#fm%E4%BC%98%E7%82%B9">FM优点</a></li>
+<li><a href="#fm%E7%BC%BA%E7%82%B9">FM缺点</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8%E7%8E%AF%E5%A2%83">使用环境</a></li>
+<li><a href="#fmp%E6%A8%A1%E5%BC%8F%E5%BA%94%E7%94%A8">FMP模式应用</a></li>
+<li><a href="#%E7%BB%BC%E8%BF%B0">综述</a></li>
+</ul>
+</li>
+<li><a href="#%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8Fabstract-factory"><strong>抽象工厂模式（Abstract Factory）</strong></a>
+<ul>
+<li><a href="#af%E5%81%9A%E4%BB%80%E4%B9%88">AF做什么?</a></li>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AFaf">什么是AF?</a></li>
+<li><a href="#af%E7%9A%84%E6%A8%A1%E5%BC%8F%E7%BB%93%E6%9E%84">AF的模式结构</a></li>
+<li><a href="#af%E6%97%B6%E5%BA%8F%E5%9B%BE">AF时序图</a></li>
+<li><a href="#af%E4%BC%98%E7%82%B9">AF优点</a></li>
+<li><a href="#af%E7%BC%BA%E7%82%B9">AF缺点</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8%E7%8E%AF%E5%A2%83-2">使用环境</a></li>
+<li><a href="#af%E6%A8%A1%E5%BC%8F%E5%BA%94%E7%94%A8">AF模式应用</a></li>
+<li><a href="#%E7%BB%BC%E8%BF%B0-2">综述</a></li>
+</ul>
+</li>
+<li><a href="#%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8Fbuilder">建造者模式（Builder）</a>
+<ul>
+<li><a href="#builder%E5%81%9A%E4%BB%80%E4%B9%88">Builder做什么?</a></li>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AFbuilder">什么是Builder?</a></li>
+<li><a href="#builder%E7%9A%84%E6%A8%A1%E5%BC%8F%E7%BB%93%E6%9E%84">Builder的模式结构</a></li>
+<li><a href="#builder%E6%97%B6%E5%BA%8F%E5%9B%BE">Builder时序图</a></li>
+<li><a href="#builder%E6%A8%A1%E5%BC%8F%E5%88%86%E6%9E%90">Builder模式分析</a></li>
+<li><a href="#builder%E4%BC%98%E7%82%B9">Builder优点</a></li>
+<li><a href="#builder%E7%BC%BA%E7%82%B9">Builder缺点</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8%E7%8E%AF%E5%A2%83-3">使用环境</a></li>
+<li><a href="#builder%E6%A8%A1%E5%BC%8F%E5%BA%94%E7%94%A8">Builder模式应用</a></li>
+<li><a href="#%E7%BB%BC%E8%BF%B0-3">综述</a></li>
+</ul>
+</li>
+<li><a href="#%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8Fprototype"><em>原型模式（Prototype）</em></a>
+<ul>
+<li><a href="#prototype%E5%81%9A%E4%BB%80%E4%B9%88">Prototype做什么?</a></li>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AFprototype">什么是Prototype?</a></li>
+<li><a href="#prototype%E7%9A%84%E6%A8%A1%E5%BC%8F%E7%BB%93%E6%9E%84">Prototype的模式结构</a></li>
+<li><a href="#prototype%E6%97%B6%E5%BA%8F%E5%9B%BE">Prototype时序图</a></li>
+<li><a href="#prototype%E6%A8%A1%E5%BC%8F%E5%88%86%E6%9E%90">Prototype模式分析</a></li>
+<li><a href="#prototype%E4%BC%98%E7%82%B9">Prototype优点</a></li>
+<li><a href="#prototype%E7%BC%BA%E7%82%B9">Prototype缺点</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8%E7%8E%AF%E5%A2%83-4">使用环境</a></li>
+<li><a href="#prototype%E6%A8%A1%E5%BC%8F%E5%BA%94%E7%94%A8">Prototype模式应用</a></li>
+<li><a href="#%E7%BB%BC%E8%BF%B0-4">综述</a></li>
+</ul>
+</li>
+<li><a href="#%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8Fsingleton">单例模式（Singleton）</a>
+<ul>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AFsingleton">什么是Singleton?</a></li>
+<li><a href="#singleton%E6%97%B6%E5%BA%8F%E5%9B%BE">Singleton时序图</a></li>
+<li><a href="#singleton%E6%A8%A1%E5%BC%8F%E5%88%86%E6%9E%90">Singleton模式分析</a></li>
+<li><a href="#singleton%E7%BC%BA%E7%82%B9">Singleton缺点</a></li>
+<li><a href="#singleton%E6%A8%A1%E5%BC%8F%E5%BA%94%E7%94%A8">Singleton模式应用</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+      </div>
+    </div>
+
+    <!-- Back to top -->
+    <div class="fixed right-0 bottom-0 mb-4 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white hover:shadow-lg transition-all dark:bg-gray-500 dark:text-gray-200" @click="backToUp" v-show="scrolled">
+      <i class="ri-arrow-up-line"></i>
+    </div>
+  </div>
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+  <!-- Background of PhotoSwipe. 
+        It's a separate element as animating opacity is faster than rgba(). -->
+  <div class="pswp__bg">
+  </div>
+  <!-- Slides wrapper with overflow:hidden. -->
+  <div class="pswp__scroll-wrap">
+    <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+    <div class="pswp__container">
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+    </div>
+    <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+    <div class="pswp__ui pswp__ui--hidden">
+      <div class="pswp__top-bar">
+        <!--  Controls are self-explanatory. Order can be changed. -->
+        <div class="pswp__counter">
+        </div>
+        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+        <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+        <!-- element will get class pswp__preloader--active when preloader is running -->
+        <div class="pswp__preloader">
+          <div class="pswp__preloader__icn">
+            <div class="pswp__preloader__cut">
+              <div class="pswp__preloader__donut">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+        <div class="pswp__share-tooltip">
+        </div>
+      </div>
+      <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+      </button>
+      <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+      </button>
+      <div class="pswp__caption">
+        <div class="pswp__caption__center">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://JoyZgq.github.io/media/scripts/main.js"></script>
+  
+  <!-- Code Highlight -->
+  
+    <script src="https://JoyZgq.github.io/media/prism.js"></script>
+    <script>
+      Prism.highlightAll()
+    </script>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+  <script>
+    //拿到预览框架，也就是上面的html代码
+    var pswpElement = document.querySelectorAll('.pswp')[0];
+    //定义图片数组变量
+    var imgitems;
+    /**
+    * 用于显示预览界面
+    * @param index 图片数组下标
+    */
+    function viewImg(index) {
+      //其它选项这里不做过多阐述，详情见官网
+      var pswpoptions = {
+        index: parseInt(index, 10), // 开始幻灯片索引。0是第一张幻灯片。必须是整数，而不是字符串。
+        bgOpacity: 0.7, // 背景透明度，0-1
+        maxSpreadZoom: 3, // 缩放级别，不要太大
+      };
+      //初始化并打开PhotoSwipe，pswpElement对应上面预览框架，PhotoSwipeUI_Default为皮肤，imgitems为图片数组，pswpoptions为选项
+      var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, imgitems, pswpoptions);
+      gallery.init()
+    }
+    /**
+    * 用于添加图片点击事件
+    * @param img 图片元素
+    * @param index 所属下标（在imgitems中的位置）
+    */
+    function addImgClick(img, index) {
+      img.onclick = function() {
+        viewImg(index)
+      }
+    }
+    /**
+    * 轮询所有图片，获取src、width、height等数据，加入imgitems，并给图片元素添加事件
+    * 最好在onload中执行该方法，本站因放在最底部，所以直接初始化
+    * 异步加载图片可在图片元素创建完成后调用此方法
+    */
+    function initImg() {
+      //重置图片数组
+      imgitems = [];
+      //查找class:markdown 下的所有img元素并遍历
+      var imgs = document.querySelectorAll('.markdown img');
+      for (var i = 0; i < imgs.length; i++) {
+        var img = imgs[i];
+        //本站相册初始为loading图片，真实图片放在data-src
+        var ds = img.getAttribute("data-src");
+        //创建image对象，用于获取图片宽高
+        var imgtemp = new Image();
+        //判断是否存在data-src
+        if (ds != null && ds.length > 0) {
+          imgtemp.src = ds
+        } else {
+          imgtemp.src = img.src
+        }
+        //判断是否存在缓存
+        if (imgtemp.complete) {
+          var imgobj = {
+            "src": imgtemp.src,
+            "w": imgtemp.width,
+            "h": imgtemp.height,
+          };
+          imgitems[i] = imgobj;
+          addImgClick(img, i);
+        } else {
+          console.log('进来了2')
+          imgtemp.index = i;
+          imgtemp.img = img;
+          imgtemp.onload = function() {
+            var imgobj = {
+              "src": this.src,
+              "w": this.width,
+              "h": this.height,
+            };
+            //不要使用push，因为onload前后顺序会不同
+            imgitems[this.index] = imgobj
+            //添加点击事件
+            addImgClick(this.img, this.index);
+          }
+        }
+      }
+    }
+    //初始化
+    initImg();
+  </script>
+  
+    <script type="application/javascript" src="https://unpkg.com/valine"></script>
+<script type="application/javascript">
+  new Valine({
+    el: '#vlaine-comment',
+    appId: 'Sy2gsMvGcPQl3gTGsqqYsHW6-gzGzoHsz',
+    appKey: 'IpsgegiMUNgRg7l5BVXk6EXM',
+    pageSize: 10,
+    notify: false,
+    avatar: 'mp',
+    verify: true,
+    placeholder: '可观来都来了，不妨评论一下🌹🐱‍👤',
+    visitor: true,
+    highlight: false,
+    recordIP: true,
+  })
+</script>
+  
+  
+</body>
+
+</html>
