@@ -25,19 +25,27 @@
 
   <meta name="description" content="运行时数据区
 
+
+
 程序计数器
 
 定义：当前线程所执行的字节码的行号指示器
 
-  字节码解释器工作时就是通过改变这个计数器的值来选取下一条需要执行的字节码指令，它是程序控制流的指示器，分支、循环、跳转、异常处理、线程恢复等基础功能都需要依赖这个..." />
+
+
+  字节码解释器工作时就是通过改变这个计数器的值来选取下一条需要执行的字节码指令，它是程序控制流的指示器，分支、循环、跳转、异常处理、线程恢复等基础功能都需要..." />
   <meta property="og:title" content="内存管理 - bravo">
   <meta property="og:description" content="运行时数据区
 
+
+
 程序计数器
 
 定义：当前线程所执行的字节码的行号指示器
 
-  字节码解释器工作时就是通过改变这个计数器的值来选取下一条需要执行的字节码指令，它是程序控制流的指示器，分支、循环、跳转、异常处理、线程恢复等基础功能都需要依赖这个..." />
+
+
+  字节码解释器工作时就是通过改变这个计数器的值来选取下一条需要执行的字节码指令，它是程序控制流的指示器，分支、循环、跳转、异常处理、线程恢复等基础功能都需要..." />
   <meta property="og:type" content="articles">
   <meta property="og:url" content="https://JoyZgq.github.io/post/NJDSCDD/" />
   <meta property="og:image" content="https://JoyZgq.github.io/post-images/NJDSCDD.webp">
@@ -46,11 +54,15 @@
   <meta name="twitter:title" content="内存管理 - bravo">
   <meta name="twitter:description" content="运行时数据区
 
+
+
 程序计数器
 
 定义：当前线程所执行的字节码的行号指示器
 
-  字节码解释器工作时就是通过改变这个计数器的值来选取下一条需要执行的字节码指令，它是程序控制流的指示器，分支、循环、跳转、异常处理、线程恢复等基础功能都需要依赖这个...">
+
+
+  字节码解释器工作时就是通过改变这个计数器的值来选取下一条需要执行的字节码指令，它是程序控制流的指示器，分支、循环、跳转、异常处理、线程恢复等基础功能都需要...">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://JoyZgq.github.io/post/NJDSCDD/">
 
@@ -89,62 +101,70 @@
         <div class="markdown mb-8" v-pre>
           <h3 id="运行时数据区">运行时数据区</h3>
 <figure data-type="image" tabindex="1"><img src="https://JoyZgq.github.io/post-images/1587698912833.png" alt="" loading="lazy"></figure>
+<ul>
+<li>
 <h4 id="程序计数器">程序计数器</h4>
 <blockquote>
 <p>定义：当前线程所执行的字节码的行号指示器</p>
 </blockquote>
+</li>
+</ul>
 <p>  字节码解释器工作时就是通过改变这个计数器的值来选取下一条需要执行的字节码指令，它是程序控制流的指示器，分支、循环、跳转、异常处理、线程恢复等基础功能都需要依赖这个计数器来完成,为了线程切换后能恢复到正确的执行位置，每条线程都需要有一个独立的程序计数器，各条线程之间计数器互不影响,故是线程私有。</p>
 <p>​  <em>此内存区域是唯一一个在《Java虚拟机规范》中没有规定任何<code>OutOfMemoryError</code>情况的区域。</em></p>
-<ol start="2">
+<ul>
 <li>
 <h4 id="java虚拟机栈">Java虚拟机栈</h4>
 <blockquote>
 <p>定义：Java虚拟机栈<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>描述Java方法执行的线程内存模型：每个方法被执行的时候，Java虚拟机都会同步创建一个栈帧（Stack Frame）用于存储局部变量表<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>、操作数栈、动态连接、方法出口等信息。每一个方法被调用直至执行完毕的过程，就对应着一个栈帧在虚拟机栈中从入栈到出栈的过程。</p>
 </blockquote>
 </li>
-</ol>
+</ul>
 <p>  这些数据类型在局部变量表中的存储空间以局部变量槽（Slot）来表示，其中64位长度的long和double类型的数据会占用两个变量槽，其余的数据类型只占用一个。局部变量表所需的内存空间在编译期间完成分配，当进入一个方法时，这个方法需要在栈帧中分配多大的局部变量空间是完全确定的，在方法运行期间不会改变局部变量表的大小<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>。<br>
   如果线程请求的栈深度大于虚拟机所允许的深度，将抛出<code>StackOverflowError</code>异常；如果Java虚拟机栈容量可以动态扩展，当栈扩展时无法申请到足够的内存会抛出<code>OutOfMemoryError</code>异常。</p>
+<ul>
+<li>
 <h4 id="本地方法栈">本地方法栈</h4>
+</li>
+</ul>
 <blockquote>
 <p>定义：Native Method Stacks与虚拟机栈所发挥的作用是非常相似的，其区别只是虚拟机栈为虚拟机执行Java方法（也就是字节码）服务，而本地方法栈则是为虚拟机使用到的本地（Native）方法服务。</p>
 </blockquote>
 <p>  无强制规定，可将其与虚拟机栈合二为一，如HotSpot VM;栈深度溢出或者栈扩展失败时分别抛出<code>StackOverflowError</code>和<code>OutOfMemoryError</code>异常。</p>
-<ol>
+<ul>
 <li>
 <h4 id="java堆">Java堆</h4>
 </li>
-</ol>
+</ul>
 <blockquote>
 <p>定义：Java Heap是虚拟机所管理的内存中最大的一块，是被所有线程共享的一块内存区域，在虚拟机启动时创建。此内存区域的唯一目的就是存放对象实例，几乎所有的对象实例都在这里分配内存。</p>
 </blockquote>
 <p>  Java堆是垃圾收集器管理的内存区域，也被称作“GC堆”。从回收内存的角度看，由于现代垃圾收集器大部分都是基于分代收集理论设计的<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>.从分配内存的角度看，所有线程共享的Java堆中可以划分出多个线程私有的分配缓冲区（Thread LocalAllocation Buffer，TLAB），以提升对象分配时的效率。不过无论从什么角度，无论如何划分，都不会改变Java堆中存储内容的共性，无论是哪个区域，存储的都只能是对象的实例，将Java堆细分的目的只是为了更好地回收内存，或者更快地分配内存。<br>
   Java堆可以处于物理上不连续的内存空间中，但在逻辑上它应该被视为连续的，这点就像我们用磁盘空间去存储文件一样，并不要求每个文件都连续存放。但对于大对象（典型的如数组对象），多数虚拟机实现出于实现简单、存储高效的考虑，很可能会要求连续的内存空间。Java堆既可以被实现成固定大小的，也可以是可扩展的，不过当前主流的Java虚拟机都是按照可扩展来实现的（通过参数-Xmx和-Xms设定）。如果在Java堆中没有内存完成实例分配，并且堆也无法再扩展时，Java虚拟机将会抛出<code>OutOfMemoryError</code>异常。</p>
-<ol>
+<ul>
 <li>
 <h4 id="方法区">方法区</h4>
 </li>
-</ol>
+</ul>
 <blockquote>
 <p>定义：各个线程共享的内存区域，它用于存储已被虚拟机加载的类型信息、常量、静态变量、即时编译器编译后的代码缓存等数据。虽然《Java虚拟机规范》中把方法区描述为堆的一个逻辑部分，但是它却有一个别名叫作“非堆”（Non-Heap），目的是与Java堆区分开来。</p>
 </blockquote>
 <p>  除了和Java堆一样不需要连续的内存和可以选择固定大小或者可扩展外，甚至还可以选择不实现垃圾收集。相对而言，垃圾收集行为在这个区域的确是比较少出现的，但并非数据进入了方法区就如永久代的名字一样“永久”存在了。这区域的内存回收目标主要是针对常量池的回收和对类型的卸载，一般来说这个区域的回收效果比较难令人满意，尤其是类型的卸载，条件相当苛刻，但是这部分区域的回收有时又确实是必要的。以前Sun公司的Bug列表中，曾出现过的若干个严重的Bug就是由于低版本的HotSpot虚拟机对此区域未完全回收而导致内存泄漏。如果方法区无法满足新的内存分配需求时，将抛出OutOfMemoryError异常。</p>
-<ol start="6">
+<ul>
 <li>
 <h4 id="运行时常量池">运行时常量池</h4>
 </li>
-</ol>
+</ul>
 <blockquote>
-<p>运行时常量池（Runtime Constant Pool）是方法区的一部分。</p>
+<p>定义：行时常量池（Runtime Constant Pool）是方法区的一部分。</p>
 </blockquote>
 <p>  Class文件中除了有类的版本、字段、方法、接口等描述信息外，还有一项信息是常量池表（Constant PoolTable），用于存放编译期生成的各种字面量与符号引用，这部分内容将在类加载后存放到方法区的运行时常量池中<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup>。运行时常量池相对于Class文件常量池的另外一个重要特征是具备动态性，Java语言并不要求常量一定只有编译期才能产生，也就是说，并非预置入Class文件中常量池的内容才能进入方法区运行时常量池，运行期间也可以将新的常量放入池中，这种特性被开发人员利用得比较多的便是String类的intern()方法。既然运行时常量池是方法区的一部分，自然受到方法区内存的限制，当常量池无法再申请到内存时会抛出<code>OutOfMemoryError</code>异常。</p>
-<ol start="7">
+<ul>
 <li>
 <h4 id="直接内存"><em>直接内存</em></h4>
 </li>
-</ol>
+</ul>
 <blockquote>
-<p>直接内存（Direct Memory）并不是虚拟机运行时数据区的一部分，也不是《Java虚拟机规范》中定义的内存区域。但是这部分内存也被频繁地使用，而且也可能导致<code>OutOfMemoryError</code>。</p>
+<p>定义：直接内存（Direct Memory）并不是虚拟机运行时数据区的一部分，也不是《Java虚拟机规范》中定义的内存区域。但是这部分内存也被频繁地使用，而且也可能导致<code>OutOfMemoryError</code>。</p>
 </blockquote>
 <p>  显然，本机直接内存的分配不会受到Java堆大小的限制，但是，既然是内存，则肯定还是会受到本机总内存（包括物理内存、SWAP分区或者分页文件）大小以及处理器寻址空间的限制，一般服务器管理员配置虚拟机参数时，会根据实际内存去设置-Xmx等参数信息，但经常忽略掉直接内存，使得各个内存区域总和大于物理内存限制（包括物理的和操作系统级的限制），从而导致动态扩展时出现<code>OutOfMemoryError</code>异常。</p>
 <blockquote>

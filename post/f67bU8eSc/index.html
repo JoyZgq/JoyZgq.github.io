@@ -27,13 +27,13 @@
 
 CharSequence是char值的可读序列。 该接口提供对许多不同类型的char序列的统一，只读访问。char值表示基本多语言平面（BMP）中的字符或代理项。
 
-此接口不会细化equals和hashCode方法的常规合..." />
+  此接口不会细化equals和hashCode方法的常..." />
   <meta property="og:title" content="Java Source --- CharSequence - bravo">
   <meta property="og:description" content="Summary
 
 CharSequence是char值的可读序列。 该接口提供对许多不同类型的char序列的统一，只读访问。char值表示基本多语言平面（BMP）中的字符或代理项。
 
-此接口不会细化equals和hashCode方法的常规合..." />
+  此接口不会细化equals和hashCode方法的常..." />
   <meta property="og:type" content="articles">
   <meta property="og:url" content="https://JoyZgq.github.io/post/f67bU8eSc/" />
   <meta property="og:image" content="https://JoyZgq.github.io/post-images/f67bU8eSc.webp">
@@ -44,7 +44,7 @@ CharSequence是char值的可读序列。 该接口提供对许多不同类型的
 
 CharSequence是char值的可读序列。 该接口提供对许多不同类型的char序列的统一，只读访问。char值表示基本多语言平面（BMP）中的字符或代理项。
 
-此接口不会细化equals和hashCode方法的常规合...">
+  此接口不会细化equals和hashCode方法的常...">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://JoyZgq.github.io/post/f67bU8eSc/">
 
@@ -90,7 +90,7 @@ CharSequence是char值的可读序列。 该接口提供对许多不同类型的
 <blockquote>
 <p>CharSequence是char值的可读序列。 该接口提供对许多不同类型的char序列的统一，只读访问。char值表示基本多语言平面（BMP）中的字符或代理项。</p>
 </blockquote>
-<p>此接口不会细化equals和hashCode方法的常规合同。 因此，测试实现CharSequence两个对象的相等性的结果通常是未定义的。 每个对象可以由不同的类实现，并且不能保证每个类都能够测试其实例与另一个类的实例是否相等。 因此，将任意CharSequence实例用作集合中的元素或映射中的键是不合适的。</p>
+<p>  此接口不会细化equals和hashCode方法的常规合同。 因此，测试实现CharSequence两个对象的相等性的结果通常是未定义的。 每个对象可以由不同的类实现，并且不能保证每个类都能够测试其实例与另一个类的实例是否相等。 因此，将任意CharSequence实例用作集合中的元素或映射中的键是不合适的。</p>
 <h3 id="抽象方法">抽象方法</h3>
 <h4 id="charatint-index">charAt(int index)</h4>
 <pre><code>char charAt​(int index)
@@ -107,7 +107,7 @@ CharSequence是char值的可读序列。 该接口提供对许多不同类型的
 <h4 id="codepoints">codePoints()</h4>
 <pre><code>static int compare​(CharSequence cs1, CharSequence cs2)
 </code></pre>
-<p>返回此序列中的代码点值流。 序列中遇到的任何代理对都被组合，就好像是Character.toCodePoint ，结果传递给流。 任何其他代码单元（包括普通BMP字符，未配对代理项和未定义代码单元）都将零扩展为int值，然后将int值传递给流。<br>
+<p>  返回此序列中的代码点值流。 序列中遇到的任何代理对都被组合，就好像是Character.toCodePoint ，结果传递给流。 任何其他代码单元（包括普通BMP字符，未配对代理项和未定义代码单元）都将零扩展为int值，然后将int值传递给流。<br>
 当终端流操作开始时，流绑定到该序列（具体地，对于可变序列，流的分裂器是late-binding ）。 如果在该操作期间修改了序列，则结果是未定义的。</p>
 <h4 id="length">length()</h4>
 <h4 id="subsequenceint-startint-end">subSequence(int start,int end)</h4>

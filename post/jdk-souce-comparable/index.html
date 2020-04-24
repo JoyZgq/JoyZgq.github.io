@@ -24,12 +24,12 @@
     
 
   <meta name="description" content="概述😜😋🤡😣
- 此接口对实现它的每个类的对象强加一个总排序。 这种排序被称为类的自然顺序 ，类的compareTo方法被称为其自然比较方法 。
-实现此接口的对象的列表（和数组）可以由Collections.sort （和Arrays..." />
+  此接口对实现它的每个类的对象强加一个总排序。 这种排序被称为类的自然顺序 ，类的compareTo方法被称为其自然比较方法 。
+  实现此接口的对象的列表（和数组）可以由Collections.sort （和Arr..." />
   <meta property="og:title" content="JDK Souce --- Comparable - bravo">
   <meta property="og:description" content="概述😜😋🤡😣
- 此接口对实现它的每个类的对象强加一个总排序。 这种排序被称为类的自然顺序 ，类的compareTo方法被称为其自然比较方法 。
-实现此接口的对象的列表（和数组）可以由Collections.sort （和Arrays..." />
+  此接口对实现它的每个类的对象强加一个总排序。 这种排序被称为类的自然顺序 ，类的compareTo方法被称为其自然比较方法 。
+  实现此接口的对象的列表（和数组）可以由Collections.sort （和Arr..." />
   <meta property="og:type" content="articles">
   <meta property="og:url" content="https://JoyZgq.github.io/post/jdk-souce-comparable/" />
   <meta property="og:image" content="https://JoyZgq.github.io/post-images/jdk-souce-comparable.webp">
@@ -37,8 +37,8 @@
   <meta property="og:image:width" content="1200">
   <meta name="twitter:title" content="JDK Souce --- Comparable - bravo">
   <meta name="twitter:description" content="概述😜😋🤡😣
- 此接口对实现它的每个类的对象强加一个总排序。 这种排序被称为类的自然顺序 ，类的compareTo方法被称为其自然比较方法 。
-实现此接口的对象的列表（和数组）可以由Collections.sort （和Arrays...">
+  此接口对实现它的每个类的对象强加一个总排序。 这种排序被称为类的自然顺序 ，类的compareTo方法被称为其自然比较方法 。
+  实现此接口的对象的列表（和数组）可以由Collections.sort （和Arr...">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://JoyZgq.github.io/post/jdk-souce-comparable/">
 
@@ -81,42 +81,36 @@
         </div>
         <div class="markdown mb-8" v-pre>
           <h3 id="概述">概述😜😋🤡😣</h3>
-<p> 此接口对实现它的每个类的对象强加一个总排序。 这种排序被称为类的自然顺序 ，类的<strong>compareTo</strong>方法被称为其自然比较方法 。<br>
-实现此接口的对象的列表（和数组）可以由Collections.sort （和Arrays.sort ）自动排序。 实现该接口的对象，可以使用如在键sorted map或作为在元件sorted set ，而不需要指定一个comparator 。</p>
-<p>一类的自然排序C据说是与equals一致 ，当且仅当e1.compareTo(e2) == 0具有相同的布尔值e1.equals(e2) ，每e1和e2类C 。</p>
+<p>  此接口对实现它的每个类的对象强加一个总排序。 这种排序被称为类的自然顺序 ，类的<strong>compareTo</strong>方法被称为其自然比较方法 。<br>
+  实现此接口的对象的列表（和数组）可以由Collections.sort （和Arrays.sort ）自动排序。 实现该接口的对象，可以使用如在键sorted map或作为在元件sorted set ，而不需要指定一个comparator 。</p>
+<p>  一类的自然排序C据说是与equals一致 ，当且仅当e1.compareTo(e2) == 0具有相同的布尔值e1.equals(e2) ，每e1和e2类C 。</p>
 <blockquote>
-<p>请注意， null不是任何类的实例， e.compareTo(null)应该抛出NullPointerException即使e.equals(null)返回false 。</p>
+<p>请注意， null不是任何类的实例， e.compareTo(null)应该抛出<code>NullPointerException</code>即使e.equals(null)返回false 。</p>
 </blockquote>
-<p><em><strong>强烈建议（尽管不是必需的）自然排序与equals一致。 这是因为没有显式比较器的有序集（和有序映射）在与自然排序与equals不一致的元素（或键）一起使用时表现得“奇怪”。 特别是，这样的有序集（或有序映射）违反了集合（或映射）的一般契约，它是根据equals方法定义的。</strong></em></p>
-<p>例如，如果将两个键a和b (!a.equals(b) &amp;&amp; a.compareTo(b) == 0)到不使用显式比较器的有序集合中，则第二个add操作返回false（并且有序集的大小不会增加），因为a和b是等效的从排序集的角度来看。<br>
-实际上，所有实现Comparable Java核心类都具有与equals一致的自然排序。 一个例外是java.math.BigDecimal ，其自然排序等同BigDecimal具有相同值和不同精度的BigDecimal对象（例如4.0和4.00）。<br>
+<p>  <em><strong>强烈建议（尽管不是必需的）自然排序与equals一致。 这是因为没有显式比较器的有序集（和有序映射）在与自然排序与equals不一致的元素（或键）一起使用时表现得“奇怪”。 特别是，这样的有序集（或有序映射）违反了集合（或映射）的一般契约，它是根据equals方法定义的。</strong></em></p>
+<p>  例如，如果将两个键a和b (!a.equals(b) &amp;&amp; a.compareTo(b) == 0)到不使用显式比较器的有序集合中，则第二个add操作返回false（并且有序集的大小不会增加），因为a和b是等效的从排序集的角度来看。<br>
+  实际上，所有实现Comparable Java核心类都具有与equals一致的自然排序。 一个例外是java.math.BigDecimal ，其自然排序等同BigDecimal具有相同值和不同精度的BigDecimal对象（例如4.0和4.00）。<br>
 对于数学倾向，定义给定类C的自然排序的关系是：</p>
 <pre><code class="language-java">   {(x, y) such that x.compareTo(y) &lt;= 0}.  
 </code></pre>
 <p>此总订单的商是：</p>
 <pre><code class="language-java">   {(x, y) such that x.compareTo(y) == 0}.  
 </code></pre>
-<p>它从合同紧跟compareTo ，该商数是一个等价关系 C ，那自然排序是全序 C 。 当我们说类的自然排序与equals一致时 ，我们的意思是自然排序的商是由类equals(Object)方法定义的等价关系：</p>
+<p>  它从合同紧跟compareTo ，该商数是一个等价关系 C ，那自然排序是全序 C 。 当我们说类的自然排序与equals一致时 ，我们的意思是自然排序的商是由类equals(Object)方法定义的等价关系：</p>
 <pre><code class="language-java">  {(x, y) such that x.equals(y)}. 
 </code></pre>
 <h4 id="compareto-方法">CompareTo 方法🤓😟😤😧</h4>
 <blockquote>
-<p>将此对象与指定的对象进行比较以获得顺序。 返回负整数，零或正整数，因为此对象小于，等于或大于指定对象。<br>
-实现程序必须确保sgn(x.compareTo(y)) == -sgn(y.compareTo(x))所有x和y 。 （这意味着x.compareTo(y) IFF必须抛出一个异常y.compareTo(x)抛出一个异常。）</p>
+<p>将此对象与指定的对象进行比较以获得顺序。 返回负整数，零或正整数，因为此对象小于，等于或大于指定对象。</p>
 </blockquote>
-<blockquote>
-<p>实现者还必须确保该关系是可传递的： (x.compareTo(y) &gt; 0 &amp;&amp; y.compareTo(z) &gt; 0)意味着x.compareTo(z) &gt; 0 。</p>
-</blockquote>
-<blockquote>
-<p>最后，实现者必须确保x.compareTo(y)==0暗示sgn(x.compareTo(z)) == sgn(y.compareTo(z)) ，对于所有z 。</p>
-</blockquote>
-<blockquote>
-<p>强烈建议，但不严格要求(x.compareTo(y)==0) == (x.equals(y)) 。 一般来说，任何实现Comparable接口且违反此条件的类都应清楚地表明这一事实。 推荐的语言是“注意：此类具有与equals不一致的自然顺序。”</p>
-</blockquote>
-<p>在前面的描述中，符号sgn( 表达 )表示数学符号函数，其被定义为返回之一-1 ， 0 ，或1分别根据表达式的值是否为负，零或正。</p>
+<p>  实现程序必须确保sgn(x.compareTo(y)) == -sgn(y.compareTo(x))所有x和y 。 （这意味着x.compareTo(y) IFF必须抛出一个异常y.compareTo(x)抛出一个异常。）</p>
+<p>  实现者还必须确保该关系是可传递的： (x.compareTo(y) &gt; 0 &amp;&amp; y.compareTo(z) &gt; 0)意味着x.compareTo(z) &gt; 0 。</p>
+<p>  最后，实现者必须确保x.compareTo(y)==0暗示sgn(x.compareTo(z)) == sgn(y.compareTo(z)) ，对于所有z 。</p>
+<p>  强烈建议，但不严格要求(x.compareTo(y)==0) == (x.equals(y)) 。 一般来说，任何实现Comparable接口且违反此条件的类都应清楚地表明这一事实。 推荐的语言是“注意：此类具有与equals不一致的自然顺序。”</p>
+<p>  在前面的描述中，符号sgn( 表达 )表示数学符号函数，其被定义为返回之一-1 ， 0 ，或1分别根据表达式的值是否为负，零或正。</p>
 <h4 id="异常️️">异常☠️☠️💀👻</h4>
-<p>*NullPointerException - 如果指定的对象为null<br>
-*ClassCastException - 如果指定对象的类型阻止将其与此对象进行比较。</p>
+<p>*<code>NullPointerException</code> - 如果指定的对象为null<br>
+*<code>ClassCastException</code> - 如果指定对象的类型阻止将其与此对象进行比较。</p>
 <hr>
 <details>
 <summary>所有已知实现类</summary>
