@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://JoyZgq.github.io</id>
     <title>bravo</title>
-    <updated>2020-04-24T05:03:49.387Z</updated>
+    <updated>2020-04-26T06:30:52.954Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://JoyZgq.github.io"/>
     <link rel="self" href="https://JoyZgq.github.io/atom.xml"/>
@@ -11,11 +11,33 @@
     <icon>https://JoyZgq.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, bravo</rights>
     <entry>
+        <title type="html"><![CDATA[笔记]]></title>
+        <id>https://JoyZgq.github.io/post/SxCUqUsXI/</id>
+        <link href="https://JoyZgq.github.io/post/SxCUqUsXI/">
+        </link>
+        <updated>2020-04-25T01:25:04.000Z</updated>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[并发编程]]></title>
         <id>https://JoyZgq.github.io/post/rLrYVERFi/</id>
         <link href="https://JoyZgq.github.io/post/rLrYVERFi/">
         </link>
         <updated>2020-03-28T03:15:15.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[New 背后过程]]></title>
+        <id>https://JoyZgq.github.io/post/lAF5734Xb/</id>
+        <link href="https://JoyZgq.github.io/post/lAF5734Xb/">
+        </link>
+        <updated>2020-03-10T06:42:59.000Z</updated>
+        <summary type="html"><![CDATA[<blockquote>
+<p>Java是一门面向对象的编程语言，Java程序运行过程中无时无刻都有对象被创建出来。在语言层面上，创建对象通常（例外：复制、反序列化）仅仅是一个new关键字而已，而在虚拟机中，对象（文中讨论的对象限于普通Java对象，不包括数组和Class对象等）的创建又是怎样一个过程呢？</p>
+</blockquote>
+]]></summary>
+        <content type="html"><![CDATA[<blockquote>
+<p>Java是一门面向对象的编程语言，Java程序运行过程中无时无刻都有对象被创建出来。在语言层面上，创建对象通常（例外：复制、反序列化）仅仅是一个new关键字而已，而在虚拟机中，对象（文中讨论的对象限于普通Java对象，不包括数组和Class对象等）的创建又是怎样一个过程呢？</p>
+</blockquote>
+]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[内存管理]]></title>
@@ -30,6 +52,13 @@
         <link href="https://JoyZgq.github.io/post/LSRQQMEMO/">
         </link>
         <updated>2019-04-22T01:41:44.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Java lang]]></title>
+        <id>https://JoyZgq.github.io/post/fXMc3StAj/</id>
+        <link href="https://JoyZgq.github.io/post/fXMc3StAj/">
+        </link>
+        <updated>2019-04-04T06:16:51.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[Java Source --- CharSequence]]></title>
@@ -70,12 +99,5 @@
 </blockquote>
 <h4 id="summary-综述">Summary 综述🤡👾😉</h4>
 ]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Hello Traveller 🍄]]></title>
-        <id>https://JoyZgq.github.io/post/hello-TRA/</id>
-        <link href="https://JoyZgq.github.io/post/hello-TRA/">
-        </link>
-        <updated>2018-12-11T16:00:00.000Z</updated>
     </entry>
 </feed>
