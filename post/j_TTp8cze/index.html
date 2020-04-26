@@ -1,0 +1,749 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Java.IO综述 - bravo</title>
+<link rel="shortcut icon" href="https://JoyZgq.github.io/favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
+<link rel="stylesheet" href="https://JoyZgq.github.io/media/css/tailwind.css">
+<link rel="stylesheet" href="https://JoyZgq.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="Java.IO综述 - bravo - Atom Feed" href="https://JoyZgq.github.io/atom.xml">
+
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-164181119-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-164181119-1');
+  </script>
+    
+
+  <meta name="description" content="
+通过数据流，序列化和文件系统提供系统输入和输出。 除非另有说明，否则将null参数传递给此包中任何类或接口中的构造函数或方法将导致抛出NullPointerException 。
+
+接口
+
+
+
+接口
+描述
+
+
+
+
+Closeable
+Cl..." />
+  <meta property="og:title" content="Java.IO综述 - bravo">
+  <meta property="og:description" content="
+通过数据流，序列化和文件系统提供系统输入和输出。 除非另有说明，否则将null参数传递给此包中任何类或接口中的构造函数或方法将导致抛出NullPointerException 。
+
+接口
+
+
+
+接口
+描述
+
+
+
+
+Closeable
+Cl..." />
+  <meta property="og:type" content="articles">
+  <meta property="og:url" content="https://JoyZgq.github.io/post/j_TTp8cze/" />
+  <meta property="og:image" content="https://JoyZgq.github.io/post-images/j_TTp8cze.webp">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:width" content="1200">
+  <meta name="twitter:title" content="Java.IO综述 - bravo">
+  <meta name="twitter:description" content="
+通过数据流，序列化和文件系统提供系统输入和输出。 除非另有说明，否则将null参数传递给此包中任何类或接口中的构造函数或方法将导致抛出NullPointerException 。
+
+接口
+
+
+
+接口
+描述
+
+
+
+
+Closeable
+Cl...">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://JoyZgq.github.io/post/j_TTp8cze/">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+ 
+  
+    <link rel="stylesheet" href="https://JoyZgq.github.io/media/css/prism-github.css">
+  
+
+  
+</head>
+
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
+    <a href="https://JoyZgq.github.io" class="fixed top-0 left-0 mt-4 bg-black text-white dark:text-gray-700 dark:bg-yellow-50 dark:hover:bg-black dark:hover:text-white inline-flex p-2 pl-8 hover:text-gray-700 hover:bg-yellow-50 font-bold z-10 transition-fast animated fadeInLeft">
+      bravo
+    </a>
+    <div class="max-w-4xl w-full mx-auto">
+      <div class="shadow-box bg-white dark:bg-gray-600 rounded-lg pt-32 md:pt-64 px-4 md:px-8 pb-8 animated fadeIn mb-8">
+        <h1 class="text-5xl font-semibold leading-normal pb-8 mb-8 border-b-8 border-gray-700">
+          Java.IO综述
+        </h1>
+        
+          <img src="https://JoyZgq.github.io/post-images/j_TTp8cze.webp" alt="Java.IO综述" class="block w-full mb-8">
+        
+        <div class="mb-8 flex flex-wrap">
+          <div class="text-gray-400 text-sm mr-4">2019-04-18 · 7 min read</div>
+          
+        </div>
+        <div class="markdown mb-8" v-pre>
+          <blockquote>
+<p>通过数据流，序列化和文件系统提供系统输入和输出。 除非另有说明，否则将null参数传递给此包中任何类或接口中的构造函数或方法将导致抛出NullPointerException 。</p>
+</blockquote>
+<h3 id="接口">接口</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">接口</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/Closeable.html">Closeable</a></td>
+<td style="text-align:left"><code>Closeable</code>是可以关闭的数据的源或目标。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/DataInput.html">DataInput</a></td>
+<td style="text-align:left"><code>DataInput</code>接口提供从二进制流中读取字节并从中重构任何Java基元类型中的数据。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/DataOutput.html">DataOutput</a></td>
+<td style="text-align:left"><code>DataOutput</code>接口用于将来自任何Java基元类型的数据转换为一系列字节，并将这些字节写入二进制流。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/Externalizable.html">Externalizable</a></td>
+<td style="text-align:left">只有Externalizable实例的类的标识才会写入序列化流中，并且该类负责保存和恢复其实例的内容。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/FileFilter.html">FileFilter</a></td>
+<td style="text-align:left">抽象路径名的过滤器。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/FilenameFilter.html">FilenameFilter</a></td>
+<td style="text-align:left">实现此接口的类的实例用于过滤文件名。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/Flushable.html">Flushable</a></td>
+<td style="text-align:left"><code>Flushable</code>是可以刷新的数据的目标。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/ObjectInput.html">ObjectInput</a></td>
+<td style="text-align:left">ObjectInput扩展DataInput接口以包括对象的读取。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/ObjectInputFilter.html">ObjectInputFilter</a></td>
+<td style="text-align:left">在反序列化期间过滤类，数组长度和图表度量。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/ObjectInputFilter.FilterInfo.html">ObjectInputFilter.FilterInfo</a></td>
+<td style="text-align:left">通过FilterInfo，可以访问有关正在反序列化的当前对象的信息以及<a href="https://www.apiref.com/java11-zh/java.base/java/io/ObjectInputStream.html"><code>ObjectInputStream</code></a>的状态。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/ObjectInputValidation.html">ObjectInputValidation</a></td>
+<td style="text-align:left">回调接口，允许验证图形中的对象。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/ObjectOutput.html">ObjectOutput</a></td>
+<td style="text-align:left">ObjectOutput扩展DataOutput接口以包括写入对象。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/ObjectStreamConstants.html">ObjectStreamConstants</a></td>
+<td style="text-align:left">写入对象序列化流的常量。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/Serializable.html">Serializable</a></td>
+<td style="text-align:left">实现java.io.Serializable接口的类启用了类的可序列化。</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="类">类</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">类</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/BufferedInputStream.html">BufferedInputStream</a></td>
+<td style="text-align:left">A <code>BufferedInputStream</code>为另一个输入流添加功能 - 即缓冲输入并支持 <code>mark</code>和 <code>reset</code>方法的功能。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/BufferedOutputStream.html">BufferedOutputStream</a></td>
+<td style="text-align:left">该类实现缓冲输出流。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/BufferedReader.html">BufferedReader</a></td>
+<td style="text-align:left">从字符输入流中读取文本，缓冲字符，以便有效地读取字符，数组和行。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/BufferedWriter.html">BufferedWriter</a></td>
+<td style="text-align:left">将文本写入字符输出流，缓冲字符，以便有效地写入单个字符，数组和字符串。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/ByteArrayInputStream.html">ByteArrayInputStream</a></td>
+<td style="text-align:left"><code>ByteArrayInputStream</code>包含一个内部缓冲区，其中包含可从流中读取的字节。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/ByteArrayOutputStream.html">ByteArrayOutputStream</a></td>
+<td style="text-align:left">此类实现一个输出流，其中数据被写入字节数组。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/CharArrayReader.html">CharArrayReader</a></td>
+<td style="text-align:left">该类实现了一个可用作字符输入流的字符缓冲区。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/CharArrayWriter.html">CharArrayWriter</a></td>
+<td style="text-align:left">该类实现了一个可用作Writer的字符缓冲区。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/Console.html">Console</a></td>
+<td style="text-align:left">访问与当前Java虚拟机关联的基于字符的控制台设备（如果有）的方法。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/DataInputStream.html">DataInputStream</a></td>
+<td style="text-align:left">数据输入流允许应用程序以与机器无关的方式从底层输入流中读取原始Java数据类型。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/DataOutputStream.html">DataOutputStream</a></td>
+<td style="text-align:left">数据输出流允许应用程序以可移植的方式将原始Java数据类型写入输出流。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/File.html">File</a></td>
+<td style="text-align:left">文件和目录路径名的抽象表示。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/FileDescriptor.html">FileDescriptor</a></td>
+<td style="text-align:left">文件描述符类的实例充当底层机器特定结构的不透明句柄，表示打开文件，打开套接字或其他字节源或接收器。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/FileInputStream.html">FileInputStream</a></td>
+<td style="text-align:left">A <code>FileInputStream</code>从文件系统中的文件获得输入字节。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/FileOutputStream.html">FileOutputStream</a></td>
+<td style="text-align:left">文件输出流是用于将数据写入 <code>File</code>或 <code>FileDescriptor</code>的输出流。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/FilePermission.html">FilePermission</a></td>
+<td style="text-align:left">此类表示对文件或目录的访问。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/FileReader.html">FileReader</a></td>
+<td style="text-align:left">使用默认缓冲区大小从字符文件中读取文本。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/FileWriter.html">FileWriter</a></td>
+<td style="text-align:left">使用默认缓冲区大小将文本写入字符文件。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/FilterInputStream.html">FilterInputStream</a></td>
+<td style="text-align:left"><code>FilterInputStream</code>包含一些其他输入流，它将其用作其基本数据源，可能会沿途转换数据或提供其他功能。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/FilterOutputStream.html">FilterOutputStream</a></td>
+<td style="text-align:left">此类是过滤输出流的所有类的超类。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/FilterReader.html">FilterReader</a></td>
+<td style="text-align:left">用于读取已过滤字符流的抽象类。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/FilterWriter.html">FilterWriter</a></td>
+<td style="text-align:left">用于编写过滤字符流的抽象类。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/InputStream.html">InputStream</a></td>
+<td style="text-align:left">此抽象类是表示输入字节流的所有类的超类。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/InputStreamReader.html">InputStreamReader</a></td>
+<td style="text-align:left">InputStreamReader是从字节流到字符流的桥接器：它使用指定的<a href="https://www.apiref.com/java11-zh/java.base/java/nio/charset/Charset.html"><code>charset</code></a>读取字节并将其解码为字符。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/LineNumberInputStream.html">LineNumberInputStream</a></td>
+<td style="text-align:left">Deprecated.This class incorrectly assumes that bytes adequately represent characters.</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/LineNumberReader.html">LineNumberReader</a></td>
+<td style="text-align:left">缓冲的字符输入流，用于跟踪行号。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/ObjectInputFilter.Config.html">ObjectInputFilter.Config</a></td>
+<td style="text-align:left">用于设置和获取进程范围过滤器或从模式字符串创建过滤器的实用程序类。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/ObjectInputStream.html">ObjectInputStream</a></td>
+<td style="text-align:left">ObjectInputStream对先前使用ObjectOutputStream编写的原始数据和对象进行反序列化。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/ObjectInputStream.GetField.html">ObjectInputStream.GetField</a></td>
+<td style="text-align:left">提供对从输入流中读取的持久字段的访问。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/ObjectOutputStream.html">ObjectOutputStream</a></td>
+<td style="text-align:left">ObjectOutputStream将Java对象的原始数据类型和图形写入OutputStream。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/ObjectOutputStream.PutField.html">ObjectOutputStream.PutField</a></td>
+<td style="text-align:left">提供对要写入ObjectOutput的持久字段的编程访问。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/ObjectStreamClass.html">ObjectStreamClass</a></td>
+<td style="text-align:left">序列化的类描述符。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/ObjectStreamField.html">ObjectStreamField</a></td>
+<td style="text-align:left">Serializable类中Serializable字段的描述。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/OutputStream.html">OutputStream</a></td>
+<td style="text-align:left">此抽象类是表示输出字节流的所有类的超类。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/OutputStreamWriter.html">OutputStreamWriter</a></td>
+<td style="text-align:left">OutputStreamWriter是从字符流到字节流的桥接：使用指定的<a href="https://www.apiref.com/java11-zh/java.base/java/nio/charset/Charset.html"><code>charset</code>将</a>写入其中的字符编码为字节。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/PipedInputStream.html">PipedInputStream</a></td>
+<td style="text-align:left">管道输入流应连接到管道输出流; 然后，管道输入流提供写入管道输出流的任何数据字节。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/PipedOutputStream.html">PipedOutputStream</a></td>
+<td style="text-align:left">管道输出流可以连接到管道输入流以创建通信管道。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/PipedReader.html">PipedReader</a></td>
+<td style="text-align:left">管道字符输入流。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/PipedWriter.html">PipedWriter</a></td>
+<td style="text-align:left">管道字符输出流。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/PrintStream.html">PrintStream</a></td>
+<td style="text-align:left"><code>PrintStream</code>向另一个输出流添加功能，即能够方便地打印各种数据值的表示。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/PrintWriter.html">PrintWriter</a></td>
+<td style="text-align:left">将对象的格式化表示打印到文本输出流。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/PushbackInputStream.html">PushbackInputStream</a></td>
+<td style="text-align:left"><code>PushbackInputStream</code>通过将推回的字节存储在内部缓冲区中，将功能添加到另一个输入流，即“推回”或“未读”字节的能力。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/PushbackReader.html">PushbackReader</a></td>
+<td style="text-align:left">字符流阅读器，允许将字符推回到流中。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/RandomAccessFile.html">RandomAccessFile</a></td>
+<td style="text-align:left">此类的实例支持读取和写入随机访问文件。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/Reader.html">Reader</a></td>
+<td style="text-align:left">用于读取字符流的抽象类。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/SequenceInputStream.html">SequenceInputStream</a></td>
+<td style="text-align:left"><code>SequenceInputStream</code>表示其他输入流的逻辑串联。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/SerializablePermission.html">SerializablePermission</a></td>
+<td style="text-align:left">此类用于Serializable权限。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/StreamTokenizer.html">StreamTokenizer</a></td>
+<td style="text-align:left"><code>StreamTokenizer</code>类接受输入流并将其解析为“标记”，允许一次读取一个标记。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/StringBufferInputStream.html">StringBufferInputStream</a></td>
+<td style="text-align:left">Deprecated.This class does not properly convert characters into bytes.</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/StringReader.html">StringReader</a></td>
+<td style="text-align:left">字符串，其源是字符串。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/StringWriter.html">StringWriter</a></td>
+<td style="text-align:left">在字符串缓冲区中收集其输出的字符流，然后可用于构造字符串。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/Writer.html">Writer</a></td>
+<td style="text-align:left">用于写入字符流的抽象类。</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="枚举">枚举</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Enum</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/ObjectInputFilter.Status.html">ObjectInputFilter.Status</a></td>
+<td style="text-align:left">检查类，数组长度，引用数，深度和流大小的状态。</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="异常">异常</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">异常</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/CharConversionException.html">CharConversionException</a></td>
+<td style="text-align:left">字符转换异常的基类。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/EOFException.html">EOFException</a></td>
+<td style="text-align:left">表示在输入期间意外到达文件末尾或流末尾的信号。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/FileNotFoundException.html">FileNotFoundException</a></td>
+<td style="text-align:left">尝试打开由指定路径名表示的文件的信号失败。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/InterruptedIOException.html">InterruptedIOException</a></td>
+<td style="text-align:left">表示I / O操作已中断。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/InvalidClassException.html">InvalidClassException</a></td>
+<td style="text-align:left">Serialization运行时检测到类的以下问题之一时抛出。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/InvalidObjectException.html">InvalidObjectException</a></td>
+<td style="text-align:left">指示一个或多个反序列化对象未通过验证测试。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/IOException.html">IOException</a></td>
+<td style="text-align:left">表示发生了某种I / O异常的信号。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/NotActiveException.html">NotActiveException</a></td>
+<td style="text-align:left">序列化或反序列化未激活时抛出。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/NotSerializableException.html">NotSerializableException</a></td>
+<td style="text-align:left">当实例需要具有Serializable接口时抛出。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/ObjectStreamException.html">ObjectStreamException</a></td>
+<td style="text-align:left">特定于Object Stream类的所有异常的超类。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/OptionalDataException.html">OptionalDataException</a></td>
+<td style="text-align:left">异常表示由于未读原始数据导致对象读取操作失败，或者属于流中序列化对象的数据结束。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/StreamCorruptedException.html">StreamCorruptedException</a></td>
+<td style="text-align:left">从对象流中读取的控制信息违反内部一致性检查时抛出。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/SyncFailedException.html">SyncFailedException</a></td>
+<td style="text-align:left">表示同步操作失败。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/UncheckedIOException.html">UncheckedIOException</a></td>
+<td style="text-align:left">使用未经检查的异常包装<a href="https://www.apiref.com/java11-zh/java.base/java/io/IOException.html"><code>IOException</code></a> 。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/UnsupportedEncodingException.html">UnsupportedEncodingException</a></td>
+<td style="text-align:left">不支持字符编码。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/UTFDataFormatException.html">UTFDataFormatException</a></td>
+<td style="text-align:left">表示已在数据输入流中或由实现数据输入接口的任何类读取 <a href="https://www.apiref.com/java11-zh/java.base/java/io/DataInput.html#modified-utf-8">modified UTF-8</a>格式的格式错误的字符串。</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/WriteAbortedException.html">WriteAbortedException</a></td>
+<td style="text-align:left">表示在写入操作期间抛出了其中一个ObjectStreamExceptions。</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="错误">错误</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Error</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a href="https://www.apiref.com/java11-zh/java.base/java/io/IOError.html">IOError</a></td>
+<td style="text-align:left">发生严重I / O错误时抛出。</td>
+</tr>
+</tbody>
+</table>
+
+        </div>
+        <!-- Share to Twitter, Weibo, Telegram -->
+        <div class="flex items-center">
+          <div class="mr-4 flex items-center">
+            <i class="ri-share-forward-line text-gray-500"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-blue-500 hover:bg-blue-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTwitter">
+            <i class="ri-twitter-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-red-500 hover:bg-red-100 dark:hover:bg-gray-600 inline-flex" @click="shareToWeibo">
+            <i class="ri-weibo-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-indigo-500 hover:bg-indigo-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTelegram">
+            <i class="ri-telegram-line"></i>
+          </div>
+        </div>
+      </div>
+
+      
+
+      
+        <div id="vlaine-comment"></div>
+      
+
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>  Made by  <a href="https://github.com/JoyZgq" target="_blank">zgq</a> 🎈❤❤❤🌹
+</footer>
+    </div>
+
+    <!-- TOC Container -->
+    <div class="fixed right-0 bottom-0 mb-16 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white dark:bg-gray-500 dark:text-gray-200 hover:shadow-lg transition-all animated fadeInRight" @click="showToc = true">
+      <i class="ri-file-list-line"></i>
+    </div>
+
+    <div class="fixed right-0 top-0 bottom-0 overflow-y-auto w-64 bg-white dark:bg-gray-800 p-4 border-l border-gray-100 dark:border-gray-600 z-10 transition-fast" :class="{ '-mr-64': !showToc }">
+      <div class="flex mb-4 justify-end">
+        <div class="w-8 h-8 inline-flex justify-center items-center rounded-full cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600 transition-fast" @click="showToc = false">
+          <i class="ri-close-line text-lg"></i>
+        </div>
+      </div>
+      <div class="post-toc-container">
+        <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#%E6%8E%A5%E5%8F%A3">接口</a></li>
+<li><a href="#%E7%B1%BB">类</a></li>
+<li><a href="#%E6%9E%9A%E4%B8%BE">枚举</a></li>
+<li><a href="#%E5%BC%82%E5%B8%B8">异常</a></li>
+<li><a href="#%E9%94%99%E8%AF%AF">错误</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+      </div>
+    </div>
+
+    <!-- Back to top -->
+    <div class="fixed right-0 bottom-0 mb-4 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white hover:shadow-lg transition-all dark:bg-gray-500 dark:text-gray-200" @click="backToUp" v-show="scrolled">
+      <i class="ri-arrow-up-line"></i>
+    </div>
+  </div>
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+  <!-- Background of PhotoSwipe. 
+        It's a separate element as animating opacity is faster than rgba(). -->
+  <div class="pswp__bg">
+  </div>
+  <!-- Slides wrapper with overflow:hidden. -->
+  <div class="pswp__scroll-wrap">
+    <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+    <div class="pswp__container">
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+    </div>
+    <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+    <div class="pswp__ui pswp__ui--hidden">
+      <div class="pswp__top-bar">
+        <!--  Controls are self-explanatory. Order can be changed. -->
+        <div class="pswp__counter">
+        </div>
+        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+        <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+        <!-- element will get class pswp__preloader--active when preloader is running -->
+        <div class="pswp__preloader">
+          <div class="pswp__preloader__icn">
+            <div class="pswp__preloader__cut">
+              <div class="pswp__preloader__donut">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+        <div class="pswp__share-tooltip">
+        </div>
+      </div>
+      <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+      </button>
+      <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+      </button>
+      <div class="pswp__caption">
+        <div class="pswp__caption__center">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://JoyZgq.github.io/media/scripts/main.js"></script>
+  
+  <!-- Code Highlight -->
+  
+    <script src="https://JoyZgq.github.io/media/prism.js"></script>
+    <script>
+      Prism.highlightAll()
+    </script>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+  <script>
+    //拿到预览框架，也就是上面的html代码
+    var pswpElement = document.querySelectorAll('.pswp')[0];
+    //定义图片数组变量
+    var imgitems;
+    /**
+    * 用于显示预览界面
+    * @param index 图片数组下标
+    */
+    function viewImg(index) {
+      //其它选项这里不做过多阐述，详情见官网
+      var pswpoptions = {
+        index: parseInt(index, 10), // 开始幻灯片索引。0是第一张幻灯片。必须是整数，而不是字符串。
+        bgOpacity: 0.7, // 背景透明度，0-1
+        maxSpreadZoom: 3, // 缩放级别，不要太大
+      };
+      //初始化并打开PhotoSwipe，pswpElement对应上面预览框架，PhotoSwipeUI_Default为皮肤，imgitems为图片数组，pswpoptions为选项
+      var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, imgitems, pswpoptions);
+      gallery.init()
+    }
+    /**
+    * 用于添加图片点击事件
+    * @param img 图片元素
+    * @param index 所属下标（在imgitems中的位置）
+    */
+    function addImgClick(img, index) {
+      img.onclick = function() {
+        viewImg(index)
+      }
+    }
+    /**
+    * 轮询所有图片，获取src、width、height等数据，加入imgitems，并给图片元素添加事件
+    * 最好在onload中执行该方法，本站因放在最底部，所以直接初始化
+    * 异步加载图片可在图片元素创建完成后调用此方法
+    */
+    function initImg() {
+      //重置图片数组
+      imgitems = [];
+      //查找class:markdown 下的所有img元素并遍历
+      var imgs = document.querySelectorAll('.markdown img');
+      for (var i = 0; i < imgs.length; i++) {
+        var img = imgs[i];
+        //本站相册初始为loading图片，真实图片放在data-src
+        var ds = img.getAttribute("data-src");
+        //创建image对象，用于获取图片宽高
+        var imgtemp = new Image();
+        //判断是否存在data-src
+        if (ds != null && ds.length > 0) {
+          imgtemp.src = ds
+        } else {
+          imgtemp.src = img.src
+        }
+        //判断是否存在缓存
+        if (imgtemp.complete) {
+          var imgobj = {
+            "src": imgtemp.src,
+            "w": imgtemp.width,
+            "h": imgtemp.height,
+          };
+          imgitems[i] = imgobj;
+          addImgClick(img, i);
+        } else {
+          console.log('进来了2')
+          imgtemp.index = i;
+          imgtemp.img = img;
+          imgtemp.onload = function() {
+            var imgobj = {
+              "src": this.src,
+              "w": this.width,
+              "h": this.height,
+            };
+            //不要使用push，因为onload前后顺序会不同
+            imgitems[this.index] = imgobj
+            //添加点击事件
+            addImgClick(this.img, this.index);
+          }
+        }
+      }
+    }
+    //初始化
+    initImg();
+  </script>
+  
+    <script type="application/javascript" src="https://unpkg.com/valine"></script>
+<script type="application/javascript">
+  new Valine({
+    el: '#vlaine-comment',
+    appId: 'Sy2gsMvGcPQl3gTGsqqYsHW6-gzGzoHsz',
+    appKey: 'IpsgegiMUNgRg7l5BVXk6EXM',
+    pageSize: 10,
+    notify: false,
+    avatar: 'mp',
+    verify: true,
+    placeholder: '可观来都来了，不妨评论一下🌹🐱‍👤',
+    visitor: true,
+    highlight: false,
+    recordIP: true,
+  })
+</script>
+  
+  
+</body>
+
+</html>
