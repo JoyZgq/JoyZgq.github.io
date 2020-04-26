@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://JoyZgq.github.io</id>
     <title>bravo</title>
-    <updated>2020-04-26T06:55:38.368Z</updated>
+    <updated>2020-04-26T07:21:40.240Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://JoyZgq.github.io"/>
     <link rel="self" href="https://JoyZgq.github.io/atom.xml"/>
@@ -10,6 +10,13 @@
     <logo>https://JoyZgq.github.io/images/avatar.png</logo>
     <icon>https://JoyZgq.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, bravo</rights>
+    <entry>
+        <title type="html"><![CDATA[Java.lang---interface---Cloneable,Thread.UncaughtExceptionHandler,Iterable<T>,Runnable]]></title>
+        <id>https://JoyZgq.github.io/post/Cex-T6UeQ/</id>
+        <link href="https://JoyZgq.github.io/post/Cex-T6UeQ/">
+        </link>
+        <updated>2020-04-26T07:03:01.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[笔记]]></title>
         <id>https://JoyZgq.github.io/post/SxCUqUsXI/</id>
@@ -54,6 +61,13 @@
         <updated>2019-04-22T01:41:44.000Z</updated>
     </entry>
     <entry>
+        <title type="html"><![CDATA[Spliterator<T>]]></title>
+        <id>https://JoyZgq.github.io/post/bqpsTtCTf/</id>
+        <link href="https://JoyZgq.github.io/post/bqpsTtCTf/">
+        </link>
+        <updated>2019-04-06T07:14:15.000Z</updated>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Java.lang综述]]></title>
         <id>https://JoyZgq.github.io/post/fXMc3StAj/</id>
         <link href="https://JoyZgq.github.io/post/fXMc3StAj/">
@@ -61,31 +75,17 @@
         <updated>2019-04-04T06:16:51.000Z</updated>
     </entry>
     <entry>
+        <title type="html"><![CDATA[Java.lang---interface---AutoCloseable]]></title>
+        <id>https://JoyZgq.github.io/post/bXupqWmE6/</id>
+        <link href="https://JoyZgq.github.io/post/bXupqWmE6/">
+        </link>
+        <updated>2019-03-11T06:56:20.000Z</updated>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Java.lang---interface---Appendable]]></title>
         <id>https://JoyZgq.github.io/post/g6ejmC6VS/</id>
         <link href="https://JoyZgq.github.io/post/g6ejmC6VS/">
         </link>
         <updated>2019-03-04T06:39:14.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Java Source --- CharSequence]]></title>
-        <id>https://JoyZgq.github.io/post/f67bU8eSc/</id>
-        <link href="https://JoyZgq.github.io/post/f67bU8eSc/">
-        </link>
-        <updated>2019-02-20T07:34:12.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[JDK Souce --- Comparable]]></title>
-        <id>https://JoyZgq.github.io/post/jdk-souce-comparable/</id>
-        <link href="https://JoyZgq.github.io/post/jdk-souce-comparable/">
-        </link>
-        <updated>2019-02-18T07:08:50.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[JDK Source --- Serializable]]></title>
-        <id>https://JoyZgq.github.io/post/jdksource-seriable/</id>
-        <link href="https://JoyZgq.github.io/post/jdksource-seriable/">
-        </link>
-        <updated>2019-02-02T03:16:49.000Z</updated>
     </entry>
 </feed>

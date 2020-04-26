@@ -1,0 +1,322 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Spliterator&lt;T&gt; - bravo</title>
+<link rel="shortcut icon" href="https://JoyZgq.github.io/favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
+<link rel="stylesheet" href="https://JoyZgq.github.io/media/css/tailwind.css">
+<link rel="stylesheet" href="https://JoyZgq.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="Spliterator&lt;T&gt; - bravo - Atom Feed" href="https://JoyZgq.github.io/atom.xml">
+
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-164181119-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-164181119-1');
+  </script>
+    
+
+  <meta name="description" content="
+用于遍历和分区源元素的对象。 Spliterator覆盖的元素源可以是例如阵列， Collection ，IO通道或生成器函数。
+
+Spliterator可以单独遍历元素（ tryAdvance() ）或按顺序遍历元素（ forEachR..." />
+  <meta property="og:title" content="Spliterator&lt;T&gt; - bravo">
+  <meta property="og:description" content="
+用于遍历和分区源元素的对象。 Spliterator覆盖的元素源可以是例如阵列， Collection ，IO通道或生成器函数。
+
+Spliterator可以单独遍历元素（ tryAdvance() ）或按顺序遍历元素（ forEachR..." />
+  <meta property="og:type" content="articles">
+  <meta property="og:url" content="https://JoyZgq.github.io/post/bqpsTtCTf/" />
+  <meta property="og:image" content="https://JoyZgq.github.io/images/avatar.png">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:width" content="1200">
+  <meta name="twitter:title" content="Spliterator&lt;T&gt; - bravo">
+  <meta name="twitter:description" content="
+用于遍历和分区源元素的对象。 Spliterator覆盖的元素源可以是例如阵列， Collection ，IO通道或生成器函数。
+
+Spliterator可以单独遍历元素（ tryAdvance() ）或按顺序遍历元素（ forEachR...">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://JoyZgq.github.io/post/bqpsTtCTf/">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+ 
+  
+    <link rel="stylesheet" href="https://JoyZgq.github.io/media/css/prism-github.css">
+  
+
+  
+</head>
+
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
+    <a href="https://JoyZgq.github.io" class="fixed top-0 left-0 mt-4 bg-black text-white dark:text-gray-700 dark:bg-yellow-50 dark:hover:bg-black dark:hover:text-white inline-flex p-2 pl-8 hover:text-gray-700 hover:bg-yellow-50 font-bold z-10 transition-fast animated fadeInLeft">
+      bravo
+    </a>
+    <div class="max-w-4xl w-full mx-auto">
+      <div class="shadow-box bg-white dark:bg-gray-600 rounded-lg pt-32 md:pt-64 px-4 md:px-8 pb-8 animated fadeIn mb-8">
+        <h1 class="text-5xl font-semibold leading-normal pb-8 mb-8 border-b-8 border-gray-700">
+          Spliterator&lt;T&gt;
+        </h1>
+        
+        <div class="mb-8 flex flex-wrap">
+          <div class="text-gray-400 text-sm mr-4">2019-04-06 · 6 min read</div>
+          
+        </div>
+        <div class="markdown mb-8" v-pre>
+          <blockquote>
+<p>用于遍历和分区源元素的对象。 Spliterator覆盖的元素源可以是例如阵列， Collection ，IO通道或生成器函数。</p>
+<ul>
+<li>Spliterator可以单独遍历元素（ tryAdvance() ）或按顺序遍历元素（ forEachRemaining() ）。</li>
+<li>Spliterator还可以将其某些元素（使用trySplit() ）作为另一个Spliterator进行分区，以用于可能并行的操作。 使用无法拆分的Spliterator或以高度不平衡或低效的方式进行操作的操作不太可能从并行性中受益。 横向和分离排气元件; 每个Spliterator仅对单个批量计算有用。<br>
+  Spliterator还报告一组characteristics()选自其结构，源极和元件的ORDERED ， DISTINCT ， SORTED ， SIZED ， NONNULL ， IMMUTABLE ， CONCURRENT ，和SUBSIZED 。 Spliterator客户端可以使用这些来控制，专门化或简化计算。 例如，Collection的Spliterator将报告SIZED的Spliterator将报告DISTINCT ，而SortedSet的Spliterator也报告SORTED 。 特征报告为简单的联合位集。 一些特征还限制了方法行为; 例如，如果ORDERED ，遍历方法必须符合其记录的顺序。 未来可能会定义新特征，因此实现者不应将意义分配给未列出的值。 后期绑定 Spliterator在第一次遍历，第一次拆分或第一次查询估计大小时绑定到元素源，而不是在创建Spliterator时绑定。 非后期绑定的 Spliterator在构造点或任何方法的第一次调用时绑定到元素源。 遍历Spliterator时会反映在绑定之前对源进行的修改。 绑定Spliterator后，如果检测到结构性干扰， 应尽最大努力抛出ConcurrentModificationException 。 执行此操作的Spliterators称为快速失败 。 Spliterator的批量遍历方法（ forEachRemaining() ）可以优化遍历并在遍历所有元素之后检查结构干扰，而不是检查每个元素并立即失败。Spliterators可以通过estimateSize()方法估算剩余元素的数量。 理想情况下，如特征SIZED中所反映的，该值与成功遍历中遇到的元素数量完全对应。 然而，即使不完全已知，估计值对于在源上执行的操作仍然是有用的，例如帮助确定是否优选地进一步分割或顺序遍历剩余元素。尽管它们在并行算法中具有明显的实用性，但预计分裂器不是线程安全的。 相反，使用分裂器的并行算法的实现应确保分裂器一次仅由一个线程使用。 这通常很容易通过串行线程限制来实现，这通常是通过递归分解工作的典型并行算法的自然结果。 调用trySplit()的线程可以将返回的Spliterator移交给另一个线程，该线程又可以遍历或进一步拆分该Spliterator。 如果两个或多个线程在同一个spliterator上同时运行，则拆分和遍历的行为是不确定的。 如果原始线程将分离器移交给另一个线程进行处理，最好是在使用tryAdvance()消耗任何元素之前进行切换，因为某些保证（例如4510720863823对于SIZED分裂器的准确性）仅在遍历开始之前有效。Spliterator被提供用于int ， long ，和double值。 子类型默认实现tryAdvance(java.util.function.Consumer)和forEachRemaining(java.util.function.Consumer)框原始值到其对应的包装类的实例。 这种装箱可能会破坏使用原始专业化所获得的任何性能优势。 为避免装箱，应使用相应的基于图元的方法。 例如， Spliterator.OfPrimitive.tryAdvance(java.util.function.IntConsumer)和Spliterator.OfPrimitive.forEachRemaining(java.util.function.IntConsumer)应优先用于Spliterator.OfInt.tryAdvance(java.util.function.Consumer)和Spliterator.OfInt.forEachRemaining(java.util.function.Consumer) 。 使用基于装箱的方法tryAdvance()和forEachRemaining()遍历原始值不会影响遇到转换为盒装值的值的顺序。</li>
+</ul>
+</blockquote>
+<p>Spliterators，如<code>Iterator</code> ，用于遍历源的元素。 除了顺序遍历之外， <code>Spliterator</code> API还支持有效的并行遍历，支持分解以及单元素迭代。 此外，通过Spliterator访问元素的协议旨在施加比<code>Iterator</code>更小的每元素开销，并避免与<code>hasNext()</code>和<code>next()</code>具有单独方法相关的固有竞争。</p>
+<p>对于可变源，如果源在Spliterator绑定到其数据源的时间与遍历结束之间受到结构干扰（元素添加，替换或删除），则可能会发生任意和非确定性行为。 例如，当使用<code>java.util.stream</code>框架时，此类干扰将产生任意的，不确定的结果。</p>
+<p>源的结构干扰可以通过以下方式进行管理（大致降低合意性的顺序）：</p>
+<ul>
+<li>源不能在结构上受到干扰。<br>
+例如， <a href="https://www.apiref.com/java11-zh/java.base/java/util/concurrent/CopyOnWriteArrayList.html"><code>CopyOnWriteArrayList</code></a>的实例是不可变的源。 从源创建的<code>IMMUTABLE</code>报告<code>IMMUTABLE</code>的特征。</li>
+<li>源管理并发修改。<br>
+例如， <a href="https://www.apiref.com/java11-zh/java.base/java/util/concurrent/ConcurrentHashMap.html"><code>ConcurrentHashMap</code></a>的密钥集是并发源。 从源创建的<code>CONCURRENT</code>报告特征为<code>CONCURRENT</code> 。</li>
+<li>可变源提供了后期绑定和失败快速的Spliterator。<br>
+后期绑定使窗口变窄，在此期间干扰会影响计算; 在遍历开始并且抛出<a href="https://www.apiref.com/java11-zh/java.base/java/util/ConcurrentModificationException.html"><code>ConcurrentModificationException</code></a>之后，在尽力而为的基础上快速检测到结构干扰已经发生。 例如， <a href="https://www.apiref.com/java11-zh/java.base/java/util/ArrayList.html">JDK中的<code>ArrayList</code></a>和许多其他非并发<code>Collection</code>类提供了一种后期绑定，失败快速的分裂器。</li>
+<li>可变源提供非后期绑定但失败快速的Spliterator。<br>
+由于潜在干扰窗口较大，因此增加投掷<code>ConcurrentModificationException</code>的可能性。</li>
+<li>可变源提供了后期绑定和非故障快速Spliterator。<br>
+由于未检测到干扰，在遍历开始之后，源会冒任意，非确定性行为。</li>
+<li>可变源提供非后期绑定和非故障快速Spliterator。<br>
+源增加了任意，非确定性行为的风险，因为在构造之后可能发生未检测到的干扰。</li>
+</ul>
+
+        </div>
+        <!-- Share to Twitter, Weibo, Telegram -->
+        <div class="flex items-center">
+          <div class="mr-4 flex items-center">
+            <i class="ri-share-forward-line text-gray-500"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-blue-500 hover:bg-blue-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTwitter">
+            <i class="ri-twitter-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-red-500 hover:bg-red-100 dark:hover:bg-gray-600 inline-flex" @click="shareToWeibo">
+            <i class="ri-weibo-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-indigo-500 hover:bg-indigo-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTelegram">
+            <i class="ri-telegram-line"></i>
+          </div>
+        </div>
+      </div>
+
+      
+
+      
+        <div id="vlaine-comment"></div>
+      
+
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>  Made by  <a href="https://github.com/JoyZgq" target="_blank">zgq</a> 🎈❤❤❤🌹
+</footer>
+    </div>
+
+    <!-- TOC Container -->
+    <div class="fixed right-0 bottom-0 mb-16 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white dark:bg-gray-500 dark:text-gray-200 hover:shadow-lg transition-all animated fadeInRight" @click="showToc = true">
+      <i class="ri-file-list-line"></i>
+    </div>
+
+    <div class="fixed right-0 top-0 bottom-0 overflow-y-auto w-64 bg-white dark:bg-gray-800 p-4 border-l border-gray-100 dark:border-gray-600 z-10 transition-fast" :class="{ '-mr-64': !showToc }">
+      <div class="flex mb-4 justify-end">
+        <div class="w-8 h-8 inline-flex justify-center items-center rounded-full cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600 transition-fast" @click="showToc = false">
+          <i class="ri-close-line text-lg"></i>
+        </div>
+      </div>
+      <div class="post-toc-container">
+        
+      </div>
+    </div>
+
+    <!-- Back to top -->
+    <div class="fixed right-0 bottom-0 mb-4 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white hover:shadow-lg transition-all dark:bg-gray-500 dark:text-gray-200" @click="backToUp" v-show="scrolled">
+      <i class="ri-arrow-up-line"></i>
+    </div>
+  </div>
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+  <!-- Background of PhotoSwipe. 
+        It's a separate element as animating opacity is faster than rgba(). -->
+  <div class="pswp__bg">
+  </div>
+  <!-- Slides wrapper with overflow:hidden. -->
+  <div class="pswp__scroll-wrap">
+    <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+    <div class="pswp__container">
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+    </div>
+    <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+    <div class="pswp__ui pswp__ui--hidden">
+      <div class="pswp__top-bar">
+        <!--  Controls are self-explanatory. Order can be changed. -->
+        <div class="pswp__counter">
+        </div>
+        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+        <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+        <!-- element will get class pswp__preloader--active when preloader is running -->
+        <div class="pswp__preloader">
+          <div class="pswp__preloader__icn">
+            <div class="pswp__preloader__cut">
+              <div class="pswp__preloader__donut">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+        <div class="pswp__share-tooltip">
+        </div>
+      </div>
+      <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+      </button>
+      <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+      </button>
+      <div class="pswp__caption">
+        <div class="pswp__caption__center">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://JoyZgq.github.io/media/scripts/main.js"></script>
+  
+  <!-- Code Highlight -->
+  
+    <script src="https://JoyZgq.github.io/media/prism.js"></script>
+    <script>
+      Prism.highlightAll()
+    </script>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+  <script>
+    //拿到预览框架，也就是上面的html代码
+    var pswpElement = document.querySelectorAll('.pswp')[0];
+    //定义图片数组变量
+    var imgitems;
+    /**
+    * 用于显示预览界面
+    * @param index 图片数组下标
+    */
+    function viewImg(index) {
+      //其它选项这里不做过多阐述，详情见官网
+      var pswpoptions = {
+        index: parseInt(index, 10), // 开始幻灯片索引。0是第一张幻灯片。必须是整数，而不是字符串。
+        bgOpacity: 0.7, // 背景透明度，0-1
+        maxSpreadZoom: 3, // 缩放级别，不要太大
+      };
+      //初始化并打开PhotoSwipe，pswpElement对应上面预览框架，PhotoSwipeUI_Default为皮肤，imgitems为图片数组，pswpoptions为选项
+      var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, imgitems, pswpoptions);
+      gallery.init()
+    }
+    /**
+    * 用于添加图片点击事件
+    * @param img 图片元素
+    * @param index 所属下标（在imgitems中的位置）
+    */
+    function addImgClick(img, index) {
+      img.onclick = function() {
+        viewImg(index)
+      }
+    }
+    /**
+    * 轮询所有图片，获取src、width、height等数据，加入imgitems，并给图片元素添加事件
+    * 最好在onload中执行该方法，本站因放在最底部，所以直接初始化
+    * 异步加载图片可在图片元素创建完成后调用此方法
+    */
+    function initImg() {
+      //重置图片数组
+      imgitems = [];
+      //查找class:markdown 下的所有img元素并遍历
+      var imgs = document.querySelectorAll('.markdown img');
+      for (var i = 0; i < imgs.length; i++) {
+        var img = imgs[i];
+        //本站相册初始为loading图片，真实图片放在data-src
+        var ds = img.getAttribute("data-src");
+        //创建image对象，用于获取图片宽高
+        var imgtemp = new Image();
+        //判断是否存在data-src
+        if (ds != null && ds.length > 0) {
+          imgtemp.src = ds
+        } else {
+          imgtemp.src = img.src
+        }
+        //判断是否存在缓存
+        if (imgtemp.complete) {
+          var imgobj = {
+            "src": imgtemp.src,
+            "w": imgtemp.width,
+            "h": imgtemp.height,
+          };
+          imgitems[i] = imgobj;
+          addImgClick(img, i);
+        } else {
+          console.log('进来了2')
+          imgtemp.index = i;
+          imgtemp.img = img;
+          imgtemp.onload = function() {
+            var imgobj = {
+              "src": this.src,
+              "w": this.width,
+              "h": this.height,
+            };
+            //不要使用push，因为onload前后顺序会不同
+            imgitems[this.index] = imgobj
+            //添加点击事件
+            addImgClick(this.img, this.index);
+          }
+        }
+      }
+    }
+    //初始化
+    initImg();
+  </script>
+  
+    <script type="application/javascript" src="https://unpkg.com/valine"></script>
+<script type="application/javascript">
+  new Valine({
+    el: '#vlaine-comment',
+    appId: 'Sy2gsMvGcPQl3gTGsqqYsHW6-gzGzoHsz',
+    appKey: 'IpsgegiMUNgRg7l5BVXk6EXM',
+    pageSize: 10,
+    notify: false,
+    avatar: 'mp',
+    verify: true,
+    placeholder: '可观来都来了，不妨评论一下🌹🐱‍👤',
+    visitor: true,
+    highlight: false,
+    recordIP: true,
+  })
+</script>
+  
+  
+</body>
+
+</html>
