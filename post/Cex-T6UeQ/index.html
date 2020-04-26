@@ -36,7 +36,7 @@
   在未实现Cloneable接口的实例上调用Object的clone方法会导致抛出异常Clone..." />
   <meta property="og:type" content="articles">
   <meta property="og:url" content="https://JoyZgq.github.io/post/Cex-T6UeQ/" />
-  <meta property="og:image" content="https://JoyZgq.github.io/images/avatar.png">
+  <meta property="og:image" content="https://JoyZgq.github.io/post-images/Cex-T6UeQ.webp">
   <meta property="og:image:height" content="630">
   <meta property="og:image:width" content="1200">
   <meta name="twitter:title" content="Java.lang---interface---Cloneable,Thread.UncaughtExceptionHandler,Iterable&lt;T&gt;,Runnable - bravo">
@@ -69,8 +69,10 @@
           Java.lang---interface---Cloneable,Thread.UncaughtExceptionHandler,Iterable&lt;T&gt;,Runnable
         </h1>
         
+          <img src="https://JoyZgq.github.io/post-images/Cex-T6UeQ.webp" alt="Java.lang---interface---Cloneable,Thread.UncaughtExceptionHandler,Iterable&lt;T&gt;,Runnable" class="block w-full mb-8">
+        
         <div class="mb-8 flex flex-wrap">
-          <div class="text-gray-400 text-sm mr-4">2020-04-26 · 3 min read</div>
+          <div class="text-gray-400 text-sm mr-4">2019-04-09 · 3 min read</div>
           
         </div>
         <div class="markdown mb-8" v-pre>
@@ -122,10 +124,15 @@
 <tr>
 <td style="text-align:left"><code>default Spliterator</code></td>
 <td style="text-align:left"><code>spliterator()</code></td>
-<td style="text-align:left">在<a href="https://www.apiref.com/java11-zh/java.base/java/util/Spliterator.html">Iterable</a>描述的元素上创建<code>Iterable</code> 。</td>
+<td style="text-align:left">在<a href="https://joyzgq.github.io/post/bqpsTtCTf/">Iterable</a>描述的元素上创建<code>Iterable</code> 。</td>
 </tr>
 </tbody>
 </table>
+<h4 id="foreach">forEach</h4>
+<p>  如果指定了该顺序，则按迭代顺序执行操作。 操作抛出的异常将转发给调用者。如果操作执行修改元素的基础源的副作用，则此方法的行为未指定，除非重写类已指定并发修改策略。</p>
+<h4 id="spliterator">spliterator</h4>
+<p>  在Iterable描述的元素上创建Iterable 。默认实现从iterable的Iterator创建early-binding Iterator , spliterator继承了iterable迭代器的fail-fast属性。<em>通常应该覆盖默认实现， 默认实现返回的分裂器具有较差的分割能<br>
+力，未分级，并且不报告任何分裂器特征。 实现类几乎总能提供更好的实现。</em></p>
 
         </div>
         <!-- Share to Twitter, Weibo, Telegram -->
@@ -176,7 +183,12 @@
 <li><a href="#cloneable">Cloneable</a></li>
 <li><a href="#threaduncaughtexceptionhandler">Thread.UncaughtExceptionHandler</a></li>
 <li><a href="#runnable">Runnable</a></li>
-<li><a href="#iterablet">Iterable<T></a></li>
+<li><a href="#iterablet">Iterable<T></a>
+<ul>
+<li><a href="#foreach">forEach</a></li>
+<li><a href="#spliterator">spliterator</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
