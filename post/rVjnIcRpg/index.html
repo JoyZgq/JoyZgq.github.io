@@ -1,0 +1,1118 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>《人人都懂设计模式：从生活中领悟设计模式》---总结(1) - bravo</title>
+<link rel="shortcut icon" href="https://JoyZgq.github.io/favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
+<link rel="stylesheet" href="https://JoyZgq.github.io/media/css/tailwind.css">
+<link rel="stylesheet" href="https://JoyZgq.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="《人人都懂设计模式：从生活中领悟设计模式》---总结(1) - bravo - Atom Feed" href="https://JoyZgq.github.io/atom.xml">
+
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-164181119-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-164181119-1');
+  </script>
+    
+
+  <meta name="description" content="
+程序源于生活，又高于生活！程序的灵魂在于思维的方式，而思维的灵感来源于精彩的生活
+
+监听模式
+什么是监听模式？
+
+官方定义：在对象间定义一种一对多的依赖关系，当这个对象状态发生改变时，所有依赖它的对象都会被通知并自动更新。
+监听模式是一种..." />
+  <meta property="og:title" content="《人人都懂设计模式：从生活中领悟设计模式》---总结(1) - bravo">
+  <meta property="og:description" content="
+程序源于生活，又高于生活！程序的灵魂在于思维的方式，而思维的灵感来源于精彩的生活
+
+监听模式
+什么是监听模式？
+
+官方定义：在对象间定义一种一对多的依赖关系，当这个对象状态发生改变时，所有依赖它的对象都会被通知并自动更新。
+监听模式是一种..." />
+  <meta property="og:type" content="articles">
+  <meta property="og:url" content="https://JoyZgq.github.io/post/rVjnIcRpg/" />
+  <meta property="og:image" content="https://JoyZgq.github.io/post-images/rVjnIcRpg.webp">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:width" content="1200">
+  <meta name="twitter:title" content="《人人都懂设计模式：从生活中领悟设计模式》---总结(1) - bravo">
+  <meta name="twitter:description" content="
+程序源于生活，又高于生活！程序的灵魂在于思维的方式，而思维的灵感来源于精彩的生活
+
+监听模式
+什么是监听模式？
+
+官方定义：在对象间定义一种一对多的依赖关系，当这个对象状态发生改变时，所有依赖它的对象都会被通知并自动更新。
+监听模式是一种...">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://JoyZgq.github.io/post/rVjnIcRpg/">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+ 
+  
+    <link rel="stylesheet" href="https://JoyZgq.github.io/media/css/prism-github.css">
+  
+
+  
+</head>
+
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
+    <a href="https://JoyZgq.github.io" class="fixed top-0 left-0 mt-4 bg-black text-white dark:text-gray-700 dark:bg-yellow-50 dark:hover:bg-black dark:hover:text-white inline-flex p-2 pl-8 hover:text-gray-700 hover:bg-yellow-50 font-bold z-10 transition-fast animated fadeInLeft">
+      bravo
+    </a>
+    <div class="max-w-4xl w-full mx-auto">
+      <div class="shadow-box bg-white dark:bg-gray-600 rounded-lg pt-32 md:pt-64 px-4 md:px-8 pb-8 animated fadeIn mb-8">
+        <h1 class="text-5xl font-semibold leading-normal pb-8 mb-8 border-b-8 border-gray-700">
+          《人人都懂设计模式：从生活中领悟设计模式》---总结(1)
+        </h1>
+        
+          <img src="https://JoyZgq.github.io/post-images/rVjnIcRpg.webp" alt="《人人都懂设计模式：从生活中领悟设计模式》---总结(1)" class="block w-full mb-8">
+        
+        <div class="mb-8 flex flex-wrap">
+          <div class="text-gray-400 text-sm mr-4">2020-05-04 · 40 min read</div>
+          
+            <a href="https://JoyZgq.github.io/tag/D-1bsAj6e/" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
+              <i class="ri-hashtag"></i>
+              review
+            </a>
+          
+        </div>
+        <div class="markdown mb-8" v-pre>
+          <blockquote>
+<p>程序源于生活，又高于生活！程序的灵魂在于思维的方式，而思维的灵感来源于精彩的生活</p>
+</blockquote>
+<h3 id="监听模式">监听模式</h3>
+<h4 id="什么是监听模式">什么是监听模式？</h4>
+<ul>
+<li>官方定义：在对象间定义一种一对多的依赖关系，当这个对象状态发生改变时，所有依赖它的对象都会被通知并自动更新。</li>
+<li>监听模式是一种一对多的关系，可以有任意个（一个或多个）观察者对象同时监听某一个对象。监听的对象叫观察者（后面提到监听者，其实就指观察者，两者是相同的），被监听的对象叫被观察者（Observable，也叫主题，即Subject）。被观察者对象在状态或内容（数据）发生变化时，会通知所有观察者对象，使它们能够做出相应的变化（如自动更新自己的信息）。</li>
+</ul>
+<h4 id="设计思想">设计思想？</h4>
+<ul>
+<li>监听模式又名观察者模式，顾名思义就是观察与被观察的关系。</li>
+<li>观察者模式是对象的行为模式，又叫发布/订阅（Publish/Subscribe）模式、模型/视图（Model/View）模式、源/监听器（Source/Listener）模式或从属者（Dependents）模式。</li>
+<li>核心思想：在被观察者与观察者之间建立一种自动触发的关系。</li>
+</ul>
+<h4 id="模型设计要点">模型设计要点？</h4>
+<ul>
+<li>要明确谁是观察者谁是被观察者，只要明白谁是应该关注的对象，问题也就明白了。一般观察者与被观察者之间是多对一的关系，一个被观察对象可以有多个监听对象（观察者）。如一个编辑框，有鼠标点击的监听者，也有键盘的监听者，还有内容改变的监听者。</li>
+<li>Observable 在发送广播通知的时候，无须指定具体的 Observer,Observer 可以自己决定是否订阅Subject的通知。</li>
+<li>被观察者至少需要有三个方法：添加监听者、移除监听者、通知Observer的方法。观察者至少要有一个方法：更新方法，即更新当前的内容，做出相应的处理。</li>
+<li>添加监听者和移除监听者在不同的模型称谓中可能会有不同命名，如在观察者模型中一般是addObserver/removeObserver；在源/监听器（Source/Listener）模型中一般是attach/detach，应用在桌面编程的窗口中还可能是attachWindow/detachWindow或Register/UnRegister。不要被名称弄迷糊了，不管它们是什么名称，其实功能都是一样的，就是添加或删除观察者。</li>
+</ul>
+<h4 id="推模型和拉模型">推模型和拉模型？</h4>
+<ul>
+<li>推模型：被观察者对象向观察者推送主题的详细信息，不管观察者是否需要，推送的信息通常是主题对象的全部或部分数据。一般在这种模型的实现中，会把被观察者对象中的全部或部分信息通过update参数传递给观察者（update（Object obj），通过obj参数传递）。</li>
+<li>被观察者在通知观察者的时候，只传递少量信息。如果观察者需要更具体的信息，由观察者主动到被观察者对象中获取，相当于观察者从被观察者对象中拉数据。一般在这种模型的实现中，会把被观察者对象自身通过 update 方法传递给观察者（update（Observableobservable），通过observable 参数传递），这样在观察者需要获取数据的时候，就可以通过这个引用来获取了。</li>
+</ul>
+<h4 id="实战应用">实战应用？</h4>
+<ul>
+<li>登录异常检测和提醒？</li>
+<li>应用场景
+<ul>
+<li>对一个对象状态或数据的更新需要其他对象同步更新，或者一个对象的更新需要依赖另一个对象的更新。</li>
+<li>对象仅需要将自己的更新通知给其他对象而不需要知道其他对象的细节，如消息推送。监听模式还可以用于网络中的客户端和服务器，比如手机中的各种App的消息推送，服务端是被观察者，各个手机App 是观察者，一旦服务器上的数据（如 App 升级信息）有更新，就会被推送到手机客户端。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="状态模式水的三种状态">状态模式（水的三种状态）</h3>
+<h4 id="什么是状态模式">什么是状态模式？</h4>
+<ul>
+<li>官方定义：允许一个对象在其内部状态发生改变时改变其行为，使这个对象看上去就像改变了它的类型一样。</li>
+<li>如水一般，状态即事物所处的某一种形态。状态模式是说一个对象在其内部状态发生改变时，其表现的行为和外在属性不一样，这个对象看上去就像改变了它的类型一样。因此，状态模式又称为对象的行为模式。</li>
+</ul>
+<h4 id="设计思想-2">设计思想？</h4>
+<ul>
+<li>一个事物（对象）有多种状态，在不同的状态下所表现出来的行为和属性不一样。</li>
+</ul>
+<h4 id="模型说明">模型说明</h4>
+<ul>
+<li>设计要点？
+<ul>
+<li>在实现状态模式的时候，实现的场景状态有时候会非常复杂，决定状态变化的因素也非常多，我们可以把决定状态变化的属性单独抽象成一个类 StateInfo，这样判断状态属性是否符合当前的状态isMatch时就可以传入更多的信息。</li>
+<li>每一种状态应当只有唯一的实例。</li>
+</ul>
+</li>
+<li>优缺点？
+<ul>
+<li>优点？
+<ul>
+<li>封装了状态的转换规则，在状态模式中可以将状态的转换代码封装在环境类中，对状态转换代码进行集中管理，而不是分散在一个个业务逻辑中；</li>
+<li>将所有与某个状态有关的行为放到一个类中（称为状态类），使开发人员只专注于该状态下的逻辑开发；</li>
+<li>允许状态转换逻辑与状态对象合为一体，使用时只需要注入一个不同的状态对象即可使环境对象拥有不同的行为。</li>
+</ul>
+</li>
+<li>缺点？
+<ul>
+<li>会增加系统类和对象的个数。</li>
+<li>状态模式的结构与实现都较为复杂，如果使用不当容易导致程序结构和代码的混乱。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="应用场景">应用场景？</h4>
+<ul>
+<li>一个对象的行为取决于它的状态，并且它在运行时可能经常改变它的状态，从而改变它的行为。</li>
+<li>一个操作中含有庞大的多分支的条件语句，这些分支依赖于该对象的状态，且每一个分支的业务逻辑都非常复杂时，我们可以使用状态模式来拆分不同的分支逻辑，使程序有更好的可读性和可维护性。</li>
+</ul>
+<hr>
+<h3 id="中介模式租房子">中介模式（租房子）</h3>
+<h4 id="什么是中介模式">什么是中介模式？</h4>
+<ul>
+<li>官方定义：用一个中介对象来封装一系列的对象交互，中介者使各对象不需要显式地相互引用，从而使其耦合松散，而且可以独立地改变它们之间的交互；</li>
+<li>中介模式又称为调停模式。</li>
+</ul>
+<h4 id="设计思想-3">设计思想？</h4>
+<ul>
+<li>在很多系统中，多个类很容易相互耦合，形成网状结构。中介模式的作用就是将这种网状结构分离成星型结构，调整之后，使得对象间的结构更加简洁，交互更加顺畅。</li>
+</ul>
+<h4 id="模型抽象">模型抽象？</h4>
+<ul>
+<li>设计要点（三个角色）：
+<ul>
+<li>交互对象（InteractiveObject）：要进行交互的一系列对象。</li>
+<li>中介者（Mediator）：负责协调各个对象之间的交互。</li>
+<li>具体中介者（Mediator）：中介的具体实现。</li>
+</ul>
+</li>
+<li>优缺点？
+<ul>
+<li>优点？
+<ul>
+<li>Mediator （中介）将原本分布于多个对象间的行为集中在一起，作为一个独立的概念并将其封装在一个对象中，简化了对象之间的交互；</li>
+<li>将多个调用者与多个实现者之间多对多的交互关系，转换为一对多的交互关系，一对多的交互关系更易于理解、维护和扩展，大大减少了多个对象之间相互交叉引用的情况。</li>
+</ul>
+</li>
+<li>缺点？
+<ul>
+<li>中介者承接了所有的交互逻辑，交互的复杂度转变成了中介者的复杂度，中介者类会变得越来越庞大和复杂，以至于难以维护。</li>
+<li>中介者出问题会导致多个使用者同时出问题。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="实战应用-2">实战应用？</h4>
+<ul>
+<li>QQ、钉钉这类支持视频通信的社交软件，需要和通信设备（扬声器、麦克风、摄像头）进行交互。在移动平台，各类通信设备一般只会有一个，但在PC端（尤其是Windows系统下），你可能会有多个扬声器、多个麦克风，甚至多个摄像头，还可能会在通话的过程中由麦克风A切换到麦克风B。</li>
+<li>应用场景？
+<ul>
+<li>一组对象以定义良好但复杂的方式进行通信。产生的相互依赖关系结构混乱且难以理解。</li>
+<li>一个对象引用其他很多对象并且直接与这些对象通信，导致难以复用该对象。</li>
+<li>想通过一个中间类来封装多个类中的行为，同时又不想生成太多的子类。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="装饰模式">装饰模式</h3>
+<h4 id="什么是装饰模式">什么是装饰模式？</h4>
+<ul>
+<li>官方定义：动态地给一个对象增加一些额外的职责，就拓展对象功能来说，装饰模式比生成子类的方式更为灵活。</li>
+<li>结构庞大的子类继承关系转换成了结构紧凑的装饰关系。</li>
+</ul>
+<h4 id="设计思想-4">设计思想？</h4>
+<ul>
+<li>在程序中，我们希望动态地给一个类增加额外的功能，而不改动原有的代码，就可用装饰模式来进行拓展。</li>
+</ul>
+<h4 id="模型抽象-2">模型抽象？</h4>
+<ul>
+<li>设计要点？
+<ul>
+<li>可灵活地给一个对象增加职责或拓展功能。你可任意地穿上自己想穿的衣服。不管穿上什么衣服，你还是那个你，但穿上不同的衣服你就会有不同的外表。</li>
+<li>可增加任意多个装饰 ；</li>
+<li>装饰的顺序不同，可能产生不同的效果。</li>
+</ul>
+</li>
+<li>优缺点？
+<ul>
+<li>优点？
+<ul>
+<li>（1）使用装饰模式来实现扩展比使用继承更加灵活，它可以在不创造更多子类的情况下，将对象的功能加以扩展。</li>
+<li>（2）可以动态地给一个对象附加更多的功能。</li>
+<li>（3）可以用不同的装饰器进行多重装饰，装饰的顺序不同，可能产生不同的效果。</li>
+<li>（4）装饰类和被装饰类可以独立发展，不会相互耦合；装饰模式相当于继承的一个替代模式。</li>
+</ul>
+</li>
+<li>缺点？
+<ul>
+<li>与继承相比，用装饰的方式拓展功能容易出错，排错也更困难。对于多次装饰的对象，调试寻找错误时可能需要逐级排查，较为烦琐</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="应用场景-2">应用场景？</h4>
+<ul>
+<li>（1）有大量独立的扩展，为支持每一种组合将产生大量的子类，使得子类数目呈爆炸性增长时。</li>
+<li>（2）需要动态地增加或撤销功能时。</li>
+<li>（3）不能采用生成子类的方法进行扩充时，类的定义不能用于生成子类（如Java中的final类）。</li>
+<li>装饰模式的应用场景非常广泛。如在实际项目开发中经常看到的过滤器，便可用装饰模式的方式实现，如Java中的I/O中的FilterInputStream和FilterOutputStream；</li>
+</ul>
+<hr>
+<h3 id="单例模式">单例模式</h3>
+<h4 id="什么是单例模式">什么是单例模式？</h4>
+<ul>
+<li>官方定义：确保一个类只有一个实例，并且提供一个访问它的全局方法。</li>
+</ul>
+<h4 id="设计思想-5">设计思想？</h4>
+<ul>
+<li>单例模式就是保证一个类有且只有一个对象（实例）的一种机制。单例模式用来控制某些事物只允许有一个个体，比如在我们生活的世界中，有生命的星球只有一个—地球（至少到目前为止在人类所探索到的世界中是这样的）。</li>
+</ul>
+<h4 id="应用场景-3">应用场景？</h4>
+<p>-（1）你希望这个类只有一个且只能有一个实例。<br>
+-（2）项目中的一些全局管理类（Manager）可以用单例模式来实现。</p>
+<hr>
+<h3 id="克隆模式">克隆模式</h3>
+<h4 id="什么是克隆模式">什么是克隆模式？</h4>
+<ul>
+<li>官方定义：用原型实例指定要创建对象的种类，并通过拷贝这些原型的属性来创建新的对象。</li>
+<li>通过拷贝自身的属性来创建一个新对象的过程叫作克隆模式（Clone）。在很多书籍和资料中被称为原型模式，克隆模式的核心就是一个clone方法，clone方法的功能就是拷贝父本的所有属性。主要包括两个过程：（1）分配一块新的内存空间给新的对象。（2）拷贝父本对象的所有属性。</li>
+</ul>
+<h4 id="深拷贝与浅拷贝">深拷贝与浅拷贝？</h4>
+<ul>
+<li>浅拷贝只拷贝引用类型对象的指针（指向），而不拷贝引用类型对象指向的值；深拷贝则同时拷贝引用类型对象及其指向的值。</li>
+<li><em><strong>通过克隆的方式创建对象时，浅拷贝往往是很危险的，因为如果这个类有引用类型的属性时，一个对象的改变会引起另一个对象也改变。深拷贝会对一个对象的属性进行完全拷贝，这样两个对象之间就不会相互影响了，你改你的，我改我的。</strong></em></li>
+<li>在使用克隆模式时，除非一些特殊情况（如需求本身就要求两个对象一起改变），尽量使用深拷贝的方式（我们称其为安全模式）。</li>
+</ul>
+<h4 id="设计要点">设计要点？</h4>
+<p>  克隆模式也叫原型模式，应用场景非常广泛。在Java中与基类Object融为一体，可以随手就拿来用，只要implements Cloneabble接口就默认拥有了克隆的功能。在设计克隆模式时，唯一需要注意的是：区分浅拷贝与深拷贝，除非一些特殊情况（如需求本身就要求两个对象一起改变），尽量使用深拷贝的方式。</p>
+<h4 id="优缺点">优缺点？</h4>
+<ul>
+<li>优点？
+<ul>
+<li>克隆模式通过内存拷贝的方式进行复制，比new的方式创建对象性能更好。</li>
+<li>通过深拷贝的方式，可以方便地创建一个具有相同属性和行为的另一个对象，特别是对于复杂对象，方便性尤为突出。</li>
+</ul>
+</li>
+<li>缺点？</li>
+</ul>
+<h4 id="应用场景-4">应用场景？</h4>
+<ul>
+<li>（1）如果创建新对象（如复杂对象）成本较高，我们可以利用已有的对象进行复制来获得。</li>
+<li>（2）类的初始化需要消耗非常多的资源时，如需要消耗很多的数据、硬件等资源。</li>
+<li>（3）可配合备忘录模式做一些备份的工作。</li>
+</ul>
+<hr>
+<h3 id="职责模式流程审批">职责模式（流程审批）</h3>
+<h4 id="什么是职责模式">什么是职责模式？</h4>
+<ul>
+<li>官方定义：为避免请求发送者与接收者耦合在一起，让多个对象都有可能接收请求。将这些接收对象连接成一条链，并且沿着这条链传递请求，直到有对象处理它为止。</li>
+<li>职责模式也称为责任链模式，它将请求的发送者和接收者解耦了。客户端不需要知道请求处理者的明确信息和处理的具体逻辑，甚至不需要知道链的结构，它只需要将请求进行发送即可。</li>
+</ul>
+<h4 id="设计思想-6">设计思想？</h4>
+<p>  责任链条上的每一个人只处理自己职责范围内的请求，对于自己处理不了的请求，直接交给下一个责任人。这就是程序设计中职责模式的核心思想。</p>
+<h4 id="设计要点-2">设计要点？</h4>
+<ul>
+<li>请求者与请求内容：确认谁要发送请求，发送请求的对象称为请求者。请求的内容通过发送请求时的参数进行传递。</li>
+<li>有哪些责任人：责任人是构成责任链的关键要素。请求的流动方向是链条中的线，而责任人则是链条上的节点，线和节点共同构成了一条链条。</li>
+<li>对责任人进行抽象：真实世界中的责任人多种多样，纷繁复杂，有不同的职责和功能；但他们也有一个共同的特征—都可以处理请求。所以需要对责任人进行抽象，使他们具有责任的可传递性。</li>
+<li>责任人可自由组合：责任链上的责任人可以根据业务的具体逻辑进行自由的组合和排序。</li>
+</ul>
+<h4 id="优缺点-2">优缺点？</h4>
+<ul>
+<li>优点？
+<ul>
+<li>（1）降低耦合度。它将请求的发送者和接收者解耦。</li>
+<li>（2）简化了对象。它使得对象不需要知道链的结构。</li>
+<li>（3）增强给对象指派职责的灵活性。可改变链内的成员或者调动它们的次序，允许动态地新增或者删除责任人。</li>
+<li>（4）增加新的处理类很方便。</li>
+</ul>
+</li>
+<li>缺点？
+<ul>
+<li>（1）不能保证请求一定被接收。</li>
+<li>（2）系统性能将受到一定的影响，而且在进行代码调试时不太方便，可能会造成循环调用。</li>
+</ul>
+</li>
+</ul>
+<h4 id="应用场景-5">应用场景？</h4>
+<ul>
+<li>（1）有多个对象可以处理同一个请求，具体哪个对象处理该请求在运行时刻自动确定。</li>
+<li>（2）请求的处理具有明显的一层层传递关系。</li>
+<li>（3）请求的处理流程和顺序需要程序运行时动态确定。</li>
+<li>（4）常见的审批流程（账务报销、转岗申请等）。</li>
+</ul>
+<hr>
+<h3 id="代理模式代领快递">代理模式（代领快递）</h3>
+<h4 id="什么是代理模式">什么是代理模式？</h4>
+<ul>
+<li>官方定义：为其他对象提供一种代理以控制对这个对象的访问。</li>
+<li>一个对象完成某项动作或任务，是通过对另一个对象的引用来完成的，这种模式叫代理模式。</li>
+</ul>
+<h4 id="设计思想-7">设计思想？</h4>
+<p>  代理模式的英文叫作Proxy或Surrogate，其核心思想是：<br>
+● 使用一个额外的间接层来支持分散的、可控的、智能的访问。<br>
+● 增加一个包装和委托来保护真实的组件，以避免过度复杂。<br>
+  代理对象可以在客户端和目标对象之间起到中间调和的作用，并且可以通过代理对象隐藏不希望被客户端看到的内容和服务，或者添加客户需要的额外服务。</p>
+<h4 id="设计要点-3">设计要点？</h4>
+<ul>
+<li>主题（Subject）：定义操作、活动、任务的接口类。</li>
+<li>真实主题（RealSubject）：真正完成操作、活动、任务的具体类。</li>
+<li>代理主题（ProxySubject）：代替真实主题完成操作、活动、任务的代理类。</li>
+</ul>
+<h4 id="优缺点-3">优缺点？</h4>
+<ul>
+<li>优点？
+<ul>
+<li>代理模式能够协调调用者和被调用者，在一定程度上降低系统的耦合度。</li>
+<li>可以灵活地隐藏被代理对象的部分功能和服务，也可以增加额外的功能和服务。</li>
+</ul>
+</li>
+<li>缺点？
+<ul>
+<li>由于在客户端和真实主题之间增加了代理对象，因此有些类型的代理模式可能会造成请求的处理速度变慢；</li>
+<li>实现代理模式需要额外的工作，有些代理模式的实现非常复杂。</li>
+</ul>
+</li>
+</ul>
+<h4 id="应用场景-6">应用场景？</h4>
+<ul>
+<li>（1）不想或者不能直接引用一个对象时，如在移动端加载网页信息时，因为下载真实大图比较耗费流量、影响性能，可以用一个小图代替进行渲染（用一个代理对象去下载小图），在真正点击图片时，才下载大图，显示大图效果。还有HTML中的占位符，其实也是代理模式的思想。</li>
+<li>（2）想对一个对象的功能进行加强时，如在字体（Font）渲染时，对粗体（BoldFont）进行渲染时，可使用字体Font对象进行代理，只要在对Font进行渲染后进行加粗的操作即可。</li>
+<li>（3）各种特殊用途的代理：远程代理、虚拟代理、Copy-on-Write 代理、保护（Protect orAccess）代理、Cache代理、防火墙（Firewall）代理、同步化（Synchronization）代理、智能引用（Smart Reference）代理。</li>
+</ul>
+<hr>
+<h3 id="外观模式">外观模式</h3>
+<h4 id="什么是外观模式">什么是外观模式？</h4>
+<ul>
+<li>官方定义：为子系统中的一组接口提供一个一致的界面称为外观模式，外观模式定义了一个高层接口，这个接口使得这一子系统更容易使用。</li>
+<li>将复杂的业务通过一个对接人来提供一整套统一的（一条龙式的）服务，让用户不用关心内部复杂的运行机制。这种方式在程序中叫外观模式，也叫门面模式。</li>
+</ul>
+<h4 id="设计思想-8">设计思想？</h4>
+<p>  用一个简单的接口来封装一个复杂的系统，使这个系统更容易使用。</p>
+<h4 id="设计要点-4">设计要点？</h4>
+<ul>
+<li>（1）实现了子系统与客户端之间的松耦合关系，这使得子系统的变化不会影响调用它的客户端。</li>
+<li>（2）简化了客户端对子系统的使用难度，客户端（用户）无须关心子系统的具体实现方式，而只需要和外观进行交互即可。</li>
+<li>（3）为不同的用户提供了统一的调用接口，方便了系统的管理和维护。</li>
+</ul>
+<h4 id="优缺点-4">优缺点？</h4>
+<ul>
+<li>优点？
+<ul>
+<li>（1）实现了子系统与客户端之间的松耦合关系，这使得子系统的变化不会影响调用它的客户端。</li>
+<li>（2）简化了客户端对子系统的使用难度，客户端（用户）无须关心子系统的具体实现方式，而只需要和外观进行交互即可。</li>
+</ul>
+<ul>
+<li>（3）为不同的用户提供了统一的调用接口，方便了系统的管理和维护。</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>缺点？<br>
+  因为统一了调用的接口，降低了系统功能的灵活性。</li>
+</ul>
+<h4 id="实战">实战？</h4>
+<ul>
+<li>文件的压缩与解压缩</li>
+<li>应用？
+<ul>
+<li>（1）要为一个复杂子系统提供一个简单接口时。</li>
+<li>（2）客户程序与多个子系统之间存在很大的依赖性时。引入外观类将子系统与客户以及其他子系统解耦，可以提高子系统的独立性和可移植性。</li>
+<li>（3）在层次化结构中，可以使用外观模式定义系统中每一层的入口，层与层之间不直接产生联系，而通过外观类建立联系，降低层之间的耦合度。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="迭代模式">迭代模式</h3>
+<h4 id="什么是迭代模式">什么是迭代模式？</h4>
+<p>  提供一种方法顺序地访问一组聚合对象（一个容器）中的各个元素，而又不需要暴露该对象的内部细节。</p>
+<h4 id="设计要点-5">设计要点？</h4>
+<ol>
+<li>了解容器的数据结构及可能的层次结构。</li>
+<li>根据需要确定迭代器要实现的功能，如next（）、previous（）、current（）、toBegin（）、toEnd（）中的一个或几个。</li>
+</ol>
+<h4 id="优缺点-5">优缺点？</h4>
+<ul>
+<li>优点？
+<ol>
+<li>迭代器模式将存储数据和遍历数据的职责分离。</li>
+<li>简化了聚合数据的访问方式。</li>
+<li>可支持多种不同的方式（如顺序和逆序）遍历一个聚合对象。</li>
+</ol>
+</li>
+<li>缺点？<br>
+需要额外增加迭代器的功能实现，增加新的聚合类时，可能需要增加新的迭代器。</li>
+</ul>
+<h4 id="应用场景-7">应用场景？</h4>
+<ul>
+<li>（1）集合的内部结构复杂，不想暴露对象的内部细节，只提供精简的访问方式。</li>
+<li>（2）需要提供统一的访问接口，从而对不同的集合使用统一的算法。</li>
+<li>（3）需要为一系列聚合对象提供多种不同的访问方式。</li>
+</ul>
+<hr>
+<h3 id="组合模式diy-pc">组合模式（DIY PC）</h3>
+<h4 id="什么是组合模式">什么是组合模式？</h4>
+<ul>
+<li>官方定义：将对象组合成树形结构以表示“整体-部分”的层次结构关系。组合使得用户对单个对象和复合对象的使用具有一致性。</li>
+<li>组合模式使得用户对单个对象和组合对象的使用具有一致性，使用组合对象就像使用一般对象一样，不用关心内部的组织结构。</li>
+</ul>
+<h4 id="设计要点-6">设计要点？</h4>
+<ul>
+<li>（1）理清部分与整体的关系，了解对象的组成结构。</li>
+<li>（2）组合模式是一种具有层次关系的树形结构，不能再分的叶子节点是具体的组件，也就是最小的逻辑单元；具有子节点（由多个子组件组成）的组件称为复合组件，也就是组合对象。</li>
+</ul>
+<h4 id="优缺点-6">优缺点？</h4>
+<ol>
+<li>调用简单，组合对象可以像一般对象一样使用。</li>
+<li>组合对象可以自由地增加、删除组件，可灵活地组合不同的对象。</li>
+</ol>
+<ul>
+<li><strong><strong>在一些层次结构太深的场景中，组合结构会变得太庞杂。</strong></strong></li>
+</ul>
+<h4 id="应用">应用？</h4>
+<ul>
+<li>（1）对象之间具有明显的“部分-整体”的关系时，或者具有层次关系时。</li>
+<li>（2）组合对象与单个对象具有相同或类似行为（方法），用户希望统一地使用组合结构中的所有对象</li>
+</ul>
+<hr>
+<h3 id="构建模式玩积木">构建模式（玩积木）</h3>
+<h4 id="什么是构建模式">什么是构建模式？</h4>
+<p>  》官方定义：将一复杂对象的构建过程和它的表现分离，使得同样的构建过程可以获取（创建）不同的表现。</p>
+<h4 id="设计思想-9">设计思想？</h4>
+<ul>
+<li>构建顾名思义就是把各种部件通过一定的方式和流程构造成一个成品的过程。在程序中，我们将这一过程称为构建模式（英文叫Builder Pattern，不同的书籍和资料翻译各有不同，有的也叫建造者模式或生成器模式）。</li>
+<li>将产品的创建过程与产品本身分离开来，使得创建过程更加清晰，能够更加精确地控制复杂对象的创建过程，让使用者可以用相同的创建过程创建不同的产品。</li>
+</ul>
+<h4 id="区别">区别？</h4>
+<ul>
+<li>工厂模式：工厂模式关注的是整个产品（整体对象）的生成，即成品的生成；而构建模式关注的是产品的创建过程和细节，一步一步地由各个子部件构建为一个成品。</li>
+<li>组合模式：
+<ul>
+<li>区别：组合模式关注的是对象内部的组成结构，强调的是部分与整体的关系。构建模式关注的是对象的创建过程，即由一个一个的子部件构建一个成品的过程。</li>
+<li>联系：组合模式和构建模式其实也经常被一起使用。还是以组装电脑为例，组合模式和构建模式一起使。</li>
+</ul>
+</li>
+</ul>
+<h4 id="设计要点-7">设计要点？</h4>
+<ul>
+<li>（1）产品（Product）：即你要构建的对象。</li>
+<li>（2）构建者（Builder）：构建模式的核心类，负责产品的构建过程。</li>
+<li>（3）指挥者（BuilderManager）：构建的管理类，负责管理每一种产品的创建数量和创建顺序。</li>
+</ul>
+<h4 id="优缺点-7">优缺点？</h4>
+<ol>
+<li>将产品（对象）的创建过程与产品（对象）本身分离开来，让使用方（调用者）可以用相同的创建过程创建不同的产品（对象）。</li>
+<li>将对象的创建过程单独分解出来，使得创建过程更加清晰，能够更加精确地控制复杂对象的创建过程。</li>
+<li>针对升级版的构建模式，每一个具体构建者都相对独立，而与其他的具体构建者无关，因此可以很方便地替换具体构建者或增加新的具体构建者。</li>
+</ol>
+<ul>
+<li><strong><strong>增加了很多创建类，如果产品的类型和种类比较多，将会增加很多类，使整个系统变得更加庞杂。</strong></strong></li>
+<li><strong><strong>产品之间的结构相差很大时，构建模式将很难适应。</strong></strong></li>
+</ul>
+<h4 id="应用场景-8">应用场景？</h4>
+<p>（1）产品（对象）的创建过程比较复杂，希望将产品的创建过程和它本身的功能分离开来。<br>
+（2）产品有很多种类，每个种类之间内部结构比较类似，但有很多差异；不同的创建顺序或不同的组合方式，将创建不同的产品。</p>
+<blockquote>
+<p>  构建模式还是比较常用的一种设计模式，常常用于有多个对象需要创建且每个对象都有比较复杂的内部结构时。比如程序员都熟悉的XML，是由很多标签组成的一种树形结构的文档或文本内容，每个标签可以有多个属性或子标签。如果我们要增加一些自定义的 XML 元素（如下面的两个元素Book和Outline），就可以使用构建模式。因为每个元素都有类似的内部结构（都是树形的标签结构），但每个元素都有自己不同的属性和子标签（且含义各不相同）。</p>
+</blockquote>
+<hr>
+<h3 id="适配模式插座转换器">适配模式（插座转换器）</h3>
+<h4 id="什么是适配模式">什么是适配模式？</h4>
+<ul>
+<li>官方定义：将一个类的接口变成客户端所期望的另一种接口，从而使原本因接口不匹配而无法一起工作的两个类能够在一起工作。</li>
+<li>作用：（1）接口转换，将原有的接口（或方法）转换成另一种接口。（2）用新的接口包装一个已有的类。（3）匹配一个老的组件到一个新的接口。</li>
+</ul>
+<h4 id="设计思想-10">设计思想？</h4>
+<ul>
+<li>核心思想：将一个对象经过包装或转换后使它符合指定的接口，使得调用方可以像使用接口的一般对象一样使用它。</li>
+<li>榫卯结构</li>
+<li>适配模式通常用于对已有的系统进行新功能拓展，尤其适用于在设计良好的系统框架下接入第三方的接口或第三方的SDK。</li>
+</ul>
+<ul>
+<li>实现方式：一种是组合方式，另一种是继承方式，</li>
+</ul>
+<h4 id="设计要点-8">设计要点?</h4>
+<ul>
+<li>（1）目标（Target）：即你期望的目标接口，要转换成的接口。</li>
+<li>（2）源对象（Adaptee）：即要被转换的角色，要把谁转换成目标角色。</li>
+<li>（3）适配器（Adapter）：适配模式的核心角色，负责把源对象转换和包装成目标对象。</li>
+</ul>
+<h4 id="优缺点-8">优缺点？</h4>
+<ol>
+<li>可以让两个没有关联的类一起运行，起中间转换的作用。</li>
+<li>提高了类的复用率。</li>
+<li>灵活性好，不会破坏原有系统。</li>
+</ol>
+<ul>
+<li>如果原有系统没有设计好（如Target不是抽象类或接口，而是一个实体类），适配模式将很难实现。</li>
+<li>过多地使用适配器，容易使代码结构混乱，如明明看到调用的是 A 接口，内部调用的却是B接口的实现。</li>
+</ul>
+<h4 id="应用场景-9">应用场景？</h4>
+<p>（1）系统需要使用现有的类，而这些类的接口不符合现有系统的要求。<br>
+（2）对已有的系统拓展新功能，尤其适用于在设计良好的系统框架下增加接入第三方的接口或第三方的SDK。</p>
+<hr>
+<h3 id="策略模式">策略模式</h3>
+<h4 id="什么是策略模式">什么是策略模式？</h4>
+<blockquote>
+<p>  官方定义：定义一系列算法，将每个算法都封装起来，并且使它们之间可以相互替换。策略模式使算法可以独立于使用它的用户而变化。</p>
+</blockquote>
+<ul>
+<li>核心思想：对算法、规则进行封装，使得替换算法和新增算法更加灵活。</li>
+</ul>
+<h4 id="设计要点-9">设计要点？</h4>
+<p>（1）上下文环境（Context）：起着承上启下的封装作用，屏蔽上层应用对策略（算法）的直接访问，封装可能存在的变化。<br>
+（2）策略的抽象（Strategy）：策略（算法）的抽象类，定义统一的接口，规定每个子类必须实现的方法。<br>
+（3）具备的策略：策略的具体实现者，可以有多个不同的（算法或规则）实现。</p>
+<h4 id="优缺点-9">优缺点</h4>
+<ol>
+<li>算法（规则）可自由切换。</li>
+<li>避免使用多重条件判断。</li>
+<li>方便拓展和增加新的算法（规则）。</li>
+</ol>
+<ul>
+<li>缺点：所有策略类都需要对外暴露。</li>
+</ul>
+<h4 id="应用场景-10">应用场景？</h4>
+<p>（1）如果一个系统里面有许多类，它们之间的区别仅在于有不同的行为，那么可以使用策略模式动态地让一个对象在许多行为中选择一种。<br>
+（2）一个系统需要动态地在几种算法中选择一种。<br>
+（3）设计程序接口时希望部分内部实现由调用方自己实现。</p>
+<hr>
+<h3 id="工厂模式">工厂模式</h3>
+<h4 id="什么是工厂模式">什么是工厂模式？</h4>
+<blockquote>
+<p>  专门定义一个类来负责创建其他类的实例，根据参数的不同创建不同类的实例，被创建的实例通常具有共同的父类，这个模式叫简单工厂模式（Simple Factory Pattern）。简单工厂模式又称为静态工厂方法模式。之所以叫“静态”，是因为在很多静态语言（如Java、C++）中方法通常被定义成一个静态（static）方法，这样便可通过类名来直接调用方法。</p>
+</blockquote>
+<h4 id="工厂三兄弟">工厂三兄弟？</h4>
+<ul>
+<li>简单工厂模式，只有一个工厂类 SimpleFactory，类中有一个静态的创建方法createProduct，该方法根据参数传递过来的类型值（type）或名称（name）来创建具体的产品（子类）对象。</li>
+</ul>
+<blockquote>
+<p>定义一个创建对象（实例化对象）的接口，通过参数来决定创建哪个类的实例。<br>
+- 优缺点？<br>
+1.  实现简单、结构清晰。<br>
+2.  抽象出一个专门的类来负责某类对象的创建，分割出创建的职责，不能直接创建具体的对象，只需传入适当的参数即可。<br>
+3.  使用者可以不关注具体对象的类名称，只需知道传入什么参数可以创建哪些需要的对象。<br>
+-  不易拓展，一旦添加新的产品类型，就不得不修改工厂的创建逻辑。不符合“开放封闭”原则，如果要增加或删除一个产品类型，就要修改switch...case...（或if...else...）的判断代码。<br>
+-  当产品类型较多时，工厂的创建逻辑可能过于复杂，switch...case...（或if...else...）判断会变得非常多。一旦出错可能造成所有产品创建失败，不利于系统的维护。<br>
+- 应用场景？<br>
+- （1）产品具有明显的继承关系，且产品的类型不太多。<br>
+- （2）所有的产品具有相同的方法和类似的属性，使用者不关心具体的类型，只希望传入合适的参数能返回合适的对象。尽管简单工厂模式不符合“开放-封闭”原则，但因为它简单，所以仍然能在很多项目中看到它。</p>
+</blockquote>
+<ul>
+<li>工厂方法模式是简单工厂模式的一个升级版本，为解决简单工厂模式不符合“开放-封闭”原则的问题，我们对 SimpleFactory 进行了一个拆分，抽象出一个父类 Factory，并增加多个子类分别负责创建不同的具体产品。</li>
+</ul>
+<blockquote>
+<p>定义一个创建对象（实例化对象）的接口，让子类来决定创建哪个类的实例。工厂方法使一个类的实例化延迟到其子类。<br>
+- 优缺点？</p>
+</blockquote>
+<ol>
+<li>解决了简单工厂模式不符合“开放-封闭”原则的问题，使程序更容易拓展。</li>
+<li>实现简单。</li>
+</ol>
+<ul>
+<li>对于有多种分类的产品，或具有二级分类的产品，工厂方法模式并不适用。
+<ul>
+<li>应用场景？<br>
+（1）客户端不知道它所需要的对象的类。（2）工厂类希望通过其子类来决定创建哪个具体类的对象。因为工厂方法模式简单且易拓展，因此在项目中应用得非常广泛，在很多标准库和开源项目中都能看到它的影子。</li>
+</ul>
+</li>
+<li>抽象工厂模式</li>
+</ul>
+<blockquote>
+<p>提供一个创建一系列相关或相互依赖的对象的接口，而无须指定它们的具体类。</p>
+</blockquote>
+<ul>
+<li>解决了具有二级分类的产品的创建。缺点：（1）如果产品的分类超过二级，如三级甚至更多级，抽象工厂模式将会变得非常臃肿。（2）不能解决产品有多种分类、多种组合的问题。</li>
+</ul>
+<hr>
+<h3 id="命令模式">命令模式</h3>
+<h4 id="什么是命令模式">什么是命令模式</h4>
+<blockquote>
+<p>将一个请求封装成一个对象，从而让你使用不同的请求把客户端参数化，对请求排队或者记录请求日志，可以提供命令的撤销和恢复功能。</p>
+</blockquote>
+<ul>
+<li>命令模式是一种高内聚的模式，之所以说是高内聚是因为它把命令封装成对象，并与接收者关联在一起，从而使（命令的）请求者（Invoker）和接收者（Receiver）分离。</li>
+</ul>
+<h4 id="设计要点-10">设计要点？</h4>
+<p>（1）命令（Command）：要完成的任务，或要执行的动作，这是命令模式的核心角色。（2）接收者（Receiver）：任务的具体实施方，或行动的真实执行者。（3）调度者（Invoker）：接收任务并发送命令，对接用户的需求并执行内部的命令，负责外部用户与内部命令的交互。（4）用户（Client）：命令的使用者，即真正的用户。</p>
+<h4 id="优缺点-10">优缺点？</h4>
+<p>-（1）对命令的发送者与接收者进行解耦，使得调用方不用关心具体的行动执行者及如何执行，只要发送正确的命令即可。（2）可以很方便地增加新的命令。缺点：在一些系统中可能会有很多命令，而每一个命令都需要一个具体的类去封装，容易使命令的类急剧膨胀。</p>
+<h4 id="应用场景-11">应用场景？</h4>
+<p>（1）你希望系统发送一个命令（或信号），任务就能得到处理时。如 GUI 中的各种按钮的点击命令，再如自定义一套消息的响应机制。（2）需要将请求调用者和请求接收者解耦，使得调用者和接收者不直接交互时。（3）需要将一系列的命令组合成一组操作时，可以使用宏命令的方式。</p>
+<hr>
+<h3 id="备忘模式">备忘模式</h3>
+<h4 id="什么是备忘模式">什么是备忘模式？</h4>
+<blockquote>
+<p>在不破坏内部结构的前提下捕获一个对象的内部状态，这样便可在以后将该对象恢复到原先保存的状态。</p>
+</blockquote>
+<ul>
+<li>最大功能就是快照；</li>
+</ul>
+<h4 id="设计要点-11">设计要点？</h4>
+<p>（1）发起人（Originator）：需要进行备份的对象。（2）备忘录（Memento）：备份的状态，即一个备份的存档。（3）备忘录管理者（Caretaker）：备份存档的管理者，由它负责与发起人的交互。</p>
+<h4 id="优缺点-11">优缺点</h4>
+<p>优点：（1）提供了一种可以恢复状态的机制，使得用户能够比较方便地回到某个历史状态。（2）实现了信息的封装，用户不需要关心状态的保存细节。缺点：如果类的成员变量过多，势必会占用比较多的资源，而且每一次保存都会消耗一定的内存。此时可以限制保存的次数。</p>
+<h4 id="应用场景-12">应用场景</h4>
+<p>（1）需要保存/恢复对象的状态或数据时，如游戏的存档、虚拟机的快照。（2）需要实现撤销、恢复功能的场景，如Word中的Ctrl+Z、Ctrl+Y功能，DOS命令行或Linux终端的命令记忆功能。（3）提供一个可回滚的操作，如数据库的事务管理。</p>
+<hr>
+<h3 id="享元模式">享元模式</h3>
+<h4 id="什么是享元模式">什么是享元模式？</h4>
+<blockquote>
+<p>运用共享技术有效地支持大量细粒度对象的复用。</p>
+</blockquote>
+<ul>
+<li>用在程序设计中，就是指享元模式要求能够共享的对象必须是轻量级对象，也就是细粒度对象，因此享元模式又称为轻量级模式。</li>
+<li>设计思想：享元模式以共享的方式高效地支持大量的细粒度对象，享元对象能做到共享的关键是区分内部状态和外部状态。
+<ul>
+<li>内部状态（Intrinsic State）是存储在享元对象内部并且不会随环境改变而改变的状态，因此内部状态是可以共享的状态；</li>
+<li>外部状态（Extrinsic State）是随环境改变而改变的、不可以共享的状态。享元对象的外部状态必须由客户端保存，并在享元对象被创建之后，在需要使用的时候再传入享元对象内部.</li>
+</ul>
+</li>
+</ul>
+<h4 id="设计要点-12">设计要点？</h4>
+<p>（1）享元对象必须是轻量级、细粒度的对象。（2）区分享元对象的内部状态和外部状态。（3）享元对象的内部状态和属性一经创建不会被随意改变。因为如果可以改变，则A取得这个对象obj后，改变了其状态，B再去取这个对象obj时就已经不是原来的状态了。（4）使用对象时通过享元工厂获取，使得传入相同的key时获得相同的对象。</p>
+<h4 id="优缺点-12">优缺点？</h4>
+<p>（1）可以极大减少内存中对象的数量，使得相同对象或相似对象（内部状态相同的对象）在内存中只保存一份。（2）享元模式的外部状态相对独立，而且不会影响其内部状态，从而使得享元对象可以在不同的环境中被共享。缺点：（1）享元模式使得系统更加复杂，需要分离出内部状态和外部状态，这使得程序的逻辑复杂化。（2）享元对象的内部状态一经创建不能被随意改变</p>
+<h4 id="应用-2">应用？</h4>
+<p>（1）一个系统有大量相同或者相似的对象，由于这类对象的大量使用，造成内存的大量耗费。（2）对象的大部分状态都可以外部化，可以将这些外部状态传入对象中。<br>
+享元模式是一个考虑系统性能的设计模式，使用享元模式可以节约内存空间，提高系统的性能，因为它的这一特性，在实际项目中使用得比较多。比如浏览器的缓存，就可以使用这个设计思想，浏览器会将已打开页面的图片、文件缓存到本地，如果在一个页面中多次出现相同的图片（即一个页面中多个img标签指向同一个图片地址），则只需要创建一个图片对象，在解析到img标签的地方多次重复显示这个对象即可。</p>
+<hr>
+<h3 id="访问模式">访问模式</h3>
+<h4 id="什么是访问模式">什么是访问模式？</h4>
+<blockquote>
+<p>封装一些作用于某种数据结构中各元素的操作，它可以在不改变数据结构的前提下定义作用于这些元素的新的操作。</p>
+</blockquote>
+<ul>
+<li>核心思想：可以在不改变数据结构的前提下定义作用于这些元素的新操作。将数据结构和操作（或算法）进行解耦，而且能更方便地拓展新的操作。</li>
+</ul>
+<h4 id="设计要点-13">设计要点</h4>
+<p>（1）访问者（Visitor）：负责对数据节点进行访问和操作。（2）数据节点（DataNode）：即要被操作的数据对象。（3）对象结构（ObjectStructure）：数据结构的管理类，也是数据对象的一个容器，可遍历容器内的所有元素。</p>
+<h4 id="优缺点-13">优缺点？</h4>
+<p>（1）将数据和操作（算法）分离，降低了耦合度。将有关元素对象的访问行为集中到一个访问者对象中，而不是分散在一个个的元素类中，类的职责更加清晰。（2）增加新的访问操作很方便。使用访问模式，增加新的访问操作就意味着增加一个新的具体访问者类，实现简单，无须修改源代码，符合“开闭原则”。（3）让用户能够在不修改现有元素类层次结构的情况下，定义作用于该层次结构的操作。缺点：（1）增加新的元素类很困难。在访问模式中，每增加一个新的元素类都意味着要在抽象访问者角色中增加一个新的抽象操作，并在每一个具体访问者类中增加相应的具体操作，这违背了“开闭-原则”的要求。（2）破坏数据对象的封装性。访问模式要求访问者对象能够访问并调用每一个元素的操作细节，这意味着元素对象有时候必须暴露一些自己的内部操作和内部状态，否则无法供访问者访问。</p>
+<h4 id="应用-3">应用？</h4>
+<p>（1）对象结构中包含的对象类型比较少，而且这些类需求比较固定，很少改变，但经常需要在此对象结构上定义新的操作。（2）一个对象结构包含多个类型的对象，希望对这些对象实施一些依赖其具体类型的操作。在访问模式中针对每一种具体的类型都提供了一个访问操作，不同类型的对象可以有不同的访问操作。（3）需要对一个对象结构中的对象进行很多不同的并且不相关的操作，需要避免让这些操作“污染”这些对象的类，也不希望在增加新操作时修改这些类。访问模式使得我们可以将相关的访问操作集中起来定义在访问者类中，对象结构可以被多个不同的访问者类所使用，将对象本身与对象的访问操作分离。</p>
+<hr>
+<h3 id="其他经典设计模式">其他经典设计模式</h3>
+<h4 id="模板模式">模板模式</h4>
+<blockquote>
+<p>定义一个操作中的算法的框（骨）架，而将算法中用到的某些具体的步骤放到子类中实现，使得子类可以在不改变算法结构的情况下重新定义该算法的某些特定步骤。这个定义算法骨架的方法就叫模板方法模式，简称模板模式。</p>
+</blockquote>
+<h4 id="桥接模式">桥接模式</h4>
+<blockquote>
+<p>将抽象和实现解耦，使得它们可以独立地变化。</p>
+</blockquote>
+<ul>
+<li>桥梁模式关注的是抽象和实现的分离，使得它们可以独立地发展；桥梁模式是结构型模式，侧重于软件结构。而策略模式关注的是对算法、规则的封装，使得算法可以独立于使用它的用户而变化；策略模式是行为型模式，侧重于对象行为。</li>
+</ul>
+<h4 id="解释模式">解释模式</h4>
+<blockquote>
+<p>定义一个语言，定义它的文法的一种表示；并定义一个解释器，该解释器使用该文法来解释语言中的句子。</p>
+</blockquote>
+<ul>
+<li>解释模式又叫解释器模式，它是一种使用频率相对较低但学习难度较大的设计模式，它用于描述如何使用面向对象语言构建一个简单的语言解释器。</li>
+</ul>
+<hr>
+<p><strong><strong>Part 1 over</strong></strong></p>
+
+        </div>
+        <!-- Share to Twitter, Weibo, Telegram -->
+        <div class="flex items-center">
+          <div class="mr-4 flex items-center">
+            <i class="ri-share-forward-line text-gray-500"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-blue-500 hover:bg-blue-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTwitter">
+            <i class="ri-twitter-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-red-500 hover:bg-red-100 dark:hover:bg-gray-600 inline-flex" @click="shareToWeibo">
+            <i class="ri-weibo-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-indigo-500 hover:bg-indigo-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTelegram">
+            <i class="ri-telegram-line"></i>
+          </div>
+        </div>
+      </div>
+
+      
+
+      
+        <div id="vlaine-comment"></div>
+      
+
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>  Made by  <a href="https://github.com/JoyZgq" target="_blank">zgq</a> 🎈❤❤❤🌹
+</footer>
+    </div>
+
+    <!-- TOC Container -->
+    <div class="fixed right-0 bottom-0 mb-16 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white dark:bg-gray-500 dark:text-gray-200 hover:shadow-lg transition-all animated fadeInRight" @click="showToc = true">
+      <i class="ri-file-list-line"></i>
+    </div>
+
+    <div class="fixed right-0 top-0 bottom-0 overflow-y-auto w-64 bg-white dark:bg-gray-800 p-4 border-l border-gray-100 dark:border-gray-600 z-10 transition-fast" :class="{ '-mr-64': !showToc }">
+      <div class="flex mb-4 justify-end">
+        <div class="w-8 h-8 inline-flex justify-center items-center rounded-full cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600 transition-fast" @click="showToc = false">
+          <i class="ri-close-line text-lg"></i>
+        </div>
+      </div>
+      <div class="post-toc-container">
+        <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#%E7%9B%91%E5%90%AC%E6%A8%A1%E5%BC%8F">监听模式</a>
+<ul>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AF%E7%9B%91%E5%90%AC%E6%A8%A1%E5%BC%8F">什么是监听模式？</a></li>
+<li><a href="#%E8%AE%BE%E8%AE%A1%E6%80%9D%E6%83%B3">设计思想？</a></li>
+<li><a href="#%E6%A8%A1%E5%9E%8B%E8%AE%BE%E8%AE%A1%E8%A6%81%E7%82%B9">模型设计要点？</a></li>
+<li><a href="#%E6%8E%A8%E6%A8%A1%E5%9E%8B%E5%92%8C%E6%8B%89%E6%A8%A1%E5%9E%8B">推模型和拉模型？</a></li>
+<li><a href="#%E5%AE%9E%E6%88%98%E5%BA%94%E7%94%A8">实战应用？</a></li>
+</ul>
+</li>
+<li><a href="#%E7%8A%B6%E6%80%81%E6%A8%A1%E5%BC%8F%E6%B0%B4%E7%9A%84%E4%B8%89%E7%A7%8D%E7%8A%B6%E6%80%81">状态模式（水的三种状态）</a>
+<ul>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AF%E7%8A%B6%E6%80%81%E6%A8%A1%E5%BC%8F">什么是状态模式？</a></li>
+<li><a href="#%E8%AE%BE%E8%AE%A1%E6%80%9D%E6%83%B3-2">设计思想？</a></li>
+<li><a href="#%E6%A8%A1%E5%9E%8B%E8%AF%B4%E6%98%8E">模型说明</a></li>
+<li><a href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF">应用场景？</a></li>
+</ul>
+</li>
+<li><a href="#%E4%B8%AD%E4%BB%8B%E6%A8%A1%E5%BC%8F%E7%A7%9F%E6%88%BF%E5%AD%90">中介模式（租房子）</a>
+<ul>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AF%E4%B8%AD%E4%BB%8B%E6%A8%A1%E5%BC%8F">什么是中介模式？</a></li>
+<li><a href="#%E8%AE%BE%E8%AE%A1%E6%80%9D%E6%83%B3-3">设计思想？</a></li>
+<li><a href="#%E6%A8%A1%E5%9E%8B%E6%8A%BD%E8%B1%A1">模型抽象？</a></li>
+<li><a href="#%E5%AE%9E%E6%88%98%E5%BA%94%E7%94%A8-2">实战应用？</a></li>
+</ul>
+</li>
+<li><a href="#%E8%A3%85%E9%A5%B0%E6%A8%A1%E5%BC%8F">装饰模式</a>
+<ul>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AF%E8%A3%85%E9%A5%B0%E6%A8%A1%E5%BC%8F">什么是装饰模式？</a></li>
+<li><a href="#%E8%AE%BE%E8%AE%A1%E6%80%9D%E6%83%B3-4">设计思想？</a></li>
+<li><a href="#%E6%A8%A1%E5%9E%8B%E6%8A%BD%E8%B1%A1-2">模型抽象？</a></li>
+<li><a href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF-2">应用场景？</a></li>
+</ul>
+</li>
+<li><a href="#%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F">单例模式</a>
+<ul>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F">什么是单例模式？</a></li>
+<li><a href="#%E8%AE%BE%E8%AE%A1%E6%80%9D%E6%83%B3-5">设计思想？</a></li>
+<li><a href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF-3">应用场景？</a></li>
+</ul>
+</li>
+<li><a href="#%E5%85%8B%E9%9A%86%E6%A8%A1%E5%BC%8F">克隆模式</a>
+<ul>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%85%8B%E9%9A%86%E6%A8%A1%E5%BC%8F">什么是克隆模式？</a></li>
+<li><a href="#%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D">深拷贝与浅拷贝？</a></li>
+<li><a href="#%E8%AE%BE%E8%AE%A1%E8%A6%81%E7%82%B9">设计要点？</a></li>
+<li><a href="#%E4%BC%98%E7%BC%BA%E7%82%B9">优缺点？</a></li>
+<li><a href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF-4">应用场景？</a></li>
+</ul>
+</li>
+<li><a href="#%E8%81%8C%E8%B4%A3%E6%A8%A1%E5%BC%8F%E6%B5%81%E7%A8%8B%E5%AE%A1%E6%89%B9">职责模式（流程审批）</a>
+<ul>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AF%E8%81%8C%E8%B4%A3%E6%A8%A1%E5%BC%8F">什么是职责模式？</a></li>
+<li><a href="#%E8%AE%BE%E8%AE%A1%E6%80%9D%E6%83%B3-6">设计思想？</a></li>
+<li><a href="#%E8%AE%BE%E8%AE%A1%E8%A6%81%E7%82%B9-2">设计要点？</a></li>
+<li><a href="#%E4%BC%98%E7%BC%BA%E7%82%B9-2">优缺点？</a></li>
+<li><a href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF-5">应用场景？</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F%E4%BB%A3%E9%A2%86%E5%BF%AB%E9%80%92">代理模式（代领快递）</a>
+<ul>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AF%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F">什么是代理模式？</a></li>
+<li><a href="#%E8%AE%BE%E8%AE%A1%E6%80%9D%E6%83%B3-7">设计思想？</a></li>
+<li><a href="#%E8%AE%BE%E8%AE%A1%E8%A6%81%E7%82%B9-3">设计要点？</a></li>
+<li><a href="#%E4%BC%98%E7%BC%BA%E7%82%B9-3">优缺点？</a></li>
+<li><a href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF-6">应用场景？</a></li>
+</ul>
+</li>
+<li><a href="#%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F">外观模式</a>
+<ul>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F">什么是外观模式？</a></li>
+<li><a href="#%E8%AE%BE%E8%AE%A1%E6%80%9D%E6%83%B3-8">设计思想？</a></li>
+<li><a href="#%E8%AE%BE%E8%AE%A1%E8%A6%81%E7%82%B9-4">设计要点？</a></li>
+<li><a href="#%E4%BC%98%E7%BC%BA%E7%82%B9-4">优缺点？</a></li>
+<li><a href="#%E5%AE%9E%E6%88%98">实战？</a></li>
+</ul>
+</li>
+<li><a href="#%E8%BF%AD%E4%BB%A3%E6%A8%A1%E5%BC%8F">迭代模式</a>
+<ul>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AF%E8%BF%AD%E4%BB%A3%E6%A8%A1%E5%BC%8F">什么是迭代模式？</a></li>
+<li><a href="#%E8%AE%BE%E8%AE%A1%E8%A6%81%E7%82%B9-5">设计要点？</a></li>
+<li><a href="#%E4%BC%98%E7%BC%BA%E7%82%B9-5">优缺点？</a></li>
+<li><a href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF-7">应用场景？</a></li>
+</ul>
+</li>
+<li><a href="#%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8Fdiy-pc">组合模式（DIY PC）</a>
+<ul>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AF%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F">什么是组合模式？</a></li>
+<li><a href="#%E8%AE%BE%E8%AE%A1%E8%A6%81%E7%82%B9-6">设计要点？</a></li>
+<li><a href="#%E4%BC%98%E7%BC%BA%E7%82%B9-6">优缺点？</a></li>
+<li><a href="#%E5%BA%94%E7%94%A8">应用？</a></li>
+</ul>
+</li>
+<li><a href="#%E6%9E%84%E5%BB%BA%E6%A8%A1%E5%BC%8F%E7%8E%A9%E7%A7%AF%E6%9C%A8">构建模式（玩积木）</a>
+<ul>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%9E%84%E5%BB%BA%E6%A8%A1%E5%BC%8F">什么是构建模式？</a></li>
+<li><a href="#%E8%AE%BE%E8%AE%A1%E6%80%9D%E6%83%B3-9">设计思想？</a></li>
+<li><a href="#%E5%8C%BA%E5%88%AB">区别？</a></li>
+<li><a href="#%E8%AE%BE%E8%AE%A1%E8%A6%81%E7%82%B9-7">设计要点？</a></li>
+<li><a href="#%E4%BC%98%E7%BC%BA%E7%82%B9-7">优缺点？</a></li>
+<li><a href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF-8">应用场景？</a></li>
+</ul>
+</li>
+<li><a href="#%E9%80%82%E9%85%8D%E6%A8%A1%E5%BC%8F%E6%8F%92%E5%BA%A7%E8%BD%AC%E6%8D%A2%E5%99%A8">适配模式（插座转换器）</a>
+<ul>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AF%E9%80%82%E9%85%8D%E6%A8%A1%E5%BC%8F">什么是适配模式？</a></li>
+<li><a href="#%E8%AE%BE%E8%AE%A1%E6%80%9D%E6%83%B3-10">设计思想？</a></li>
+<li><a href="#%E8%AE%BE%E8%AE%A1%E8%A6%81%E7%82%B9-8">设计要点?</a></li>
+<li><a href="#%E4%BC%98%E7%BC%BA%E7%82%B9-8">优缺点？</a></li>
+<li><a href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF-9">应用场景？</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F">策略模式</a>
+<ul>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AF%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F">什么是策略模式？</a></li>
+<li><a href="#%E8%AE%BE%E8%AE%A1%E8%A6%81%E7%82%B9-9">设计要点？</a></li>
+<li><a href="#%E4%BC%98%E7%BC%BA%E7%82%B9-9">优缺点</a></li>
+<li><a href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF-10">应用场景？</a></li>
+</ul>
+</li>
+<li><a href="#%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F">工厂模式</a>
+<ul>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F">什么是工厂模式？</a></li>
+<li><a href="#%E5%B7%A5%E5%8E%82%E4%B8%89%E5%85%84%E5%BC%9F">工厂三兄弟？</a></li>
+</ul>
+</li>
+<li><a href="#%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F">命令模式</a>
+<ul>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F">什么是命令模式</a></li>
+<li><a href="#%E8%AE%BE%E8%AE%A1%E8%A6%81%E7%82%B9-10">设计要点？</a></li>
+<li><a href="#%E4%BC%98%E7%BC%BA%E7%82%B9-10">优缺点？</a></li>
+<li><a href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF-11">应用场景？</a></li>
+</ul>
+</li>
+<li><a href="#%E5%A4%87%E5%BF%98%E6%A8%A1%E5%BC%8F">备忘模式</a>
+<ul>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%87%E5%BF%98%E6%A8%A1%E5%BC%8F">什么是备忘模式？</a></li>
+<li><a href="#%E8%AE%BE%E8%AE%A1%E8%A6%81%E7%82%B9-11">设计要点？</a></li>
+<li><a href="#%E4%BC%98%E7%BC%BA%E7%82%B9-11">优缺点</a></li>
+<li><a href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF-12">应用场景</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F">享元模式</a>
+<ul>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AF%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F">什么是享元模式？</a></li>
+<li><a href="#%E8%AE%BE%E8%AE%A1%E8%A6%81%E7%82%B9-12">设计要点？</a></li>
+<li><a href="#%E4%BC%98%E7%BC%BA%E7%82%B9-12">优缺点？</a></li>
+<li><a href="#%E5%BA%94%E7%94%A8-2">应用？</a></li>
+</ul>
+</li>
+<li><a href="#%E8%AE%BF%E9%97%AE%E6%A8%A1%E5%BC%8F">访问模式</a>
+<ul>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AF%E8%AE%BF%E9%97%AE%E6%A8%A1%E5%BC%8F">什么是访问模式？</a></li>
+<li><a href="#%E8%AE%BE%E8%AE%A1%E8%A6%81%E7%82%B9-13">设计要点</a></li>
+<li><a href="#%E4%BC%98%E7%BC%BA%E7%82%B9-13">优缺点？</a></li>
+<li><a href="#%E5%BA%94%E7%94%A8-3">应用？</a></li>
+</ul>
+</li>
+<li><a href="#%E5%85%B6%E4%BB%96%E7%BB%8F%E5%85%B8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F">其他经典设计模式</a>
+<ul>
+<li><a href="#%E6%A8%A1%E6%9D%BF%E6%A8%A1%E5%BC%8F">模板模式</a></li>
+<li><a href="#%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F">桥接模式</a></li>
+<li><a href="#%E8%A7%A3%E9%87%8A%E6%A8%A1%E5%BC%8F">解释模式</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+      </div>
+    </div>
+
+    <!-- Back to top -->
+    <div class="fixed right-0 bottom-0 mb-4 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white hover:shadow-lg transition-all dark:bg-gray-500 dark:text-gray-200" @click="backToUp" v-show="scrolled">
+      <i class="ri-arrow-up-line"></i>
+    </div>
+  </div>
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+  <!-- Background of PhotoSwipe. 
+        It's a separate element as animating opacity is faster than rgba(). -->
+  <div class="pswp__bg">
+  </div>
+  <!-- Slides wrapper with overflow:hidden. -->
+  <div class="pswp__scroll-wrap">
+    <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+    <div class="pswp__container">
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+    </div>
+    <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+    <div class="pswp__ui pswp__ui--hidden">
+      <div class="pswp__top-bar">
+        <!--  Controls are self-explanatory. Order can be changed. -->
+        <div class="pswp__counter">
+        </div>
+        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+        <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+        <!-- element will get class pswp__preloader--active when preloader is running -->
+        <div class="pswp__preloader">
+          <div class="pswp__preloader__icn">
+            <div class="pswp__preloader__cut">
+              <div class="pswp__preloader__donut">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+        <div class="pswp__share-tooltip">
+        </div>
+      </div>
+      <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+      </button>
+      <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+      </button>
+      <div class="pswp__caption">
+        <div class="pswp__caption__center">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://JoyZgq.github.io/media/scripts/main.js"></script>
+  
+  <!-- Code Highlight -->
+  
+    <script src="https://JoyZgq.github.io/media/prism.js"></script>
+    <script>
+      Prism.highlightAll()
+    </script>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+  <script>
+    //拿到预览框架，也就是上面的html代码
+    var pswpElement = document.querySelectorAll('.pswp')[0];
+    //定义图片数组变量
+    var imgitems;
+    /**
+    * 用于显示预览界面
+    * @param index 图片数组下标
+    */
+    function viewImg(index) {
+      //其它选项这里不做过多阐述，详情见官网
+      var pswpoptions = {
+        index: parseInt(index, 10), // 开始幻灯片索引。0是第一张幻灯片。必须是整数，而不是字符串。
+        bgOpacity: 0.7, // 背景透明度，0-1
+        maxSpreadZoom: 3, // 缩放级别，不要太大
+      };
+      //初始化并打开PhotoSwipe，pswpElement对应上面预览框架，PhotoSwipeUI_Default为皮肤，imgitems为图片数组，pswpoptions为选项
+      var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, imgitems, pswpoptions);
+      gallery.init()
+    }
+    /**
+    * 用于添加图片点击事件
+    * @param img 图片元素
+    * @param index 所属下标（在imgitems中的位置）
+    */
+    function addImgClick(img, index) {
+      img.onclick = function() {
+        viewImg(index)
+      }
+    }
+    /**
+    * 轮询所有图片，获取src、width、height等数据，加入imgitems，并给图片元素添加事件
+    * 最好在onload中执行该方法，本站因放在最底部，所以直接初始化
+    * 异步加载图片可在图片元素创建完成后调用此方法
+    */
+    function initImg() {
+      //重置图片数组
+      imgitems = [];
+      //查找class:markdown 下的所有img元素并遍历
+      var imgs = document.querySelectorAll('.markdown img');
+      for (var i = 0; i < imgs.length; i++) {
+        var img = imgs[i];
+        //本站相册初始为loading图片，真实图片放在data-src
+        var ds = img.getAttribute("data-src");
+        //创建image对象，用于获取图片宽高
+        var imgtemp = new Image();
+        //判断是否存在data-src
+        if (ds != null && ds.length > 0) {
+          imgtemp.src = ds
+        } else {
+          imgtemp.src = img.src
+        }
+        //判断是否存在缓存
+        if (imgtemp.complete) {
+          var imgobj = {
+            "src": imgtemp.src,
+            "w": imgtemp.width,
+            "h": imgtemp.height,
+          };
+          imgitems[i] = imgobj;
+          addImgClick(img, i);
+        } else {
+          console.log('进来了2')
+          imgtemp.index = i;
+          imgtemp.img = img;
+          imgtemp.onload = function() {
+            var imgobj = {
+              "src": this.src,
+              "w": this.width,
+              "h": this.height,
+            };
+            //不要使用push，因为onload前后顺序会不同
+            imgitems[this.index] = imgobj
+            //添加点击事件
+            addImgClick(this.img, this.index);
+          }
+        }
+      }
+    }
+    //初始化
+    initImg();
+  </script>
+  
+    <script type="application/javascript" src="https://unpkg.com/valine"></script>
+<script type="application/javascript">
+  new Valine({
+    el: '#vlaine-comment',
+    appId: 'Sy2gsMvGcPQl3gTGsqqYsHW6-gzGzoHsz',
+    appKey: 'IpsgegiMUNgRg7l5BVXk6EXM',
+    pageSize: 10,
+    notify: false,
+    avatar: 'mp',
+    verify: true,
+    placeholder: '客官来都来了，不妨评论一下🌹🐱‍👤',
+    visitor: true,
+    highlight: false,
+    recordIP: true,
+  })
+</script>
+  
+  
+</body>
+
+</html>
