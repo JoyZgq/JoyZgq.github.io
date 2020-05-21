@@ -23,19 +23,28 @@
   </script>
     
 
-  <meta name="description" content="Creational patterns
-Abstract factory (recognizeable by creational methods returning the factory itself which in turn can..." />
+  <meta name="description" content="
+摘自StackOverflow论坛回复,译文在下方
+
+Creational patterns
+Abstract factory (recognizeable by creational methods returning the fact..." />
   <meta property="og:title" content="JDK中应用的设计模式 - bravo">
-  <meta property="og:description" content="Creational patterns
-Abstract factory (recognizeable by creational methods returning the factory itself which in turn can..." />
+  <meta property="og:description" content="
+摘自StackOverflow论坛回复,译文在下方
+
+Creational patterns
+Abstract factory (recognizeable by creational methods returning the fact..." />
   <meta property="og:type" content="articles">
   <meta property="og:url" content="https://JoyZgq.github.io/post/vh9lsAukM/" />
   <meta property="og:image" content="https://JoyZgq.github.io/post-images/vh9lsAukM.webp">
   <meta property="og:image:height" content="630">
   <meta property="og:image:width" content="1200">
   <meta name="twitter:title" content="JDK中应用的设计模式 - bravo">
-  <meta name="twitter:description" content="Creational patterns
-Abstract factory (recognizeable by creational methods returning the factory itself which in turn can...">
+  <meta name="twitter:description" content="
+摘自StackOverflow论坛回复,译文在下方
+
+Creational patterns
+Abstract factory (recognizeable by creational methods returning the fact...">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://JoyZgq.github.io/post/vh9lsAukM/">
 
@@ -67,7 +76,10 @@ Abstract factory (recognizeable by creational methods returning the factory itse
           
         </div>
         <div class="markdown mb-8" v-pre>
-          <h2 id="creational-patterns"><a href="http://en.wikipedia.org/wiki/Creational_pattern">Creational patterns</a></h2>
+          <blockquote>
+<p>摘自StackOverflow论坛回复,译文在下方</p>
+</blockquote>
+<h2 id="creational-patterns"><a href="http://en.wikipedia.org/wiki/Creational_pattern">Creational patterns</a></h2>
 <h3 id="abstract-factory"><a href="http://en.wikipedia.org/wiki/Abstract_factory_pattern">Abstract factory</a> (recognizeable by creational methods returning the factory itself which in turn can be used to create another abstract/interface type)</h3>
 <ul>
 <li><a href="http://docs.oracle.com/javase/8/docs/api/javax/xml/parsers/DocumentBuilderFactory.html#newInstance--"><code>javax.xml.parsers.DocumentBuilderFactory#newInstance()</code></a></li>
@@ -204,11 +216,6 @@ Abstract factory (recognizeable by creational methods returning the factory itse
 <h3 id="template-method"><a href="http://en.wikipedia.org/wiki/Template_method_pattern">Template method</a> (recognizeable by behavioral methods which already have a &quot;default&quot; behaviour defined by an abstract type)</h3>
 <ul>
 <li>All non-abstract methods of <a href="http://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html"><code>java.io.InputStream</code></a>, <a href="http://docs.oracle.com/javase/8/docs/api/java/io/OutputStream.html"><code>java.io.OutputStream</code></a>, <a href="http://docs.oracle.com/javase/8/docs/api/java/io/Reader.html"><code>java.io.Reader</code></a> and <a href="http://docs.oracle.com/javase/8/docs/api/java/io/Writer.html"><code>java.io.Writer</code></a>.</li>
-</ul>
-<blockquote>
-<p>摘自StackOverflow论坛回复</p>
-</blockquote>
-<ul>
 <li>All non-abstract methods of <a href="http://docs.oracle.com/javase/8/docs/api/java/util/AbstractList.html"><code>java.util.AbstractList</code></a>, <a href="http://docs.oracle.com/javase/8/docs/api/java/util/AbstractSet.html"><code>java.util.AbstractSet</code></a> and <a href="http://docs.oracle.com/javase/8/docs/api/java/util/AbstractMap.html"><code>java.util.AbstractMap</code></a>.</li>
 <li><a href="http://docs.oracle.com/javaee/7/api/javax/servlet/http/HttpServlet.html"><code>javax.servlet.http.HttpServlet</code></a>, all the <code>doXXX()</code> methods by default sends a HTTP 405 &quot;Method Not Allowed&quot; error to the response. You're free to implement none or any of them.</li>
 </ul>
