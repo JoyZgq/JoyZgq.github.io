@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>Java Source --- CharSequence - bravo</title>
+<title>Java---锁 - bravo</title>
 <link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
 <link rel="stylesheet" href="http://localhost:4000/media/css/tailwind.css">
 <link rel="stylesheet" href="http://localhost:4000/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="Java Source --- CharSequence - bravo - Atom Feed" href="http://localhost:4000/atom.xml">
+<link rel="alternate" type="application/atom+xml" title="Java---锁 - bravo - Atom Feed" href="http://localhost:4000/atom.xml">
 
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-164181119-1"></script>
@@ -23,30 +23,75 @@
   </script>
     
 
-  <meta name="description" content="Summary
+  <meta name="description" content="
+并发是编程重要的手段，更好的运用并发就必须理解各种锁的区别？
 
-CharSequence是char值的可读序列。 该接口提供对许多不同类型的char序列的统一，只读访问。char值表示基本多语言平面（BMP）中的字符或代理项。
+分类
 
-  此接口不会细化equals和hashCode方法的常..." />
-  <meta property="og:title" content="Java Source --- CharSequence - bravo">
-  <meta property="og:description" content="Summary
+公平锁、非公平锁
+可重入锁
+独享锁，共享锁
+互斥锁，读写锁
+乐观锁，悲观锁
+分段锁
+偏向锁，轻量级锁，重量级锁
+自旋锁
 
-CharSequence是char值的可读序列。 该接口提供对许多不同类型的char序列的统一，只读访问。char值表示基本多语言平面（BMP）中的字符或代理项。
 
-  此接口不会细化equals和hashCode方法的常..." />
+
+
+公平锁、非公平锁
+
+公平锁：申请锁的顺..." />
+  <meta property="og:title" content="Java---锁 - bravo">
+  <meta property="og:description" content="
+并发是编程重要的手段，更好的运用并发就必须理解各种锁的区别？
+
+分类
+
+公平锁、非公平锁
+可重入锁
+独享锁，共享锁
+互斥锁，读写锁
+乐观锁，悲观锁
+分段锁
+偏向锁，轻量级锁，重量级锁
+自旋锁
+
+
+
+
+公平锁、非公平锁
+
+公平锁：申请锁的顺..." />
   <meta property="og:type" content="articles">
-  <meta property="og:url" content="http://localhost:4000/post/f67bU8eSc/" />
-  <meta property="og:image" content="http://localhost:4000/post-images/f67bU8eSc.webp">
+  <meta property="og:url" content="http://localhost:4000/post/5DDpUu6H-/" />
+  <meta property="og:image" content="http://localhost:4000/post-images/5DDpUu6H-.webp">
   <meta property="og:image:height" content="630">
   <meta property="og:image:width" content="1200">
-  <meta name="twitter:title" content="Java Source --- CharSequence - bravo">
-  <meta name="twitter:description" content="Summary
+  <meta name="twitter:title" content="Java---锁 - bravo">
+  <meta name="twitter:description" content="
+并发是编程重要的手段，更好的运用并发就必须理解各种锁的区别？
 
-CharSequence是char值的可读序列。 该接口提供对许多不同类型的char序列的统一，只读访问。char值表示基本多语言平面（BMP）中的字符或代理项。
+分类
 
-  此接口不会细化equals和hashCode方法的常...">
+公平锁、非公平锁
+可重入锁
+独享锁，共享锁
+互斥锁，读写锁
+乐观锁，悲观锁
+分段锁
+偏向锁，轻量级锁，重量级锁
+自旋锁
+
+
+
+
+公平锁、非公平锁
+
+公平锁：申请锁的顺...">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="canonical" href="http://localhost:4000/post/f67bU8eSc/">
+  <link rel="canonical" href="http://localhost:4000/post/5DDpUu6H-/">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
@@ -66,58 +111,106 @@ CharSequence是char值的可读序列。 该接口提供对许多不同类型的
     <div class="max-w-4xl w-full mx-auto">
       <div class="shadow-box bg-white dark:bg-gray-600 rounded-lg pt-32 md:pt-64 px-4 md:px-8 pb-8 animated fadeIn mb-8">
         <h1 class="text-5xl font-semibold leading-normal pb-8 mb-8 border-b-8 border-gray-700">
-          Java Source --- CharSequence
+          Java---锁
         </h1>
         
-          <img src="http://localhost:4000/post-images/f67bU8eSc.webp" alt="Java Source --- CharSequence" class="block w-full mb-8">
+          <img src="http://localhost:4000/post-images/5DDpUu6H-.webp" alt="Java---锁" class="block w-full mb-8">
         
         <div class="mb-8 flex flex-wrap">
-          <div class="text-gray-400 text-sm mr-4">2019-02-20 · 3 min read</div>
-          
-            <a href="http://localhost:4000/tag/ElQLiC5kr/" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
-              <i class="ri-hashtag"></i>
-              interface
-            </a>
-          
-            <a href="http://localhost:4000/tag/mfQ75zvRf/" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
-              <i class="ri-hashtag"></i>
-              lang
-            </a>
+          <div class="text-gray-400 text-sm mr-4">2020-05-20 · 5 min read</div>
           
         </div>
         <div class="markdown mb-8" v-pre>
-          <h3 id="summary">Summary</h3>
-<blockquote>
-<p>CharSequence是char值的可读序列。 该接口提供对许多不同类型的char序列的统一，只读访问。char值表示基本多语言平面（BMP）中的字符或代理项。</p>
+          <blockquote>
+<p>并发是编程重要的手段，更好的运用并发就必须理解各种锁的区别？</p>
 </blockquote>
-<p>  此接口不会细化equals和hashCode方法的常规合同。 因此，测试实现CharSequence两个对象的相等性的结果通常是未定义的。 每个对象可以由不同的类实现，并且不能保证每个类都能够测试其实例与另一个类的实例是否相等。 因此，将任意CharSequence实例用作集合中的元素或映射中的键是不合适的。</p>
-<h3 id="抽象方法">抽象方法</h3>
-<h4 id="charatint-index">charAt(int index)</h4>
-<pre><code>char charAt​(int index)
-</code></pre>
-<blockquote>
-<p>返回指定索引处的char值。 索引范围为0到length() - 1 。 序列的第一个char值在索引0处，下一个在索引1处，依此类推，就像数组索引一样。如果索引指定的char值为surrogate ，则返回代理值。</p>
-</blockquote>
-<h4 id="chars">chars()</h4>
-<pre><code>default IntStream codePoints()
-</code></pre>
-<blockquote>
-<p>返回此序列中的代码点值流。 序列中遇到的任何代理对都被组合，就好像是Character.toCodePoint &gt;，结果传递给流。 任何其他代码单元（包括普通BMP字符，未配对代理项和未定义代码单元）都将零扩展为int值，然后将int值传递给流。当终端流操作开始时，流绑定到该序列（具体地，对于可变序列，流的分裂器是late-binding ）。 如果在该操作期间修改了序列，则结果是未定义的。</p>
-</blockquote>
-<h4 id="codepoints">codePoints()</h4>
-<pre><code>static int compare​(CharSequence cs1, CharSequence cs2)
-</code></pre>
-<p>  返回此序列中的代码点值流。 序列中遇到的任何代理对都被组合，就好像是Character.toCodePoint ，结果传递给流。 任何其他代码单元（包括普通BMP字符，未配对代理项和未定义代码单元）都将零扩展为int值，然后将int值传递给流。<br>
-当终端流操作开始时，流绑定到该序列（具体地，对于可变序列，流的分裂器是late-binding ）。 如果在该操作期间修改了序列，则结果是未定义的。</p>
-<h4 id="length">length()</h4>
-<h4 id="subsequenceint-startint-end">subSequence(int start,int end)</h4>
-<h4 id="tostring">toString()</h4>
+<h3 id="分类">分类</h3>
+<ul>
+<li>公平锁、非公平锁</li>
+<li>可重入锁</li>
+<li>独享锁，共享锁</li>
+<li>互斥锁，读写锁</li>
+<li>乐观锁，悲观锁</li>
+<li>分段锁</li>
+<li>偏向锁，轻量级锁，重量级锁</li>
+<li>自旋锁</li>
+</ul>
 <hr>
-<h3 id="默认方法">默认方法</h3>
-<h6 id="异常">异常</h6>
-<blockquote>
-<p>IndexOutOfBoundsException - 如果 index参数为负数或不小于 length()</p>
-</blockquote>
+<ol>
+<li>
+<h4 id="公平锁-非公平锁">公平锁、非公平锁</h4>
+<ul>
+<li>公平锁：申请锁的顺序，先来先得锁</li>
+<li>非公平锁：不按照申请顺序，优先级反转或者饥饿现象<br>
+  ReentrantLock会默认是非公平锁，非公平锁优点在于吞吐量弄公平锁大<br>
+  对于Synchronized而言，也是一种非公平锁。由于其并不像ReentrantLock是通过AQS的来实现线程调度，所以并没有任何办法使其变成公平锁。</li>
+</ul>
+</li>
+<li>
+<h4 id="可重入锁">可重入锁</h4>
+</li>
+</ol>
+<p>  又名递归锁，是指在同一个线程在外层方法获取锁的时候，在进入内层方法会自动获取锁。<br>
+- 对于Java ReentrantLock而言, 他的名字就可以看出是一个可重入锁，其名字是Re entrant Lock重新进入锁。<br>
+- 对于Synchronized而言，也是一个可重入锁。可重入锁的一个好处是可一定程度避免死锁。<br>
+3. #### 独享锁，共享锁</p>
+<ul>
+<li>独享锁是指该锁一次只能被一个线程所持有。</li>
+<li>共享锁是指该锁可被多个线程所持有<br>
+  对于Java ReentrantLock而言，其是独享锁。但是对于Lock的另一个实现类ReadWriteLock，其读锁是共享锁，其写锁是独享锁。</li>
+<li>读锁的共享锁可保证并发读是非常高效的，读写，写读 ，写写的过程是互斥的。</li>
+<li>独享锁与共享锁也是通过AQS来实现的，通过实现不同的方法，来实现独享或者共享。<br>
+  对于Sychronized而言，当然是独享锁</li>
+</ul>
+<ol>
+<li>
+<h4 id="互斥锁读写锁">互斥锁，读写锁</h4>
+</li>
+</ol>
+<p>  上面讲的独享锁/共享锁就是一种广义的说法，互斥锁/读写锁就是具体的实现。</p>
+<ul>
+<li>互斥锁在Java中的具体实现就是ReentrantLock</li>
+<li>读写锁在Java中的具体实现就是ReadWriteLock</li>
+</ul>
+<ol start="5">
+<li>
+<h4 id="乐观锁悲观锁">乐观锁，悲观锁</h4>
+</li>
+</ol>
+<p>  乐观锁与悲观锁非具体锁，是指看待并发同步的角度。</p>
+<ul>
+<li>悲观锁认为对于同一个数据的并发操作，一定是会发生修改的，哪怕没有修改，也会认为修改。因此对于同一个数据的并发操作，悲观锁采取加锁的形式。悲观的认为，不加锁的并发操作一定会出问题。</li>
+<li>乐观锁则认为对于同一个数据的并发操作，是不会发生修改的。在更新数据的时候，会采用尝试更新，不断重新的方式更新数据。乐观的认为，不加锁的并发操作是没有事情的。<br>
+  从上面的描述我们可以看出，悲观锁适合写操作非常多的场景，乐观锁适合读操作非常多的场景，不加锁会带来大量的性能提升。</li>
+<li>悲观锁在Java中的使用，就是利用各种锁。</li>
+<li>乐观锁在Java中的使用，是无锁编程，常常采用的是CAS算法，典型的例子就是原子类，通过CAS自旋实现原子操作的更新。</li>
+</ul>
+<ol start="6">
+<li>
+<h4 id="分段锁">分段锁</h4>
+</li>
+</ol>
+<p>  分段锁其实是一种锁的设计，并不是具体的一种锁，对于ConcurrentHashMap而言，其并发的实现就是通过分段锁的形式来实现高效的并发操作。以ConcurrentHashMap来说一下分段锁的含义以及设计思想，ConcurrentHashMap中的分段锁称为Segment，它即类似于HashMap（JDK7与JDK8中HashMap的实现）的结构，即内部拥有一个Entry数组，数组中的每个元素又是一个链表；同时又是一个ReentrantLock（Segment继承了ReentrantLock)。当需要put元素的时候，并不是对整个hashmap进行加锁，而是先通过hashcode来知道他要放在那一个分段中，然后对这个分段进行加锁，所以当多线程put的时候，只要不是放在一个分段中，就实现了真正的并行的插入。但是，在统计size的时候，可就是获取hashmap全局信息的时候，就需要获取所有的分段锁才能统计。</p>
+<p>  分段锁的设计目的是细化锁的粒度，当操作不需要更新整个数组的时候，就仅仅针对数组中的一项进行加锁操作。<br>
+7. #### 偏向锁，轻量级锁，重量级锁<br>
+  这三种锁是指锁的状态，并且是针对Synchronized。在Java 5通过引入锁升级的机制来实现高效Synchronized。这三种锁的状态是通过对象监视器在对象头中的字段来表明的。</p>
+<ul>
+<li>
+<p>偏向锁是指一段同步代码一直被一个线程所访问，那么该线程会自动获取锁。降低获取锁的代价。</p>
+</li>
+<li>
+<p>轻量级锁是指当锁是偏向锁的时候，被另一个线程所访问，偏向锁就会升级为轻量级锁，其他线程会通过自旋的形式尝试获取锁，不会阻塞，提高性能。</p>
+</li>
+<li>
+<p>重量级锁是指当锁为轻量级锁的时候，另一个线程虽然是自旋，但自旋不会一直持续下去，当自旋一定次数的时候，还没有获取到锁，就会进入阻塞，该锁膨胀为重量级锁。重量级锁会让其他申请的线程进入阻塞，性能降低。</p>
+</li>
+</ul>
+<ol start="8">
+<li>
+<h4 id="自旋锁">自旋锁</h4>
+</li>
+</ol>
+<p>  在Java中，自旋锁是指尝试获取锁的线程不会立即阻塞，而是采用循环的方式去尝试获取锁，这样的好处是减少线程上下文切换的消耗，缺点是循环会消耗CPU。</p>
 
         </div>
         <!-- Share to Twitter, Weibo, Telegram -->
@@ -165,21 +258,16 @@ CharSequence是char值的可读序列。 该接口提供对许多不同类型的
 <ul>
 <li>
 <ul>
-<li><a href="#summary">Summary</a></li>
-<li><a href="#%E6%8A%BD%E8%B1%A1%E6%96%B9%E6%B3%95">抽象方法</a>
+<li><a href="#%E5%88%86%E7%B1%BB">分类</a>
 <ul>
-<li><a href="#charatint-index">charAt(int index)</a></li>
-<li><a href="#chars">chars()</a></li>
-<li><a href="#codepoints">codePoints()</a></li>
-<li><a href="#length">length()</a></li>
-<li><a href="#subsequenceint-startint-end">subSequence(int start,int end)</a></li>
-<li><a href="#tostring">toString()</a></li>
+<li><a href="#%E5%85%AC%E5%B9%B3%E9%94%81-%E9%9D%9E%E5%85%AC%E5%B9%B3%E9%94%81">公平锁、非公平锁</a></li>
+<li><a href="#%E5%8F%AF%E9%87%8D%E5%85%A5%E9%94%81">可重入锁</a></li>
+<li><a href="#%E4%BA%92%E6%96%A5%E9%94%81%E8%AF%BB%E5%86%99%E9%94%81">互斥锁，读写锁</a></li>
+<li><a href="#%E4%B9%90%E8%A7%82%E9%94%81%E6%82%B2%E8%A7%82%E9%94%81">乐观锁，悲观锁</a></li>
+<li><a href="#%E5%88%86%E6%AE%B5%E9%94%81">分段锁</a></li>
+<li><a href="#%E8%87%AA%E6%97%8B%E9%94%81">自旋锁</a></li>
 </ul>
 </li>
-<li><a href="#%E9%BB%98%E8%AE%A4%E6%96%B9%E6%B3%95">默认方法</a><br>
-*<br>
-*<br>
-* <a href="#%E5%BC%82%E5%B8%B8">异常</a></li>
 </ul>
 </li>
 </ul>

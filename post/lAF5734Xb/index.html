@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>New 背后过程 - bravo</title>
-<link rel="shortcut icon" href="https://JoyZgq.github.io/favicon.ico">
+<link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
-<link rel="stylesheet" href="https://JoyZgq.github.io/media/css/tailwind.css">
-<link rel="stylesheet" href="https://JoyZgq.github.io/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="New 背后过程 - bravo - Atom Feed" href="https://JoyZgq.github.io/atom.xml">
+<link rel="stylesheet" href="http://localhost:4000/media/css/tailwind.css">
+<link rel="stylesheet" href="http://localhost:4000/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="New 背后过程 - bravo - Atom Feed" href="http://localhost:4000/atom.xml">
 
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-164181119-1"></script>
@@ -29,21 +29,21 @@ Java是一门面向对象的编程语言，Java程序运行过程中无时无刻
   <meta property="og:description" content="
 Java是一门面向对象的编程语言，Java程序运行过程中无时无刻都有对象被创建出来。在语言层面上，创建对象通常（例外：复制、反序列化）仅仅是一个new关键字而已，而在虚拟机中，对象（文中讨论的对象限于普通Java对象，不包括数组和Clas..." />
   <meta property="og:type" content="articles">
-  <meta property="og:url" content="https://JoyZgq.github.io/post/lAF5734Xb/" />
-  <meta property="og:image" content="https://JoyZgq.github.io/post-images/lAF5734Xb.webp">
+  <meta property="og:url" content="http://localhost:4000/post/lAF5734Xb/" />
+  <meta property="og:image" content="http://localhost:4000/post-images/lAF5734Xb.webp">
   <meta property="og:image:height" content="630">
   <meta property="og:image:width" content="1200">
   <meta name="twitter:title" content="New 背后过程 - bravo">
   <meta name="twitter:description" content="
 Java是一门面向对象的编程语言，Java程序运行过程中无时无刻都有对象被创建出来。在语言层面上，创建对象通常（例外：复制、反序列化）仅仅是一个new关键字而已，而在虚拟机中，对象（文中讨论的对象限于普通Java对象，不包括数组和Clas...">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="canonical" href="https://JoyZgq.github.io/post/lAF5734Xb/">
+  <link rel="canonical" href="http://localhost:4000/post/lAF5734Xb/">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
  
   
-    <link rel="stylesheet" href="https://JoyZgq.github.io/media/css/prism-github.css">
+    <link rel="stylesheet" href="http://localhost:4000/media/css/prism-github.css">
   
 
   
@@ -51,7 +51,7 @@ Java是一门面向对象的编程语言，Java程序运行过程中无时无刻
 
 <body>
   <div class="antialiased flex flex-col min-h-screen" id="app">
-    <a href="https://JoyZgq.github.io" class="fixed top-0 left-0 mt-4 bg-black text-white dark:text-gray-700 dark:bg-yellow-50 dark:hover:bg-black dark:hover:text-white inline-flex p-2 pl-8 hover:text-gray-700 hover:bg-yellow-50 font-bold z-10 transition-fast animated fadeInLeft">
+    <a href="http://localhost:4000" class="fixed top-0 left-0 mt-4 bg-black text-white dark:text-gray-700 dark:bg-yellow-50 dark:hover:bg-black dark:hover:text-white inline-flex p-2 pl-8 hover:text-gray-700 hover:bg-yellow-50 font-bold z-10 transition-fast animated fadeInLeft">
       bravo
     </a>
     <div class="max-w-4xl w-full mx-auto">
@@ -60,12 +60,12 @@ Java是一门面向对象的编程语言，Java程序运行过程中无时无刻
           New 背后过程
         </h1>
         
-          <img src="https://JoyZgq.github.io/post-images/lAF5734Xb.webp" alt="New 背后过程" class="block w-full mb-8">
+          <img src="http://localhost:4000/post-images/lAF5734Xb.webp" alt="New 背后过程" class="block w-full mb-8">
         
         <div class="mb-8 flex flex-wrap">
           <div class="text-gray-400 text-sm mr-4">2020-03-10 · 8 min read</div>
           
-            <a href="https://JoyZgq.github.io/tag/7R90wwt4I/" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
+            <a href="http://localhost:4000/tag/7R90wwt4I/" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
               <i class="ri-hashtag"></i>
               base
             </a>
@@ -79,7 +79,7 @@ Java是一门面向对象的编程语言，Java程序运行过程中无时无刻
 <h2 id="对象的创建">对象的创建</h2>
 <p>  当Java虚拟机遇到一条字节码new指令时，首先将去检查这个指令的参数是否能在常量池中定位到一个类的符号引用，并且检查这个符号引用代表的类是否已被加载、解析和初始化过。</p>
 <p>  一个类型从被加载到虚拟机内存中开始，到卸载出内存为止，它的整个生命周期将会经历加载（Loading）、验证（Verification）、准备（Preparation）、解析（Resolution）、初始化（Initialization）、使用（Using）和卸载（Unloading）七个阶段，其中验证、准备、解析三个部分统称为连接（Linking）<br>
-<img src="https://JoyZgq.github.io/post-images/1587711579864.png" alt="" loading="lazy"></p>
+<img src="http://localhost:4000/post-images/1587711579864.png" alt="" loading="lazy"></p>
 <hr>
 <p>在类加载检查通过后，接下来虚拟机将为新生对象分配内存。对象所需内存的大小在类加载完成后便可完全确定</p>
 <h3 id="那么如何确定的内存大小的呢">那么如何确定的内存大小的呢？</h3>
@@ -276,11 +276,11 @@ if (!constants-&gt;tag_at(index).is_unresolved_klass()) {
 </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <script src="https://JoyZgq.github.io/media/scripts/main.js"></script>
+  <script src="http://localhost:4000/media/scripts/main.js"></script>
   
   <!-- Code Highlight -->
   
-    <script src="https://JoyZgq.github.io/media/prism.js"></script>
+    <script src="http://localhost:4000/media/prism.js"></script>
     <script>
       Prism.highlightAll()
     </script>
