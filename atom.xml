@@ -2,14 +2,21 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://JoyZgq.github.io</id>
     <title>bravo</title>
-    <updated>2020-05-23T23:10:40.564Z</updated>
+    <updated>2021-01-12T03:52:28.284Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://JoyZgq.github.io"/>
     <link rel="self" href="https://JoyZgq.github.io/atom.xml"/>
     <subtitle>Tomorrow is another day.🎈🎈🎈🎈🎈🎈</subtitle>
     <logo>https://JoyZgq.github.io/images/avatar.png</logo>
     <icon>https://JoyZgq.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2020, bravo</rights>
+    <rights>All rights reserved 2021, bravo</rights>
+    <entry>
+        <title type="html"><![CDATA[基本功—Java]]></title>
+        <id>https://JoyZgq.github.io/post/wPh6nKNWy/</id>
+        <link href="https://JoyZgq.github.io/post/wPh6nKNWy/">
+        </link>
+        <updated>2021-01-06T10:58:01.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Java---锁]]></title>
         <id>https://JoyZgq.github.io/post/5DDpUu6H-/</id>
@@ -80,12 +87,5 @@
         <link href="https://JoyZgq.github.io/post/SxCUqUsXI/">
         </link>
         <updated>2019-05-21T01:25:04.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Java.IO综述]]></title>
-        <id>https://JoyZgq.github.io/post/j_TTp8cze/</id>
-        <link href="https://JoyZgq.github.io/post/j_TTp8cze/">
-        </link>
-        <updated>2019-04-18T07:42:10.000Z</updated>
     </entry>
 </feed>
